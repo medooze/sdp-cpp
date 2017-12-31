@@ -1,0 +1,262 @@
+session-description =   proto-version
+                        origin-field
+                        session-name-field
+                        [information-field]
+                        [uri-field]
+                        email-fields
+                        phone-fields
+                        [connection-field]
+                        bandwidth-fields
+                        time-fields
+			[zone-adjustments]
+                        [key-field]
+                        attribute-fields
+                        media-descriptions;
+proto-version       = %x76 "=" 1*DIGIT CRLF ;
+origin-field        = %x6f "=" username SP sess-id SP sess-version SP nettype SP addrtype SP unicast-address CRLF;
+session-name-field  = %x73 "=" text CRLF;
+information-field   = %x69 "=" text CRLF;
+uri-field           = %x75 "=" URI-reference CRLF;
+email-fields        = *(email-field);
+email-field         = %x65 "=" email-address CRLF;
+phone-fields        = *(phone-field);
+phone-field         = %x70 "=" phone-number CRLF;
+connection-field    = %x63 "=" nettype SP addrtype SP connection-address CRLF;
+bandwidth-fields    = *(bandwidth-field);
+bandwidth-field     = %x62 "=" bwtype ":" bandwidth CRLF;
+time-fields         = 1*(time-repeat-field) ;
+time-repeat-field   = time-field *(repeat-field);
+time-field          = %x74 "=" start-time SP stop-time CRLF;
+repeat-field        = %x72 "=" repeat-interval SP typed-time 1*(SP typed-time) CRLF;
+zone-adjustments    = %x7a "="  *(SP time SP ["-"] typed-time) CRLF;
+key-field           = %x6b "=" key-type CRLF;
+attribute-fields    = *(attribute-field);
+attribute-field	    = %x61 "="  gen-attribute CRLF;
+gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / extmap-attribute / fingerprint-attribute / sctpmap-attr / attribute;
+sctpmap-attr        =  "sctpmap:" sctpmap-number SP app SP [streams];
+sctpmap-number      =  1*DIGIT;
+app                 =  token;
+streams             =  1*DIGIT;
+fingerprint-attribute  =  "fingerprint" ":" hash-func SP fingerprint;
+hash-func           = "sha-1" / "sha-224" / "sha-256" / "sha-384" / "sha-512" / "md5" / "md2" / token ;
+fingerprint         = 2HEXDIG *(":" 2HEXDIG);
+extmap-attribute    = "extmap:" extension-identifier ["/" direction] SP extension-name [SP extension-attributes];
+extension-identifier= 1*5DIGIT;
+extension-name	    = URI;
+direction	    = "sendonly" / "recvonly" / "sendrecv" / "inactive";
+extension-attributes= byte-string;
+candidate-attribute = "candidate" ":" foundation SP component-id SP
+                           transport SP
+                           priority SP
+                           connection-address SP
+                           port         
+                           SP cand-type
+                           [SP "raddr" SP rel-addr]
+                           [SP "rport" SP rel-port]
+                           *(SP extension-att);
+foundation          = 1*32ice-char;
+component-id        = 1*5DIGIT ;
+transport           = "UDP" / transport-extension;
+transport-extension = token ;            
+priority            = 1*10DIGIT ;
+cand-type           = "typ" SP candidate-types ;
+candidate-types     = "host" / "srflx" / "prflx" / "relay" / token ;
+rel-addr            =  connection-address;
+rel-port            =  port;
+extension-att       = extension-att-name SP extension-att-value ;
+extension-att-name  = token ;
+extension-att-value = token ;
+ice-char            = ALPHA / DIGIT / "+" / "/" ;
+crypto-attribute    = "crypto:" tag 1*WSP crypto-suite 1*WSP key-params *(1*WSP session-param);
+tag                 = 1*9DIGIT ;
+crypto-suite        = 1*(ALPHA / DIGIT / "_");
+key-params          = key-param *(";" key-param) ;
+key-param           = key-method ":" key-info ;
+key-method          = "inline" / key-method-ext ;
+key-method-ext      = 1*(ALPHA / DIGIT / "_") ;
+key-info            = key-salt  [ "|" key-lifetime ] [ "|" key-mki ]; 
+key-salt            = base64; 
+key-lifetime        = ["2^"] 1*(DIGIT);
+key-mki             = key-mki-value ":" key-mki-length;
+key-mki-value       = 1*DIGIT;
+key-mki-length      = 1*3DIGIT;
+session-param       = 1*(VCHAR); 
+mid-attr            = "mid:" identification-tag;
+identification-tag  = token;
+group-attr          = "group:" group-semantics *(SP identification-tag);
+group-semantics     = token;
+ssrc-attr           = "ssrc:" ssrc-id SP attribute;
+ssrc-id             = integer ; 
+ssrc-group-attr     = "ssrc-group:" ssrc-group-semantics *(SP ssrc-id);
+ssrc-group-semantics = token ;
+cname-attr          = "cname:" cname ;
+cname               = byte-string;
+previous-ssrc-attr  = "previous-ssrc:" ssrc-id *(SP ssrc-id);
+rtpmap-attr         = "rtpmap:" fmt SP name "/" rate ["/" parameters];
+name                = token ;
+rate                = integer ;
+parameters          = token ;
+fmtp-attr           = "fmtp:" fmt SP param-list;
+param-list	    = byte-string ;
+media-descriptions  = *(media-description);
+media-description   =  media-field
+		       [information-field]
+		       *connection-field
+		       bandwidth-fields
+		       [key-field]
+		       attribute-fields;
+media-field         = %x6d "=" media SP port ["/" number-of-ports] SP proto 1*(SP fmt) CRLF;
+username            = non-ws-string ;
+sess-id             = 1*DIGIT;
+sess-version        = 1*DIGIT;
+nettype             = token;
+addrtype            = token;
+email-address       = address-and-comment / dispname-and-address / addr-spec;
+address-and-comment = addr-spec 1*SP "(" 1*email-safe ")";
+dispname-and-address= 1*email-safe 1*SP "<" addr-spec ">";
+phone-number        = phone *SP "(" 1*email-safe ")" / 1*email-safe "<" phone ">" /  phone;
+phone               = ["+"] DIGIT 1*(SP / "-" / DIGIT);
+connection-address  = IP4-multicast / IP6-multicast / IPv4address / IPv6address / FQDN / extn-addr;
+unicast-address     = IPv4address / IPv6address / FQDN / extn-addr;
+bwtype              = token;
+bandwidth           = 1*DIGIT;
+start-time          = time / "0";
+stop-time           = time / "0";
+time                = POS-DIGIT 9*DIGIT;
+repeat-interval     = POS-DIGIT *DIGIT [fixed-len-time-unit];
+typed-time          = 1*DIGIT [fixed-len-time-unit];
+fixed-len-time-unit = %x64 / %x68 / %x6d / %x73;
+key-type            = prompt-key-type / clear-key-type / base64-key-type / uri-key-type;
+prompt-key-type     = "prompt";
+clear-key-type      = "clear" ":" text;
+base64-key-type     = "base64" ":" base64;
+uri-key-type        = "uri" ":" URI-reference;
+base64              = *base64-unit [base64-pad];
+base64-unit         = 4base64-char;
+base64-pad          = 2base64-char "==" / 3base64-char "=";
+base64-char         = ALPHA / DIGIT / "+" / "/";
+attribute           = (att-field ":" att-value) / att-field;
+att-field           = token;
+att-value           = byte-string;
+media               = token;
+fmt                 = token;
+proto               = token *("/" token);
+port                = 1*DIGIT;
+number-of-ports     = integer;
+IP4-multicast       = m1 3( "." decimal-uchar ) "/" ttl [ "/" integer ];
+m1                  = ("22" ("4"/"5"/"6"/"7"/"8"/"9")) / ("23" DIGIT );
+IP6-multicast       = IPv6address [ "/" integer ];
+ttl                 = (POS-DIGIT *2DIGIT) / "0";
+FQDN                = 4*(alpha-numeric / "-" / ".");
+email-safe          = %x01-09/%x0B-0C/%x0E-27/%x2A-3B/%x3D/%x3F-FF;
+URI                 = scheme ":" hier-part [ "?" query ] [ "#" fragment ];
+hier-part	    = "//" authority path-abempty / path-absolute / path-rootless / path-empty;
+URI-reference	    = URI / relative-ref;
+absolute-URI	    = scheme ":" hier-part [ "?" query ];
+relative-ref	    = relative-part [ "?" query ] [ "#" fragment ];
+relative-part	    = "//" authority path-abempty / path-absolute / path-noscheme / path-empty;
+scheme	            = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." );
+authority	    = [ userinfo "@" ] host [ ":" port ];
+userinfo	    = *( unreserved / pct-encoded / sub-delims / ":" );
+host                = IP-literal / IPv4address / reg-name;
+IP-literal	    = "[" ( IPv6address / IPvFuture ) "]";
+IPvFuture	    = "v" 1*HEXDIG "." 1*( unreserved / sub-delims / ":" );
+IPv6address	    = 6( h16 ":" ) ls32
+                     / "::" 5( h16 ":" ) ls32
+                     / [ h16 ] "::" 4( h16 ":" ) ls32
+                     / [ *1( h16 ":" ) h16 ] "::" 3( h16 ":" ) ls32
+                     / [ *2( h16 ":" ) h16 ] "::" 2( h16 ":" ) ls32
+                     / [ *3( h16 ":" ) h16 ] "::" h16 ":" ls32
+                     / [ *4( h16 ":" ) h16 ] "::" ls32
+                     / [ *5( h16 ":" ) h16 ] "::" h16
+                     / [ *6( h16 ":" ) h16 ] "::";
+h16                 = 1*4HEXDIG;
+ls32                = ( h16 ":" h16 ) / IPv4address;
+IPv4address	    = dec-octet "." dec-octet "." dec-octet "." dec-octet;
+dec-octet	    = DIGIT / %x31-39 DIGIT / "1" 2DIGIT / "2" %x30-34 DIGIT / "25" %x30-35 ;
+reg-name	    = *( unreserved / pct-encoded / sub-delims );
+path                = path-abempty / path-absolute / path-noscheme / path-rootless / path-empty ;
+path-abempty	    = *( "/" segment );
+path-absolute	    = "/" [ segment-nz *( "/" segment ) ];
+path-noscheme	    = segment-nz-nc *( "/" segment );
+path-rootless	    = segment-nz *( "/" segment );
+path-empty	    = 0*pchar;
+segment 	    = *pchar;
+segment-nz	    = 1*pchar;
+segment-nz-nc	    = 1*( unreserved / pct-encoded / sub-delims / "@" );
+pchar               = unreserved / pct-encoded / sub-delims / ":" / "@";
+query               = *( pchar / "/" / "?" );
+fragment	    = *( pchar / "/" / "?" );
+pct-encoded	    = "%" HEXDIG HEXDIG;
+unreserved	    = ALPHA / DIGIT / "-" / "." / "_" / "~";
+reserved	    = gen-delims / sub-delims;
+gen-delims	    = ":" / "/" / "?" / "#" / "[" / "]" / "@";
+sub-delims	    = "!" / "$" / "&" / "'" / "(" / ")" / "*" / "+" / "," / ";" / "=";
+addr-spec           = local-part "@" domain ;
+local-part          = dot-atom / quoted-string / obs-local-part ;
+domain              = dot-atom / domain-literal / obs-domain ;
+domain-literal      = [CFWS] "[" *([FWS] dcontent) [FWS] "]" [CFWS] ;
+dcontent            = dtext / quoted-pair ;
+dtext               = NO-WS-CTL / %d33-90 / %d94-126 ;
+NO-WS-CTL           = %d1-8 / %d11 / %d12 / %d14-31 / %d127;
+quoted-pair         = ("\" text) / obs-qp ;
+text                = byte-string;
+FWS                 = ([*WSP CRLF] 1*WSP) / obs-FWS;
+
+comment             = "(" *([FWS] ccontent) [FWS] ")";
+ccontent            = ctext / quoted-pair / comment;
+ctext               = NO-WS-CTL / %d33-39 / %d42-91 / %d93-126 ;
+dot-atom            = [CFWS] dot-atom-text [CFWS];
+dot-atom-text       = 1*atext *("." 1*atext);
+atext               = ALPHA / DIGIT /
+                         "!" / "#" /
+                         "$" / "%" /
+                         "&" / "'" /
+                         "*" / "+" /
+                         "-" / "/" /
+                         "=" / "?" /
+                         "^" / "_" /
+                         "`" / "{" /
+                         "|" / "}" /
+                         "~";
+
+integer             = POS-DIGIT *DIGIT;
+alpha-numeric       = ALPHA / DIGIT;
+decimal-uchar       = decimal-uchar-25x / decimal-uchar-2xx / decimal-uchar-1xx /POS-DIGIT DIGIT / DIGIT ;
+decimal-uchar-1xx   = "1" 2*(DIGIT);
+decimal-uchar-2xx   = "2" ("0"/"1"/"2"/"3"/"4") DIGIT;
+decimal-uchar-25x   = "2" "5" ("0"/"1"/"2"/"3"/"4"/"5");
+BIT                 = "0" / "1";
+CHAR                = %x01-7F;
+CR                  = %x0D;
+CTL                 = %x00-1F / %x7F;
+HEXDIG              = DIGIT / "A" / "B" / "C" / "D" / "E" / "F";
+HTAB                = %x09;
+LF                  = %x0A;
+LWSP                = *(WSP / CRLF WSP);
+OCTET               = %x00-FF;
+SP                  = %x20;
+VCHAR               = %x21-7E;
+quoted-string       = [CFWS] DQUOTE *([FWS] qcontent) [FWS] DQUOTE [CFWS];
+qcontent            = qtext / quoted-pair;
+qtext               = NO-WS-CTL / %d33 / %d35-91 / %d93-126 ;
+obs-local-part      = word *("." word);
+obs-domain          = atom *("." atom);
+obs-FWS             = 1*WSP *(CRLF 1*WSP);
+obs-qp              = "\" (%d0-127);
+obs-text            = *LF *CR *(obs-char *LF *CR);
+obs-char            = %d0-9 / %d11 / %d12 / %d14-127 ;
+CFWS                = *([FWS] comment) (([FWS] comment) / FWS);
+WSP                 = SP / HTAB ;
+atom                = [CFWS] 1*atext [CFWS];
+word                = atom / quoted-string;
+extn-addr           = non-ws-string;
+non-ws-string       = 1*(VCHAR/%x80-FF);
+byte-string         = $rule("org.murillo.abnf.precomp.ByteString")	; # 1*(%x01-09/%x0B-0C/%x0E-FF);
+CRLF                = $rule("org.murillo.abnf.precomp.CRLF")  		; # %d13.10
+token               = $rule("org.murillo.abnf.precomp.Token") 		; # 1*(%x21 / %x23-27 / %x2A-2B / %x2D-2E / %x30-39 / %x41-5A / %x5E-7E)
+ALPHA               = $rule("org.murillo.abnf.precomp.ALPHA") 		; # %x41-5A / %x61-7A 
+DIGIT               = %x30-39;
+POS-DIGIT           = %x31-39;
+DQUOTE              = %x22;
+EQUALS              = "=";

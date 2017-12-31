@@ -1,0 +1,2592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="abnf" projectFiles="true">
+        <itemPath>src/abnf/Displayer.cpp</itemPath>
+        <itemPath>src/abnf/Displayer.hpp</itemPath>
+        <itemPath>src/abnf/Parser.cpp</itemPath>
+        <itemPath>src/abnf/Parser.hpp</itemPath>
+        <itemPath>src/abnf/ParserContext.cpp</itemPath>
+        <itemPath>src/abnf/ParserContext.hpp</itemPath>
+        <itemPath>src/abnf/ParserException.cpp</itemPath>
+        <itemPath>src/abnf/ParserException.hpp</itemPath>
+        <itemPath>src/abnf/Rule.cpp</itemPath>
+        <itemPath>src/abnf/Rule.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ALPHA.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ALPHA.hpp</itemPath>
+        <itemPath>src/abnf/Rule_BIT.cpp</itemPath>
+        <itemPath>src/abnf/Rule_BIT.hpp</itemPath>
+        <itemPath>src/abnf/Rule_CFWS.cpp</itemPath>
+        <itemPath>src/abnf/Rule_CFWS.hpp</itemPath>
+        <itemPath>src/abnf/Rule_CHAR.cpp</itemPath>
+        <itemPath>src/abnf/Rule_CHAR.hpp</itemPath>
+        <itemPath>src/abnf/Rule_CR.cpp</itemPath>
+        <itemPath>src/abnf/Rule_CR.hpp</itemPath>
+        <itemPath>src/abnf/Rule_CRLF.cpp</itemPath>
+        <itemPath>src/abnf/Rule_CRLF.hpp</itemPath>
+        <itemPath>src/abnf/Rule_CTL.cpp</itemPath>
+        <itemPath>src/abnf/Rule_CTL.hpp</itemPath>
+        <itemPath>src/abnf/Rule_DIGIT.cpp</itemPath>
+        <itemPath>src/abnf/Rule_DIGIT.hpp</itemPath>
+        <itemPath>src/abnf/Rule_DQUOTE.cpp</itemPath>
+        <itemPath>src/abnf/Rule_DQUOTE.hpp</itemPath>
+        <itemPath>src/abnf/Rule_EQUALS.cpp</itemPath>
+        <itemPath>src/abnf/Rule_EQUALS.hpp</itemPath>
+        <itemPath>src/abnf/Rule_FQDN.cpp</itemPath>
+        <itemPath>src/abnf/Rule_FQDN.hpp</itemPath>
+        <itemPath>src/abnf/Rule_FWS.cpp</itemPath>
+        <itemPath>src/abnf/Rule_FWS.hpp</itemPath>
+        <itemPath>src/abnf/Rule_HEXDIG.cpp</itemPath>
+        <itemPath>src/abnf/Rule_HEXDIG.hpp</itemPath>
+        <itemPath>src/abnf/Rule_HTAB.cpp</itemPath>
+        <itemPath>src/abnf/Rule_HTAB.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IP4_multicast.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IP4_multicast.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IP6_multicast.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IP6_multicast.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IP_literal.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IP_literal.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IPv4address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IPv4address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IPv6address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IPv6address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_IPvFuture.cpp</itemPath>
+        <itemPath>src/abnf/Rule_IPvFuture.hpp</itemPath>
+        <itemPath>src/abnf/Rule_LF.cpp</itemPath>
+        <itemPath>src/abnf/Rule_LF.hpp</itemPath>
+        <itemPath>src/abnf/Rule_LWSP.cpp</itemPath>
+        <itemPath>src/abnf/Rule_LWSP.hpp</itemPath>
+        <itemPath>src/abnf/Rule_NO_WS_CTL.cpp</itemPath>
+        <itemPath>src/abnf/Rule_NO_WS_CTL.hpp</itemPath>
+        <itemPath>src/abnf/Rule_OCTET.cpp</itemPath>
+        <itemPath>src/abnf/Rule_OCTET.hpp</itemPath>
+        <itemPath>src/abnf/Rule_POS_DIGIT.cpp</itemPath>
+        <itemPath>src/abnf/Rule_POS_DIGIT.hpp</itemPath>
+        <itemPath>src/abnf/Rule_SP.cpp</itemPath>
+        <itemPath>src/abnf/Rule_SP.hpp</itemPath>
+        <itemPath>src/abnf/Rule_URI.cpp</itemPath>
+        <itemPath>src/abnf/Rule_URI.hpp</itemPath>
+        <itemPath>src/abnf/Rule_URI_reference.cpp</itemPath>
+        <itemPath>src/abnf/Rule_URI_reference.hpp</itemPath>
+        <itemPath>src/abnf/Rule_VCHAR.cpp</itemPath>
+        <itemPath>src/abnf/Rule_VCHAR.hpp</itemPath>
+        <itemPath>src/abnf/Rule_WSP.cpp</itemPath>
+        <itemPath>src/abnf/Rule_WSP.hpp</itemPath>
+        <itemPath>src/abnf/Rule_absolute_URI.cpp</itemPath>
+        <itemPath>src/abnf/Rule_absolute_URI.hpp</itemPath>
+        <itemPath>src/abnf/Rule_addr_spec.cpp</itemPath>
+        <itemPath>src/abnf/Rule_addr_spec.hpp</itemPath>
+        <itemPath>src/abnf/Rule_address_and_comment.cpp</itemPath>
+        <itemPath>src/abnf/Rule_address_and_comment.hpp</itemPath>
+        <itemPath>src/abnf/Rule_addrtype.cpp</itemPath>
+        <itemPath>src/abnf/Rule_addrtype.hpp</itemPath>
+        <itemPath>src/abnf/Rule_alpha_numeric.cpp</itemPath>
+        <itemPath>src/abnf/Rule_alpha_numeric.hpp</itemPath>
+        <itemPath>src/abnf/Rule_app.cpp</itemPath>
+        <itemPath>src/abnf/Rule_app.hpp</itemPath>
+        <itemPath>src/abnf/Rule_atext.cpp</itemPath>
+        <itemPath>src/abnf/Rule_atext.hpp</itemPath>
+        <itemPath>src/abnf/Rule_atom.cpp</itemPath>
+        <itemPath>src/abnf/Rule_atom.hpp</itemPath>
+        <itemPath>src/abnf/Rule_att_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_att_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_att_value.cpp</itemPath>
+        <itemPath>src/abnf/Rule_att_value.hpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute_fields.cpp</itemPath>
+        <itemPath>src/abnf/Rule_attribute_fields.hpp</itemPath>
+        <itemPath>src/abnf/Rule_authority.cpp</itemPath>
+        <itemPath>src/abnf/Rule_authority.hpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth.cpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth.hpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth_fields.cpp</itemPath>
+        <itemPath>src/abnf/Rule_bandwidth_fields.hpp</itemPath>
+        <itemPath>src/abnf/Rule_base64.cpp</itemPath>
+        <itemPath>src/abnf/Rule_base64.hpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_char.cpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_char.hpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_key_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_key_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_pad.cpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_pad.hpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_unit.cpp</itemPath>
+        <itemPath>src/abnf/Rule_base64_unit.hpp</itemPath>
+        <itemPath>src/abnf/Rule_bwtype.cpp</itemPath>
+        <itemPath>src/abnf/Rule_bwtype.hpp</itemPath>
+        <itemPath>src/abnf/Rule_byte_string.cpp</itemPath>
+        <itemPath>src/abnf/Rule_byte_string.hpp</itemPath>
+        <itemPath>src/abnf/Rule_cand_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_cand_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_candidate_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_candidate_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_candidate_types.cpp</itemPath>
+        <itemPath>src/abnf/Rule_candidate_types.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ccontent.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ccontent.hpp</itemPath>
+        <itemPath>src/abnf/Rule_clear_key_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_clear_key_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_cname.cpp</itemPath>
+        <itemPath>src/abnf/Rule_cname.hpp</itemPath>
+        <itemPath>src/abnf/Rule_cname_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_cname_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_comment.cpp</itemPath>
+        <itemPath>src/abnf/Rule_comment.hpp</itemPath>
+        <itemPath>src/abnf/Rule_component_id.cpp</itemPath>
+        <itemPath>src/abnf/Rule_component_id.hpp</itemPath>
+        <itemPath>src/abnf/Rule_connection_address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_connection_address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_connection_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_connection_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_crypto_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_crypto_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_crypto_suite.cpp</itemPath>
+        <itemPath>src/abnf/Rule_crypto_suite.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ctext.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ctext.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dcontent.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dcontent.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dec_octet.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dec_octet.hpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar.cpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar.hpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_1xx.cpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_1xx.hpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_25x.cpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_25x.hpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_2xx.cpp</itemPath>
+        <itemPath>src/abnf/Rule_decimal_uchar_2xx.hpp</itemPath>
+        <itemPath>src/abnf/Rule_direction.cpp</itemPath>
+        <itemPath>src/abnf/Rule_direction.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dispname_and_address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dispname_and_address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_domain.cpp</itemPath>
+        <itemPath>src/abnf/Rule_domain.hpp</itemPath>
+        <itemPath>src/abnf/Rule_domain_literal.cpp</itemPath>
+        <itemPath>src/abnf/Rule_domain_literal.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dot_atom.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dot_atom.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dot_atom_text.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dot_atom_text.hpp</itemPath>
+        <itemPath>src/abnf/Rule_dtext.cpp</itemPath>
+        <itemPath>src/abnf/Rule_dtext.hpp</itemPath>
+        <itemPath>src/abnf/Rule_email_address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_email_address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_email_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_email_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_email_fields.cpp</itemPath>
+        <itemPath>src/abnf/Rule_email_fields.hpp</itemPath>
+        <itemPath>src/abnf/Rule_email_safe.cpp</itemPath>
+        <itemPath>src/abnf/Rule_email_safe.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att_name.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att_name.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att_value.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_att_value.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_attributes.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_attributes.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_identifier.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_identifier.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_name.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extension_name.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extmap_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extmap_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_extn_addr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_extn_addr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fingerprint.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fingerprint.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fingerprint_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fingerprint_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fixed_len_time_unit.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fixed_len_time_unit.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fmt.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fmt.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fmtp_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fmtp_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_foundation.cpp</itemPath>
+        <itemPath>src/abnf/Rule_foundation.hpp</itemPath>
+        <itemPath>src/abnf/Rule_fragment.cpp</itemPath>
+        <itemPath>src/abnf/Rule_fragment.hpp</itemPath>
+        <itemPath>src/abnf/Rule_gen_attribute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_gen_attribute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_gen_delims.cpp</itemPath>
+        <itemPath>src/abnf/Rule_gen_delims.hpp</itemPath>
+        <itemPath>src/abnf/Rule_group_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_group_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_group_semantics.cpp</itemPath>
+        <itemPath>src/abnf/Rule_group_semantics.hpp</itemPath>
+        <itemPath>src/abnf/Rule_h16.cpp</itemPath>
+        <itemPath>src/abnf/Rule_h16.hpp</itemPath>
+        <itemPath>src/abnf/Rule_hash_func.cpp</itemPath>
+        <itemPath>src/abnf/Rule_hash_func.hpp</itemPath>
+        <itemPath>src/abnf/Rule_hier_part.cpp</itemPath>
+        <itemPath>src/abnf/Rule_hier_part.hpp</itemPath>
+        <itemPath>src/abnf/Rule_host.cpp</itemPath>
+        <itemPath>src/abnf/Rule_host.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ice_char.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ice_char.hpp</itemPath>
+        <itemPath>src/abnf/Rule_identification_tag.cpp</itemPath>
+        <itemPath>src/abnf/Rule_identification_tag.hpp</itemPath>
+        <itemPath>src/abnf/Rule_information_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_information_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_integer.cpp</itemPath>
+        <itemPath>src/abnf/Rule_integer.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_info.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_info.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_lifetime.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_lifetime.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_method.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_method.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_method_ext.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_method_ext.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki_length.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki_length.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki_value.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_mki_value.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_param.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_param.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_params.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_params.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_salt.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_salt.hpp</itemPath>
+        <itemPath>src/abnf/Rule_key_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_key_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_local_part.cpp</itemPath>
+        <itemPath>src/abnf/Rule_local_part.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ls32.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ls32.hpp</itemPath>
+        <itemPath>src/abnf/Rule_m1.cpp</itemPath>
+        <itemPath>src/abnf/Rule_m1.hpp</itemPath>
+        <itemPath>src/abnf/Rule_media.cpp</itemPath>
+        <itemPath>src/abnf/Rule_media.hpp</itemPath>
+        <itemPath>src/abnf/Rule_media_description.cpp</itemPath>
+        <itemPath>src/abnf/Rule_media_description.hpp</itemPath>
+        <itemPath>src/abnf/Rule_media_descriptions.cpp</itemPath>
+        <itemPath>src/abnf/Rule_media_descriptions.hpp</itemPath>
+        <itemPath>src/abnf/Rule_media_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_media_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_mid_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_mid_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_name.cpp</itemPath>
+        <itemPath>src/abnf/Rule_name.hpp</itemPath>
+        <itemPath>src/abnf/Rule_nettype.cpp</itemPath>
+        <itemPath>src/abnf/Rule_nettype.hpp</itemPath>
+        <itemPath>src/abnf/Rule_non_ws_string.cpp</itemPath>
+        <itemPath>src/abnf/Rule_non_ws_string.hpp</itemPath>
+        <itemPath>src/abnf/Rule_number_of_ports.cpp</itemPath>
+        <itemPath>src/abnf/Rule_number_of_ports.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_FWS.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_FWS.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_char.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_char.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_domain.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_domain.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_local_part.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_local_part.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_qp.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_qp.hpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_text.cpp</itemPath>
+        <itemPath>src/abnf/Rule_obs_text.hpp</itemPath>
+        <itemPath>src/abnf/Rule_origin_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_origin_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_param_list.cpp</itemPath>
+        <itemPath>src/abnf/Rule_param_list.hpp</itemPath>
+        <itemPath>src/abnf/Rule_parameters.cpp</itemPath>
+        <itemPath>src/abnf/Rule_parameters.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path_abempty.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path_abempty.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path_absolute.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path_absolute.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path_empty.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path_empty.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path_noscheme.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path_noscheme.hpp</itemPath>
+        <itemPath>src/abnf/Rule_path_rootless.cpp</itemPath>
+        <itemPath>src/abnf/Rule_path_rootless.hpp</itemPath>
+        <itemPath>src/abnf/Rule_pchar.cpp</itemPath>
+        <itemPath>src/abnf/Rule_pchar.hpp</itemPath>
+        <itemPath>src/abnf/Rule_pct_encoded.cpp</itemPath>
+        <itemPath>src/abnf/Rule_pct_encoded.hpp</itemPath>
+        <itemPath>src/abnf/Rule_phone.cpp</itemPath>
+        <itemPath>src/abnf/Rule_phone.hpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_fields.cpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_fields.hpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_number.cpp</itemPath>
+        <itemPath>src/abnf/Rule_phone_number.hpp</itemPath>
+        <itemPath>src/abnf/Rule_port.cpp</itemPath>
+        <itemPath>src/abnf/Rule_port.hpp</itemPath>
+        <itemPath>src/abnf/Rule_previous_ssrc_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_previous_ssrc_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_priority.cpp</itemPath>
+        <itemPath>src/abnf/Rule_priority.hpp</itemPath>
+        <itemPath>src/abnf/Rule_prompt_key_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_prompt_key_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_proto.cpp</itemPath>
+        <itemPath>src/abnf/Rule_proto.hpp</itemPath>
+        <itemPath>src/abnf/Rule_proto_version.cpp</itemPath>
+        <itemPath>src/abnf/Rule_proto_version.hpp</itemPath>
+        <itemPath>src/abnf/Rule_qcontent.cpp</itemPath>
+        <itemPath>src/abnf/Rule_qcontent.hpp</itemPath>
+        <itemPath>src/abnf/Rule_qtext.cpp</itemPath>
+        <itemPath>src/abnf/Rule_qtext.hpp</itemPath>
+        <itemPath>src/abnf/Rule_query.cpp</itemPath>
+        <itemPath>src/abnf/Rule_query.hpp</itemPath>
+        <itemPath>src/abnf/Rule_quoted_pair.cpp</itemPath>
+        <itemPath>src/abnf/Rule_quoted_pair.hpp</itemPath>
+        <itemPath>src/abnf/Rule_quoted_string.cpp</itemPath>
+        <itemPath>src/abnf/Rule_quoted_string.hpp</itemPath>
+        <itemPath>src/abnf/Rule_rate.cpp</itemPath>
+        <itemPath>src/abnf/Rule_rate.hpp</itemPath>
+        <itemPath>src/abnf/Rule_reg_name.cpp</itemPath>
+        <itemPath>src/abnf/Rule_reg_name.hpp</itemPath>
+        <itemPath>src/abnf/Rule_rel_addr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_rel_addr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_rel_port.cpp</itemPath>
+        <itemPath>src/abnf/Rule_rel_port.hpp</itemPath>
+        <itemPath>src/abnf/Rule_relative_part.cpp</itemPath>
+        <itemPath>src/abnf/Rule_relative_part.hpp</itemPath>
+        <itemPath>src/abnf/Rule_relative_ref.cpp</itemPath>
+        <itemPath>src/abnf/Rule_relative_ref.hpp</itemPath>
+        <itemPath>src/abnf/Rule_repeat_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_repeat_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_repeat_interval.cpp</itemPath>
+        <itemPath>src/abnf/Rule_repeat_interval.hpp</itemPath>
+        <itemPath>src/abnf/Rule_reserved.cpp</itemPath>
+        <itemPath>src/abnf/Rule_reserved.hpp</itemPath>
+        <itemPath>src/abnf/Rule_rtpmap_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_rtpmap_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_scheme.cpp</itemPath>
+        <itemPath>src/abnf/Rule_scheme.hpp</itemPath>
+        <itemPath>src/abnf/Rule_sctpmap_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_sctpmap_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_sctpmap_number.cpp</itemPath>
+        <itemPath>src/abnf/Rule_sctpmap_number.hpp</itemPath>
+        <itemPath>src/abnf/Rule_segment.cpp</itemPath>
+        <itemPath>src/abnf/Rule_segment.hpp</itemPath>
+        <itemPath>src/abnf/Rule_segment_nz.cpp</itemPath>
+        <itemPath>src/abnf/Rule_segment_nz.hpp</itemPath>
+        <itemPath>src/abnf/Rule_segment_nz_nc.cpp</itemPath>
+        <itemPath>src/abnf/Rule_segment_nz_nc.hpp</itemPath>
+        <itemPath>src/abnf/Rule_sess_id.cpp</itemPath>
+        <itemPath>src/abnf/Rule_sess_id.hpp</itemPath>
+        <itemPath>src/abnf/Rule_sess_version.cpp</itemPath>
+        <itemPath>src/abnf/Rule_sess_version.hpp</itemPath>
+        <itemPath>src/abnf/Rule_session_description.cpp</itemPath>
+        <itemPath>src/abnf/Rule_session_description.hpp</itemPath>
+        <itemPath>src/abnf/Rule_session_name_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_session_name_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_session_param.cpp</itemPath>
+        <itemPath>src/abnf/Rule_session_param.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_group_attr.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_group_attr.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_group_semantics.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_group_semantics.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_id.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ssrc_id.hpp</itemPath>
+        <itemPath>src/abnf/Rule_start_time.cpp</itemPath>
+        <itemPath>src/abnf/Rule_start_time.hpp</itemPath>
+        <itemPath>src/abnf/Rule_stop_time.cpp</itemPath>
+        <itemPath>src/abnf/Rule_stop_time.hpp</itemPath>
+        <itemPath>src/abnf/Rule_streams.cpp</itemPath>
+        <itemPath>src/abnf/Rule_streams.hpp</itemPath>
+        <itemPath>src/abnf/Rule_sub_delims.cpp</itemPath>
+        <itemPath>src/abnf/Rule_sub_delims.hpp</itemPath>
+        <itemPath>src/abnf/Rule_tag.cpp</itemPath>
+        <itemPath>src/abnf/Rule_tag.hpp</itemPath>
+        <itemPath>src/abnf/Rule_text.cpp</itemPath>
+        <itemPath>src/abnf/Rule_text.hpp</itemPath>
+        <itemPath>src/abnf/Rule_time.cpp</itemPath>
+        <itemPath>src/abnf/Rule_time.hpp</itemPath>
+        <itemPath>src/abnf/Rule_time_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_time_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_time_fields.cpp</itemPath>
+        <itemPath>src/abnf/Rule_time_fields.hpp</itemPath>
+        <itemPath>src/abnf/Rule_time_repeat_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_time_repeat_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_token.cpp</itemPath>
+        <itemPath>src/abnf/Rule_token.hpp</itemPath>
+        <itemPath>src/abnf/Rule_transport.cpp</itemPath>
+        <itemPath>src/abnf/Rule_transport.hpp</itemPath>
+        <itemPath>src/abnf/Rule_transport_extension.cpp</itemPath>
+        <itemPath>src/abnf/Rule_transport_extension.hpp</itemPath>
+        <itemPath>src/abnf/Rule_ttl.cpp</itemPath>
+        <itemPath>src/abnf/Rule_ttl.hpp</itemPath>
+        <itemPath>src/abnf/Rule_typed_time.cpp</itemPath>
+        <itemPath>src/abnf/Rule_typed_time.hpp</itemPath>
+        <itemPath>src/abnf/Rule_unicast_address.cpp</itemPath>
+        <itemPath>src/abnf/Rule_unicast_address.hpp</itemPath>
+        <itemPath>src/abnf/Rule_unreserved.cpp</itemPath>
+        <itemPath>src/abnf/Rule_unreserved.hpp</itemPath>
+        <itemPath>src/abnf/Rule_uri_field.cpp</itemPath>
+        <itemPath>src/abnf/Rule_uri_field.hpp</itemPath>
+        <itemPath>src/abnf/Rule_uri_key_type.cpp</itemPath>
+        <itemPath>src/abnf/Rule_uri_key_type.hpp</itemPath>
+        <itemPath>src/abnf/Rule_userinfo.cpp</itemPath>
+        <itemPath>src/abnf/Rule_userinfo.hpp</itemPath>
+        <itemPath>src/abnf/Rule_username.cpp</itemPath>
+        <itemPath>src/abnf/Rule_username.hpp</itemPath>
+        <itemPath>src/abnf/Rule_word.cpp</itemPath>
+        <itemPath>src/abnf/Rule_word.hpp</itemPath>
+        <itemPath>src/abnf/Rule_zone_adjustments.cpp</itemPath>
+        <itemPath>src/abnf/Rule_zone_adjustments.hpp</itemPath>
+        <itemPath>src/abnf/Terminal_NumericValue.cpp</itemPath>
+        <itemPath>src/abnf/Terminal_NumericValue.hpp</itemPath>
+        <itemPath>src/abnf/Terminal_StringValue.cpp</itemPath>
+        <itemPath>src/abnf/Terminal_StringValue.hpp</itemPath>
+        <itemPath>src/abnf/Visitor.hpp</itemPath>
+        <itemPath>src/abnf/XmlDisplayer.cpp</itemPath>
+        <itemPath>src/abnf/XmlDisplayer.hpp</itemPath>
+        <itemPath>src/abnf/sdp.abnf</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/abnf</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="src/abnf/Displayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Displayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Parser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Parser.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserContext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserContext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserException.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ALPHA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ALPHA.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_BIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_BIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CFWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CFWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CHAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CHAR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CRLF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CRLF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CTL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CTL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DIGIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DIGIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DQUOTE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DQUOTE.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_EQUALS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_EQUALS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FQDN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FQDN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HEXDIG.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HEXDIG.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HTAB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HTAB.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP4_multicast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP4_multicast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP6_multicast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP6_multicast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP_literal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP_literal.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv4address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv4address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv6address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv6address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPvFuture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPvFuture.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LWSP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LWSP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_NO_WS_CTL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_NO_WS_CTL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_OCTET.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_OCTET.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_POS_DIGIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_POS_DIGIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_SP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_SP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI_reference.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI_reference.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_VCHAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_VCHAR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_WSP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_WSP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_absolute_URI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_absolute_URI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addr_spec.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addr_spec.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_address_and_comment.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_address_and_comment.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addrtype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addrtype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_alpha_numeric.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_alpha_numeric.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_app.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_app.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atom.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atom.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_value.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_value.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_authority.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_authority.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_pad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_pad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_unit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_unit.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bwtype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bwtype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_byte_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_byte_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cand_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cand_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_attribute.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_attribute.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ccontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ccontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_clear_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_clear_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_comment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_comment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_component_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_component_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_address.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_address.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_suite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_suite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ctext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ctext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dcontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dcontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dec_octet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dec_octet.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_1xx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_1xx.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_25x.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_25x.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_2xx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_2xx.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_direction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_direction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dispname_and_address.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dispname_and_address.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain_literal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain_literal.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dtext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dtext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_safe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_safe.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_name.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_name.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_value.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_value.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_attributes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_attributes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_identifier.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_identifier.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extmap_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extmap_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extn_addr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extn_addr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint_attribute.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint_attribute.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fixed_len_time_unit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fixed_len_time_unit.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmt.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmtp_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmtp_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_foundation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_foundation.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fragment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fragment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_delims.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_delims.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_semantics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_semantics.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_h16.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_h16.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hash_func.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hash_func.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hier_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hier_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_host.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_host.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ice_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ice_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_identification_tag.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_identification_tag.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_information_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_information_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_integer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_info.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_info.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_lifetime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_lifetime.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method_ext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method_ext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_length.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_length.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_value.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_value.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_param.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_param.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_params.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_params.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_salt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_salt.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_local_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_local_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ls32.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ls32.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_m1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_m1.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_description.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_description.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_descriptions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_descriptions.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_mid_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_mid_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_nettype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_nettype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_non_ws_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_non_ws_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_number_of_ports.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_number_of_ports.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_FWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_FWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_domain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_domain.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_local_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_local_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_qp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_qp.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_origin_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_origin_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_param_list.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_param_list.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_parameters.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_parameters.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_abempty.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_abempty.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_absolute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_absolute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_empty.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_empty.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_noscheme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_noscheme.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_rootless.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_rootless.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pchar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pchar.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pct_encoded.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pct_encoded.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_number.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_port.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_previous_ssrc_attr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_previous_ssrc_attr.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_priority.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_priority.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_prompt_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_prompt_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto_version.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto_version.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qcontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qcontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qtext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qtext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_query.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_query.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_pair.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_pair.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rate.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reg_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reg_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_addr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_addr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_port.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_ref.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_ref.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_interval.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_interval.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reserved.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reserved.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rtpmap_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rtpmap_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_scheme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_scheme.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_number.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz_nc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz_nc.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_version.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_version.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_description.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_description.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_name_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_name_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_param.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_param.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_semantics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_semantics.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_start_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_start_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_stop_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_stop_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_streams.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_streams.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sub_delims.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sub_delims.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_tag.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_tag.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_repeat_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_repeat_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_token.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_token.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport_extension.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport_extension.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ttl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ttl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_typed_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_typed_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unicast_address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unicast_address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unreserved.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unreserved.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_userinfo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_userinfo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_username.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_username.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_word.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_word.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_zone_adjustments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_zone_adjustments.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_NumericValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_NumericValue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_StringValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_StringValue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Visitor.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/XmlDisplayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/XmlDisplayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/sdp.abnf" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/abnf/Displayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Displayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Parser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Parser.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserContext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserContext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/ParserException.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ALPHA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ALPHA.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_BIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_BIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CFWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CFWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CHAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CHAR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CRLF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CRLF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CTL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_CTL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DIGIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DIGIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DQUOTE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_DQUOTE.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_EQUALS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_EQUALS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FQDN.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FQDN.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_FWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HEXDIG.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HEXDIG.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HTAB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_HTAB.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP4_multicast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP4_multicast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP6_multicast.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP6_multicast.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP_literal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IP_literal.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv4address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv4address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv6address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPv6address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPvFuture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_IPvFuture.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LF.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LF.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LWSP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_LWSP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_NO_WS_CTL.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_NO_WS_CTL.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_OCTET.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_OCTET.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_POS_DIGIT.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_POS_DIGIT.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_SP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_SP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI_reference.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_URI_reference.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_VCHAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_VCHAR.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_WSP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_WSP.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_absolute_URI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_absolute_URI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addr_spec.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addr_spec.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_address_and_comment.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_address_and_comment.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addrtype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_addrtype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_alpha_numeric.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_alpha_numeric.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_app.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_app.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atom.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_atom.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_value.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_att_value.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_attribute_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_authority.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_authority.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bandwidth_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_pad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_pad.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_unit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_base64_unit.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bwtype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_bwtype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_byte_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_byte_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cand_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cand_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_attribute.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_attribute.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_candidate_types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ccontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ccontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_clear_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_clear_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_cname_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_comment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_comment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_component_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_component_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_address.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_address.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_connection_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_suite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_crypto_suite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ctext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ctext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dcontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dcontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dec_octet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dec_octet.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_1xx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_1xx.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_25x.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_25x.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_2xx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_decimal_uchar_2xx.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_direction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_direction.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dispname_and_address.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dispname_and_address.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain_literal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_domain_literal.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dot_atom_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dtext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_dtext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_safe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_email_safe.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_name.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_name.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_value.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_att_value.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_attributes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_attributes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_identifier.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_identifier.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extension_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extmap_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extmap_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extn_addr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_extn_addr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint_attribute.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fingerprint_attribute.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fixed_len_time_unit.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fixed_len_time_unit.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmt.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmtp_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fmtp_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_foundation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_foundation.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fragment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_fragment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_attribute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_attribute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_delims.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_gen_delims.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_semantics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_group_semantics.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_h16.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_h16.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hash_func.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hash_func.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hier_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_hier_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_host.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_host.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ice_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ice_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_identification_tag.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_identification_tag.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_information_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_information_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_integer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_integer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_info.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_info.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_lifetime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_lifetime.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method_ext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_method_ext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_length.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_length.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_value.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_mki_value.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_param.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_param.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_params.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_params.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_salt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_salt.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_local_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_local_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ls32.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ls32.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_m1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_m1.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_description.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_description.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_descriptions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_descriptions.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_media_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_mid_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_mid_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_nettype.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_nettype.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_non_ws_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_non_ws_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_number_of_ports.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_number_of_ports.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_FWS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_FWS.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_char.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_char.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_domain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_domain.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_local_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_local_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_qp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_qp.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_obs_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_origin_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_origin_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_param_list.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_param_list.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_parameters.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_parameters.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_abempty.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_abempty.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_absolute.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_absolute.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_empty.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_empty.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_noscheme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_noscheme.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_rootless.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_path_rootless.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pchar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pchar.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pct_encoded.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_pct_encoded.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_phone_number.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_port.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_previous_ssrc_attr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_previous_ssrc_attr.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_priority.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_priority.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_prompt_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_prompt_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto_version.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_proto_version.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qcontent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qcontent.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qtext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_qtext.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_query.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_query.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_pair.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_pair.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_quoted_string.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rate.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reg_name.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reg_name.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_addr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_addr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_port.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rel_port.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_part.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_part.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_ref.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_relative_ref.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_interval.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_repeat_interval.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reserved.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_reserved.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rtpmap_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_rtpmap_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_scheme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_scheme.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sctpmap_number.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz_nc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_segment_nz_nc.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_version.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sess_version.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_description.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_description.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_name_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_name_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_param.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_session_param.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_attr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_attr.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_semantics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_group_semantics.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_id.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ssrc_id.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_start_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_start_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_stop_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_stop_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_streams.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_streams.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sub_delims.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_sub_delims.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_tag.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_tag.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_fields.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_fields.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_repeat_field.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_time_repeat_field.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_token.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_token.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport_extension.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_transport_extension.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ttl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_ttl.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_typed_time.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_typed_time.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unicast_address.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unicast_address.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unreserved.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_unreserved.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_field.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_field.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_key_type.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_uri_key_type.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_userinfo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_userinfo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_username.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_username.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_word.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_word.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_zone_adjustments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Rule_zone_adjustments.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_NumericValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_NumericValue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_StringValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/Terminal_StringValue.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/Visitor.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/XmlDisplayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/abnf/XmlDisplayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/abnf/sdp.abnf" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
