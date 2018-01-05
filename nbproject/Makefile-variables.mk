@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU_LENOVO-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU_LENOVO-Linux
+CND_PLATFORM_Debug=GNU-Linux
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
 CND_ARTIFACT_NAME_Debug=libsdp-cpp.so
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU_LENOVO-Linux/libsdp-cpp.so
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU_LENOVO-Linux/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libsdp-cpp.so
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=libsdp-cpp.so.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU_LENOVO-Linux/package/libsdp-cpp.so.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/libsdp-cpp.so.tar
 # Release configuration
 CND_PLATFORM_Release=GNU_LENOVO-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU_LENOVO-Linux

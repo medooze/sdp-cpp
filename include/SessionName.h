@@ -1,0 +1,46 @@
+#ifndef _SDP_SESSION_NAME_
+#define _SDP_SESSION_NAME_
+
+#include <string>
+#include <memory>
+
+namespace sdp
+{
+
+class SessionName 
+{
+public:
+	SessionName()
+	{
+	}
+
+	SessionName(std::string name)
+	{
+		this->name = name;
+	}
+
+	std::shared_ptr<SessionName> clone()
+	{
+		return std::make_shared<SessionName>(name);
+	}
+
+	std::string toString()
+	{
+		return "s=" + name + "\r\n";
+	}
+
+	std::string getName()
+	{
+		return name;
+	}
+
+	void setName(std::string name)
+	{
+		this->name = name;
+	}
+private:	
+	std::string name;
+};
+
+}
+#endif
