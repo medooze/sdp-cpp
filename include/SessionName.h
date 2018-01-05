@@ -14,7 +14,7 @@ public:
 	{
 	}
 
-	SessionName(std::string name)
+	SessionName(const std::string& name)
 	{
 		this->name = name;
 	}
@@ -34,7 +34,7 @@ public:
 		return name;
 	}
 
-	void setName(std::string name)
+	void setName(const std::string& name)
 	{
 		this->name = name;
 	}

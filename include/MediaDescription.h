@@ -282,8 +282,25 @@ public:
 		for (auto attr : attributes)
 			//Check if the one searhced
 			if (strcasecmp(attr->getField().c_str(),key.c_str())==0)
+				//Try to convert it
+				return std::dynamic_pointer_cast<T>(attr);
+		//Not found
+		return std::shared_ptr<T>();
+	}
+	
+	template<typename T>
+	std::shared_ptr<T> getAttribute()
+	{
+		//For each attribute
+		for (auto attr : attributes)
+		{
+			//Try to convert it
+			auto t = std::dynamic_pointer_cast<T>(attr);
+			//If it is from this type
+			if (t)
 				//Found
-				return attr;
+				return t;
+		}
 		//Not found
 		return std::shared_ptr<T>();
 	}
