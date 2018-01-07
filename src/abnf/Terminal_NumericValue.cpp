@@ -14,8 +14,6 @@ using std::string;
 #include <vector>
 using std::vector;
 
-#include <regex>
-using std::tr1::regex;
 
 #include "Terminal_NumericValue.hpp"
 #include "Visitor.hpp"
@@ -57,8 +55,6 @@ const Terminal_NumericValue* Terminal_NumericValue::parse(
     {
       string value = context.text.substr(context.index, length);
 
-      regex rx(pattern);
-      parsed = regex_match(value, rx);
 
       if (parsed)
       {

@@ -31,7 +31,7 @@ public:
 		return key;
 	}
 
-	void setKey(const std::string& key)
+	void setKey(std::string key)
 	{
 		this->key = key;
 	}
@@ -41,7 +41,7 @@ public:
 		return type;
 	}
 
-	void setType(const std::string& type)
+	void setType(std::string type)
 	{
 		this->type = type;
 	}

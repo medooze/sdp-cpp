@@ -1,5 +1,5 @@
-#ifndef _SDP_GROUP_ATTRIBUTE_H_
-#define _SDP_GROUP_ATTRIBUTE_H:
+#ifndef _SDP_SSRC_GROUP_ATTRIBUTE_H_
+#define _SDP_SSRC_GROUP_ATTRIBUTE_H_
 
 #include <string>
 #include <list>

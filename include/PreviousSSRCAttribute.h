@@ -66,7 +66,7 @@ public:
 	void setSSRCs(const std::vector<std::string>& SSRCs)
 	{
 		this->SSRCs.clear();
-		this->SSRCs.insert(SSRCs.cbegin(), SSRCs.cend());
+		this->SSRCs.insert(SSRCs.cbegin(), SSRCs.cend(), this->SSRCs.cbegin());
 	}
 private:
 	std::vector<std::string> SSRCs;

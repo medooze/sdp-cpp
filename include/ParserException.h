@@ -3,13 +3,15 @@
 
 namespace sdp {
 
-import java.util.Stack;
+
 
 /**
  *
  * @author Sergio
  */
- class ParserException extends org.murillo.abnf.ParserException {
+ class ParserException : 
+	public org.murillo.abnf.ParserException 
+{
 
 	 ParserException(std::string reason, std::string text, int index, Stack<std::string> ruleStack) {
 		super(reason, text, index, ruleStack);

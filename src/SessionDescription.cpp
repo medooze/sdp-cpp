@@ -1,18 +1,21 @@
 #include "SessionDescription.h"
+#include "abnf/ParserContext.hpp"
+#include "abnf/Rule_session_description.hpp"
+#include "builders/SessionDescriptionBuilder.h"
 #include "SCTPMapAttribute.h"
 #include <iostream>
 
+
 using namespace sdp;
 
-#if 0
-
-std::shared_ptr<SessionDescription> SessionDescription::parse(std::string std::string)
+std::shared_ptr<SessionDescription> SessionDescription::parse(const std::string& str)
 {
-	ParserContext context = new ParserContext(std::string, false);
+	abnf::ParserContext context(str, false);
 
-	Rule$session_description rule = Rule$session_description.parse(context);
+	auto rule = abnf::Rule_session_description::parse(context);
 
-	if (rule == null)
+	/*
+	if (!rule)
 	{
 		throw new ParserException(
 					"rule \"" + (std::string) context.getErrorStack().peek() + "\" failed",
@@ -44,12 +47,13 @@ std::shared_ptr<SessionDescription> SessionDescription::parse(std::string std::s
 
 		throw primaryError;
 	}
+	*/
+	
 	//Create builder
-	SessionDescriptionBuilder buider = new SessionDescriptionBuilder();
+	SessionDescriptionBuilder builder;
 	//And make it visit the object
-	return (SessionDescription) buider.visit(rule);
+	return std::shared_ptr<SessionDescription>((SessionDescription*)builder.visit(*rule));
 }
-#endif
 
 
 SessionDescription::SessionDescription(int version)
@@ -69,6 +73,7 @@ std::shared_ptr<SessionDescription> SessionDescription::clone()
 	if (information) cloned->setInformation(information->clone());
 	if (connection) cloned->setConnection(connection->clone());
 	if (key) cloned->setKey(key->clone());
+	if (!uri.empty()) cloned->setUri(uri);
 	//For each email
 	for (std::string email : emails)
 		//Add it
@@ -106,8 +111,8 @@ std::string SessionDescription::toString()
 	std::string sdp = "v=" + std::to_string(version) + "\r\n";
 	sdp += origin->toString();
 	sdp += sessionName->toString();
-	if (uri)
-		sdp += "u=" + uri->toString();
+	if (!uri.empty())
+		sdp += "u=" + uri + "\r\n";
 	for (std::string email : emails)
 		sdp += "e=" + email + "\r\n";
 	for (std::string phone : phones)
@@ -278,12 +283,12 @@ void SessionDescription::setTimes(const std::vector<std::shared_ptr<Time>>& time
 	this->times = times;
 }
 
-std::shared_ptr<URI> SessionDescription::getUri()
+std::string SessionDescription::getUri()
 {
 	return uri;
 }
 
-void SessionDescription::setUri(const std::shared_ptr<URI>& uri)
+void SessionDescription::setUri(const std::string& uri)
 {
 	this->uri = uri;
 }

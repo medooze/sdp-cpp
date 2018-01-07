@@ -18,8 +18,6 @@ using std::vector;
 #include "Visitor.hpp"
 #include "ParserContext.hpp"
 
-#include "org.murillo.abnf.precomp.Token.hpp"
-
 using namespace abnf;
 
 Rule_token::Rule_token(
@@ -70,7 +68,6 @@ const Rule_token* Rule_token::parse(ParserContext& context)
         int c1 = 0;
         for (int i1 = 0; i1 < 1 && f1; i1++)
         {
-          rule = org.murillo.abnf.precomp.Token::parse(context);
           if ((f1 = rule != NULL))
           {
             e1.push_back(rule);

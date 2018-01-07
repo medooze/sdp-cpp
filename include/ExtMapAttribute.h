@@ -21,7 +21,7 @@ public:
 		this->name = name;
 	}
 
-	ExtMapAttribute(int id, const std::string&, const std::string& name, const std::string& attributes)
+	ExtMapAttribute(int id, const std::string& direction, const std::string& name, const std::string& attributes)
 	{
 		this->id = id;
 		this->direction = direction;
@@ -41,7 +41,7 @@ public:
 
 	virtual std::string getValue() override
 	{
-		return id + (!direction.empty() ? "/" + direction : "") + " " + name + (!attributes.empty() ? " " + attributes : "");
+		return std::to_string(id) + (!direction.empty() ? "/" + direction : "") + " " + name + (!attributes.empty() ? " " + attributes : "");
 	}
 
 	virtual std::string toString() override

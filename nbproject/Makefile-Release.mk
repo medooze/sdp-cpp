@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/SessionDescription.o \
-	${OBJECTDIR}/src/abnf/Displayer.o \
 	${OBJECTDIR}/src/abnf/Parser.o \
 	${OBJECTDIR}/src/abnf/ParserContext.o \
 	${OBJECTDIR}/src/abnf/ParserException.o \
@@ -259,32 +258,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/abnf/Rule_zone_adjustments.o \
 	${OBJECTDIR}/src/abnf/Terminal_NumericValue.o \
 	${OBJECTDIR}/src/abnf/Terminal_StringValue.o \
-	${OBJECTDIR}/src/abnf/XmlDisplayer.o \
-	${OBJECTDIR}/src/builders/AttributeBuilder.o \
-	${OBJECTDIR}/src/builders/BandwitdhBuilder.o \
-	${OBJECTDIR}/src/builders/BaseAttributeBuilder.o \
 	${OBJECTDIR}/src/builders/Builder.o \
-	${OBJECTDIR}/src/builders/CNameAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/CandidateAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/ConnectionBuilder.o \
-	${OBJECTDIR}/src/builders/CryptoAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/ExtMapAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/FingerprintAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/FormatAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/GroupAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/InformationBuilder.o \
-	${OBJECTDIR}/src/builders/KeyBuilder.o \
-	${OBJECTDIR}/src/builders/MediaDescriptionBuilder.o \
-	${OBJECTDIR}/src/builders/MidAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/OriginBuilder.o \
-	${OBJECTDIR}/src/builders/PreviousSSRCAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/RTPMapAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/SCTPMapAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/SSRCAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/SSRCGroupAttributeBuilder.o \
-	${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o \
-	${OBJECTDIR}/src/builders/SessionNameBuilder.o \
-	${OBJECTDIR}/src/builders/TimeBuilder.o
+	${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o
 
 
 # C Compiler Flags
@@ -315,11 +290,6 @@ ${OBJECTDIR}/src/SessionDescription.o: src/SessionDescription.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SessionDescription.o src/SessionDescription.cpp
-
-${OBJECTDIR}/src/abnf/Displayer.o: src/abnf/Displayer.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/abnf
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Displayer.o src/abnf/Displayer.cpp
 
 ${OBJECTDIR}/src/abnf/Parser.o: src/abnf/Parser.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
@@ -1431,135 +1401,15 @@ ${OBJECTDIR}/src/abnf/Terminal_StringValue.o: src/abnf/Terminal_StringValue.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Terminal_StringValue.o src/abnf/Terminal_StringValue.cpp
 
-${OBJECTDIR}/src/abnf/XmlDisplayer.o: src/abnf/XmlDisplayer.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/abnf
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/XmlDisplayer.o src/abnf/XmlDisplayer.cpp
-
-${OBJECTDIR}/src/builders/AttributeBuilder.o: src/builders/AttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/AttributeBuilder.o src/builders/AttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/BandwitdhBuilder.o: src/builders/BandwitdhBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/BandwitdhBuilder.o src/builders/BandwitdhBuilder.cpp
-
-${OBJECTDIR}/src/builders/BaseAttributeBuilder.o: src/builders/BaseAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/BaseAttributeBuilder.o src/builders/BaseAttributeBuilder.cpp
-
 ${OBJECTDIR}/src/builders/Builder.o: src/builders/Builder.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/builders
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/Builder.o src/builders/Builder.cpp
 
-${OBJECTDIR}/src/builders/CNameAttributeBuilder.o: src/builders/CNameAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/CNameAttributeBuilder.o src/builders/CNameAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/CandidateAttributeBuilder.o: src/builders/CandidateAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/CandidateAttributeBuilder.o src/builders/CandidateAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/ConnectionBuilder.o: src/builders/ConnectionBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/ConnectionBuilder.o src/builders/ConnectionBuilder.cpp
-
-${OBJECTDIR}/src/builders/CryptoAttributeBuilder.o: src/builders/CryptoAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/CryptoAttributeBuilder.o src/builders/CryptoAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/ExtMapAttributeBuilder.o: src/builders/ExtMapAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/ExtMapAttributeBuilder.o src/builders/ExtMapAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/FingerprintAttributeBuilder.o: src/builders/FingerprintAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/FingerprintAttributeBuilder.o src/builders/FingerprintAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/FormatAttributeBuilder.o: src/builders/FormatAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/FormatAttributeBuilder.o src/builders/FormatAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/GroupAttributeBuilder.o: src/builders/GroupAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/GroupAttributeBuilder.o src/builders/GroupAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/InformationBuilder.o: src/builders/InformationBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/InformationBuilder.o src/builders/InformationBuilder.cpp
-
-${OBJECTDIR}/src/builders/KeyBuilder.o: src/builders/KeyBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/KeyBuilder.o src/builders/KeyBuilder.cpp
-
-${OBJECTDIR}/src/builders/MediaDescriptionBuilder.o: src/builders/MediaDescriptionBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/MediaDescriptionBuilder.o src/builders/MediaDescriptionBuilder.cpp
-
-${OBJECTDIR}/src/builders/MidAttributeBuilder.o: src/builders/MidAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/MidAttributeBuilder.o src/builders/MidAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/OriginBuilder.o: src/builders/OriginBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/OriginBuilder.o src/builders/OriginBuilder.cpp
-
-${OBJECTDIR}/src/builders/PreviousSSRCAttributeBuilder.o: src/builders/PreviousSSRCAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/PreviousSSRCAttributeBuilder.o src/builders/PreviousSSRCAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/RTPMapAttributeBuilder.o: src/builders/RTPMapAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/RTPMapAttributeBuilder.o src/builders/RTPMapAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/SCTPMapAttributeBuilder.o: src/builders/SCTPMapAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SCTPMapAttributeBuilder.o src/builders/SCTPMapAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/SSRCAttributeBuilder.o: src/builders/SSRCAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SSRCAttributeBuilder.o src/builders/SSRCAttributeBuilder.cpp
-
-${OBJECTDIR}/src/builders/SSRCGroupAttributeBuilder.o: src/builders/SSRCGroupAttributeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SSRCGroupAttributeBuilder.o src/builders/SSRCGroupAttributeBuilder.cpp
-
 ${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o: src/builders/SessionDescriptionBuilder.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/builders
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o src/builders/SessionDescriptionBuilder.cpp
-
-${OBJECTDIR}/src/builders/SessionNameBuilder.o: src/builders/SessionNameBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SessionNameBuilder.o src/builders/SessionNameBuilder.cpp
-
-${OBJECTDIR}/src/builders/TimeBuilder.o: src/builders/TimeBuilder.cpp
-	${MKDIR} -p ${OBJECTDIR}/src/builders
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/TimeBuilder.o src/builders/TimeBuilder.cpp
 
 # Subprojects
 .build-subprojects:

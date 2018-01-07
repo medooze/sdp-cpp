@@ -16,9 +16,7 @@ public:
 	{
 	public:
 
-		Extension()
-		{
-		}
+		Extension() = default;
 
 		Extension(const std::string& name, const std::string& value)
 		{

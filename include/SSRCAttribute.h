@@ -21,7 +21,7 @@ public:
 
 	virtual std::shared_ptr<Attribute> clone() override
 	{
-		return std::make_shared(SSRC, attrField, attrValue);
+		return std::make_shared<SSRCAttribute>(SSRC, attrField, attrValue);
 	}
 
 	virtual	std::string toString() override
@@ -39,7 +39,7 @@ public:
 
 	virtual	std::string getValue() override
 	{
-		return SSRC + " " + attrField + (!attrValue.empty() ? ":" + attrValue : "");
+		return std::to_string(SSRC) + " " + attrField + (!attrValue.empty() ? ":" + attrValue : "");
 	}
 
 	int64_t getSSRC()

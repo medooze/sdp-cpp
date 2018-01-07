@@ -17,8 +17,6 @@ using std::vector;
 #include <exception>
 using std::exception;
 
-#include <regex>
-using std::tr1::regex;
 
 #include "ParserException.hpp"
 
@@ -38,8 +36,6 @@ ParserException::ParserException(
   text60 = text.substr(start, end - start);
   index60 = (index < 30) ? index : 30;
 
-  regex rx("[^[:print:]]");
-  text60 = regex_replace(text60, rx, string(" "));
 }
 
 ParserException::ParserException(const ParserException& exception) :

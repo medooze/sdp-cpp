@@ -18,9 +18,6 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-#include <regex>
-using std::tr1::regex;
-
 #include "ParserContext.hpp"
 
 using namespace abnf;
@@ -47,9 +44,6 @@ void ParserContext::push(const string& rulename, const string& trace)
   if (traceOn)
   {
     string sample = text.substr(index, (index + 10 > text.length() ? text.length() : 10));
-
-    regex rx("[^[:print:]]");
-    sample = regex_replace(sample, rx, string(" "));
 
     cout << "-> " << ++level << ": " << rulename << "(" << trace << ")" << endl;
     cout << index << ": " << sample << endl;

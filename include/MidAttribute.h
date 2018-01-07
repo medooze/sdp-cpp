@@ -13,7 +13,7 @@ public:
 
 	MidAttribute() = default;
 
-	MidAttribute(const string& identificationTag)
+	MidAttribute(const std::string& identificationTag)
 	{
 		this->identificationTag = identificationTag;
 	}
@@ -48,7 +48,7 @@ public:
 		return identificationTag;
 	}
 
-	void setIdentificationTag(const string& identificationTag)
+	void setIdentificationTag(const std::string& identificationTag)
 	{
 		this->identificationTag = identificationTag;
 	}

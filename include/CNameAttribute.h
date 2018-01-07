@@ -21,7 +21,7 @@ public:
 
 	virtual std::shared_ptr<Attribute> clone() override
 	{
-		return std::make_shared<Attribute>(CNameAttribute(cname));
+		return std::make_shared<CNameAttribute>(cname);
 	}
 
 	virtual std::string toString() override

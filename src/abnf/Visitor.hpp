@@ -229,10 +229,10 @@ class Rule_DIGIT;
 class Rule_POS_DIGIT;
 class Rule_DQUOTE;
 class Rule_EQUALS;
-class org.murillo.abnf.precomp.CRLF;
-class org.murillo.abnf.precomp.Token;
-class org.murillo.abnf.precomp.ALPHA;
-class org.murillo.abnf.precomp.ByteString;
+class CRLF;
+class Token;
+class ALPHA;
+class ByteString;
 class Terminal_StringValue;
 class Terminal_NumericValue;
 
@@ -455,11 +455,6 @@ public:
   virtual void* visit(const Rule_POS_DIGIT* rule) = 0;
   virtual void* visit(const Rule_DQUOTE* rule) = 0;
   virtual void* visit(const Rule_EQUALS* rule) = 0;
-  virtual void* visit(const org.murillo.abnf.precomp.CRLF* rule) = 0;
-  virtual void* visit(const org.murillo.abnf.precomp.Token* rule) = 0;
-  virtual void* visit(const org.murillo.abnf.precomp.ALPHA* rule) = 0;
-  virtual void* visit(const org.murillo.abnf.precomp.ByteString* rule) = 0;
-
   virtual void* visit(const Terminal_StringValue* value) = 0;
   virtual void* visit(const Terminal_NumericValue* value) = 0;
 };

@@ -60,7 +60,7 @@ public:
 	CryptoAttribute() = default;
 	virtual ~CryptoAttribute() = default;
 
-	CryptoAttribute(int tag, const std::string& suite, const std::vector<KeyParam>& keyParams, const std::string& sessionParams)
+	CryptoAttribute(int tag, const std::string& suite, const std::vector<std::shared_ptr<KeyParam>>& keyParams, const std::string& sessionParams)
 	{
 		this->tag = tag;
 		this->suite = suite;
@@ -72,7 +72,7 @@ public:
 	{
 		this->tag = tag;
 		this->suite = suite;
-		this->keyParams.push_back(std::make_shared(KeyParam(method, info)));
+		this->keyParams.push_back(std::make_shared<KeyParam>(method, info));
 		this->sessionParams = sessionParams;
 	}
 
@@ -80,7 +80,7 @@ public:
 	{
 		this->tag = tag;
 		this->suite = suite;
-		this->keyParams.push_back(std::make_shared(KeyParam(method, info)));
+		this->keyParams.push_back(std::make_shared<KeyParam>(method, info));
 	}
 
 	virtual std::shared_ptr<Attribute> clone() override
@@ -126,7 +126,7 @@ public:
 		return "a=" + getField() + (!value.empty() ? ":" + value : "") + "\r\n";
 	}
 
-	std::vector<KeyParam> getKeyParams()
+	std::vector<std::shared_ptr<KeyParam>> getKeyParams()
 	{
 		return keyParams;
 	}
@@ -136,7 +136,7 @@ public:
 		keyParams.push_back(param);
 	}
 
-	void setKeyParams(const std::vector<KeyParam>& keyParams)
+	void setKeyParams(const std::vector<std::shared_ptr<KeyParam>>& keyParams)
 	{
 		this->keyParams = keyParams;
 	}
@@ -173,7 +173,7 @@ public:
 
 	std::shared_ptr<KeyParam> getFirstKeyParam()
 	{
-		return keyParams->front();
+		return keyParams.front();
 	}
 
 private:

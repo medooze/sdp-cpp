@@ -30,6 +30,7 @@
         <itemPath>include/SessionDescription.h</itemPath>
         <itemPath>include/SessionName.h</itemPath>
         <itemPath>include/Time.h</itemPath>
+        <itemPath>include/URI.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -40,8 +41,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="abnf" projectFiles="true">
-        <itemPath>src/abnf/Displayer.cpp</itemPath>
-        <itemPath>src/abnf/Displayer.hpp</itemPath>
         <itemPath>src/abnf/Parser.cpp</itemPath>
         <itemPath>src/abnf/Parser.hpp</itemPath>
         <itemPath>src/abnf/ParserContext.cpp</itemPath>
@@ -487,60 +486,35 @@
         <itemPath>src/abnf/Terminal_StringValue.cpp</itemPath>
         <itemPath>src/abnf/Terminal_StringValue.hpp</itemPath>
         <itemPath>src/abnf/Visitor.hpp</itemPath>
-        <itemPath>src/abnf/XmlDisplayer.cpp</itemPath>
-        <itemPath>src/abnf/XmlDisplayer.hpp</itemPath>
         <itemPath>src/abnf/sdp.abnf</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="builders" projectFiles="true">
-        <itemPath>src/builders/AttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/AttributeBuilder.h</itemPath>
-        <itemPath>src/builders/BandwitdhBuilder.cpp</itemPath>
         <itemPath>src/builders/BandwitdhBuilder.h</itemPath>
-        <itemPath>src/builders/BaseAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/BaseAttributeBuilder.h</itemPath>
         <itemPath>src/builders/Builder.cpp</itemPath>
         <itemPath>src/builders/Builder.h</itemPath>
-        <itemPath>src/builders/CNameAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/CNameAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/CandidateAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/CandidateAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/ConnectionBuilder.cpp</itemPath>
         <itemPath>src/builders/ConnectionBuilder.h</itemPath>
-        <itemPath>src/builders/CryptoAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/CryptoAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/ExtMapAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/ExtMapAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/FingerprintAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/FingerprintAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/FormatAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/FormatAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/GroupAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/GroupAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/InformationBuilder.cpp</itemPath>
         <itemPath>src/builders/InformationBuilder.h</itemPath>
-        <itemPath>src/builders/KeyBuilder.cpp</itemPath>
         <itemPath>src/builders/KeyBuilder.h</itemPath>
-        <itemPath>src/builders/MediaDescriptionBuilder.cpp</itemPath>
         <itemPath>src/builders/MediaDescriptionBuilder.h</itemPath>
-        <itemPath>src/builders/MidAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/MidAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/OriginBuilder.cpp</itemPath>
         <itemPath>src/builders/OriginBuilder.h</itemPath>
-        <itemPath>src/builders/PreviousSSRCAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/PreviousSSRCAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/RTPMapAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/RTPMapAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/SCTPMapAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/SCTPMapAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/SSRCAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/SSRCAttributeBuilder.h</itemPath>
-        <itemPath>src/builders/SSRCGroupAttributeBuilder.cpp</itemPath>
         <itemPath>src/builders/SSRCGroupAttributeBuilder.h</itemPath>
         <itemPath>src/builders/SessionDescriptionBuilder.cpp</itemPath>
         <itemPath>src/builders/SessionDescriptionBuilder.h</itemPath>
-        <itemPath>src/builders/SessionNameBuilder.cpp</itemPath>
         <itemPath>src/builders/SessionNameBuilder.h</itemPath>
-        <itemPath>src/builders/TimeBuilder.cpp</itemPath>
         <itemPath>src/builders/TimeBuilder.h</itemPath>
       </logicalFolder>
       <logicalFolder name="src" displayName="src" projectFiles="true">
@@ -630,11 +604,9 @@
       </item>
       <item path="include/Time.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/URI.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/SessionDescription.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/Displayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/Displayer.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/abnf/Parser.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1664,24 +1636,11 @@
       </item>
       <item path="src/abnf/Visitor.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/abnf/XmlDisplayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/XmlDisplayer.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/abnf/sdp.abnf" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/AttributeBuilder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/builders/AttributeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/BandwitdhBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/BandwitdhBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/BaseAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/BaseAttributeBuilder.h"
             ex="false"
@@ -1692,19 +1651,9 @@
       </item>
       <item path="src/builders/Builder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/CNameAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/CNameAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/CandidateAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/CandidateAttributeBuilder.h"
@@ -1712,23 +1661,11 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/ConnectionBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/ConnectionBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/CryptoAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/CryptoAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/ExtMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/ExtMapAttributeBuilder.h"
@@ -1736,19 +1673,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/FingerprintAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/FingerprintAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/FormatAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/FormatAttributeBuilder.h"
@@ -1756,61 +1683,27 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/GroupAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/GroupAttributeBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/InformationBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/InformationBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/KeyBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/KeyBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/MediaDescriptionBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/MediaDescriptionBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/MidAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/MidAttributeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/OriginBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/OriginBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/PreviousSSRCAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/PreviousSSRCAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/RTPMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/RTPMapAttributeBuilder.h"
@@ -1818,29 +1711,14 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SCTPMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SCTPMapAttributeBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SSRCAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SSRCAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/SSRCGroupAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/SSRCGroupAttributeBuilder.h"
@@ -1858,14 +1736,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SessionNameBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SessionNameBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/TimeBuilder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/builders/TimeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1940,11 +1811,9 @@
       </item>
       <item path="include/Time.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/URI.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/SessionDescription.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/Displayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/Displayer.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/abnf/Parser.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2974,24 +2843,11 @@
       </item>
       <item path="src/abnf/Visitor.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/abnf/XmlDisplayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/abnf/XmlDisplayer.hpp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/abnf/sdp.abnf" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/AttributeBuilder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/builders/AttributeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/BandwitdhBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/BandwitdhBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/BaseAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/BaseAttributeBuilder.h"
             ex="false"
@@ -3002,19 +2858,9 @@
       </item>
       <item path="src/builders/Builder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/CNameAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/CNameAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/CandidateAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/CandidateAttributeBuilder.h"
@@ -3022,23 +2868,11 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/ConnectionBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/ConnectionBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/CryptoAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/CryptoAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/ExtMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/ExtMapAttributeBuilder.h"
@@ -3046,19 +2880,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/FingerprintAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/FingerprintAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/FormatAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/FormatAttributeBuilder.h"
@@ -3066,61 +2890,27 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/GroupAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/GroupAttributeBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/InformationBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/InformationBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/KeyBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/KeyBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/MediaDescriptionBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/MediaDescriptionBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/MidAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/MidAttributeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/builders/OriginBuilder.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/builders/OriginBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/PreviousSSRCAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="src/builders/PreviousSSRCAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/RTPMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/RTPMapAttributeBuilder.h"
@@ -3128,29 +2918,14 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SCTPMapAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SCTPMapAttributeBuilder.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SSRCAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SSRCAttributeBuilder.h"
             ex="false"
             tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/builders/SSRCGroupAttributeBuilder.cpp"
-            ex="false"
-            tool="1"
             flavor2="0">
       </item>
       <item path="src/builders/SSRCGroupAttributeBuilder.h"
@@ -3168,14 +2943,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="src/builders/SessionNameBuilder.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/builders/SessionNameBuilder.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/builders/TimeBuilder.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/builders/TimeBuilder.h" ex="false" tool="3" flavor2="0">
       </item>

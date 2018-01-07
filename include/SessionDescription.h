@@ -43,7 +43,7 @@ public:
 	std::vector<std::string> getPhones();
 	std::shared_ptr<SessionName> getSessionName();
 	std::vector<std::shared_ptr<Time>> getTimes();
-	std::shared_ptr<URI> getUri();
+	std::string getUri();
 	std::vector<std::shared_ptr<Bandwidth>> getBandwidths();
 
 	void setVersion(int version);
@@ -51,7 +51,7 @@ public:
 	void setOrigin(const std::string& username, uint64_t sessId, uint64_t sessVersion, const std::string& nettype, const std::string& addrtype, const std::string& address);
 	void setOrigin(const std::string& username, int sessId, uint64_t sessVersion, const std::string& nettype, const std::string& addrtype, const std::string& address);
 	void setOrigin(const std::string& username, int sessId, int sessVersion, const std::string& nettype, const std::string& addrtype, const std::string& address);
-	void setUri(const std::shared_ptr<URI>& uri);
+	void setUri(const std::string& uri);
 	void setSessionName(std::string sessionName);
 	void setSessionName(const std::shared_ptr<SessionName>& sessionName);
 	void setInformation(const std::shared_ptr<Information>& information);
@@ -78,7 +78,7 @@ public:
 private:
 	int version;
 	std::shared_ptr<Origin> origin;
-	std::shared_ptr<URI> uri;
+	std::string uri;
 	std::shared_ptr<SessionName> sessionName;
 	std::shared_ptr<Information> information;
 	std::vector<std::string> emails;
