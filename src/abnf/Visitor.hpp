@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -229,10 +229,6 @@ class Rule_DIGIT;
 class Rule_POS_DIGIT;
 class Rule_DQUOTE;
 class Rule_EQUALS;
-class CRLF;
-class Token;
-class ALPHA;
-class ByteString;
 class Terminal_StringValue;
 class Terminal_NumericValue;
 
@@ -455,6 +451,7 @@ public:
   virtual void* visit(const Rule_POS_DIGIT* rule) = 0;
   virtual void* visit(const Rule_DQUOTE* rule) = 0;
   virtual void* visit(const Rule_EQUALS* rule) = 0;
+
   virtual void* visit(const Terminal_StringValue* value) = 0;
   virtual void* visit(const Terminal_NumericValue* value) = 0;
 };

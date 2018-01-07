@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -17,6 +17,9 @@ using std::vector;
 #include <iostream>
 using std::cout;
 using std::endl;
+
+#include <regex>
+using std::regex;
 
 #include "ParserContext.hpp"
 
@@ -44,6 +47,9 @@ void ParserContext::push(const string& rulename, const string& trace)
   if (traceOn)
   {
     string sample = text.substr(index, (index + 10 > text.length() ? text.length() : 10));
+
+    regex rx("[^[:print:]]");
+    sample = regex_replace(sample, rx, string(" "));
 
     cout << "-> " << ++level << ": " << rulename << "(" << trace << ")" << endl;
     cout << index << ": " << sample << endl;

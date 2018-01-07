@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@ using std::vector;
 #include "Visitor.hpp"
 #include "ParserContext.hpp"
 
+#include "Terminal_NumericValue.hpp"
 
 using namespace abnf;
 
@@ -69,13 +70,181 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
         int c1 = 0;
         for (int i1 = 0; i1 < 1 && f1; i1++)
         {
-          if ((f1 = rule != NULL))
+          unsigned int g1 = context.index;
+          parsed = false;
+          if (!parsed)
           {
-            e1.push_back(rule);
-            c1++;
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
           }
+          if (!parsed)
+          {
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
+          }
+          if (!parsed)
+          {
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x0E-FF", "[\\x0E-\\xFF]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
+          }
+          if (context.index > g1) c1++;
+          f1 = c1 > i1;
         }
-        parsed = c1 == 1;
+        for (int i1 = 0; f1; i1++)
+        {
+          unsigned int g1 = context.index;
+          parsed = false;
+          if (!parsed)
+          {
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
+          }
+          if (!parsed)
+          {
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
+          }
+          if (!parsed)
+          {
+            {
+              vector<const Rule*> e2;
+              int s2 = context.index;
+              parsed = true;
+              if (parsed)
+              {
+                bool f2 = true;
+                int c2 = 0;
+                for (int i2 = 0; i2 < 1 && f2; i2++)
+                {
+                  rule = Terminal_NumericValue::parse(context, "%x0E-FF", "[\\x0E-\\xFF]", 1);
+                  if ((f2 = rule != NULL))
+                  {
+                    e2.push_back(rule);
+                    c2++;
+                  }
+                }
+                parsed = c2 == 1;
+              }
+              if (parsed)
+                e1.insert(e1.end(), e2.begin(), e2.end());
+              else
+                context.index = s2;
+            }
+          }
+          if (context.index > g1) c1++;
+          f1 = c1 > i1;
+        }
+        parsed = c1 >= 1;
       }
       if (parsed)
         e0.insert(e0.end(), e1.begin(), e1.end());

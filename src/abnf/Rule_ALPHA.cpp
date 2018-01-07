@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@ using std::vector;
 #include "Visitor.hpp"
 #include "ParserContext.hpp"
 
+#include "Terminal_NumericValue.hpp"
 
 using namespace abnf;
 
@@ -69,6 +70,34 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
         int c1 = 0;
         for (int i1 = 0; i1 < 1 && f1; i1++)
         {
+          rule = Terminal_NumericValue::parse(context, "%x41-5A", "[\\x41-\\x5A]", 1);
+          if ((f1 = rule != NULL))
+          {
+            e1.push_back(rule);
+            c1++;
+          }
+        }
+        parsed = c1 == 1;
+      }
+      if (parsed)
+        e0.insert(e0.end(), e1.begin(), e1.end());
+      else
+        context.index = s1;
+    }
+  }
+  if (!parsed)
+  {
+    {
+      vector<const Rule*> e1;
+      int s1 = context.index;
+      parsed = true;
+      if (parsed)
+      {
+        bool f1 = true;
+        int c1 = 0;
+        for (int i1 = 0; i1 < 1 && f1; i1++)
+        {
+          rule = Terminal_NumericValue::parse(context, "%x61-7A", "[\\x61-\\x7A]", 1);
           if ((f1 = rule != NULL))
           {
             e1.push_back(rule);

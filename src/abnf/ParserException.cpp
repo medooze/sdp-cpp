@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -17,6 +17,8 @@ using std::vector;
 #include <exception>
 using std::exception;
 
+#include <regex>
+using std::regex;
 
 #include "ParserException.hpp"
 
@@ -36,6 +38,8 @@ ParserException::ParserException(
   text60 = text.substr(start, end - start);
   index60 = (index < 30) ? index : 30;
 
+  regex rx("[^[:print:]]");
+  text60 = regex_replace(text60, rx, string(" "));
 }
 
 ParserException::ParserException(const ParserException& exception) :

@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Dec 31 10:33:28 CET 2017
+ * Produced : Sun Jan 07 16:41:36 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@ using std::vector;
 #include "Visitor.hpp"
 #include "ParserContext.hpp"
 
+#include "Terminal_NumericValue.hpp"
 
 using namespace abnf;
 
@@ -69,6 +70,7 @@ const Rule_CRLF* Rule_CRLF::parse(ParserContext& context)
         int c1 = 0;
         for (int i1 = 0; i1 < 1 && f1; i1++)
         {
+          rule = Terminal_NumericValue::parse(context, "%d13.10", "(\\x0d\\x0a)", 2);
           if ((f1 = rule != NULL))
           {
             e1.push_back(rule);
