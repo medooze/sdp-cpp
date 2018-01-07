@@ -224,6 +224,7 @@
 #include "InformationBuilder.h"
 #include "AttributeBuilder.h"
 #include "ConnectionBuilder.h"
+#include "TimeBuilder.h"
 
 
 
@@ -356,5 +357,53 @@ void* SessionDescriptionBuilder::visit(const Rule_connection_field* rule)
 	//Set it
 	sdp->setConnection(connection);
 	//Return connection
+	return NULL;
+}
+
+void* SessionDescriptionBuilder::visit(const Rule_bandwidth_field* rule)
+{
+	//Create builder
+	BandwitdhBuilder builder;
+	//Parse it
+	auto bandwidth = std::shared_ptr<Bandwidth>((Bandwidth*)builder.visit(rule));
+	//Set it
+	sdp->addBandwidth(bandwidth);
+	//Nothing
+	return NULL;
+}
+
+void* SessionDescriptionBuilder::visit(const Rule_time_repeat_field* rule)
+{
+	//Create builder
+	TimeBuilder builder;
+	//Parse it
+	auto time = std::shared_ptr<Time>((Time*)builder.visit(rule));
+	//Set it
+	sdp->addTime(time);
+	
+	return NULL;
+}
+
+void* SessionDescriptionBuilder::visit(const Rule_key_field* rule)
+{
+	//Create builder
+	KeyBuilder builder;
+	//Parse it
+	auto key = std::shared_ptr<Key>((Key*)builder.visit(rule));
+	//Set it
+	sdp->setKey(key);
+	
+	return NULL;
+}
+
+void* SessionDescriptionBuilder::visit(const Rule_media_description* rule)
+{
+	//Create builder
+	MediaDescriptionBuilder builder;
+	//Parse it
+	auto media = std::shared_ptr<MediaDescription>((MediaDescription*)builder.visit(rule));
+	//Set it
+	sdp->addMedia(media);
+	
 	return NULL;
 }
