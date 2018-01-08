@@ -1,5 +1,6 @@
 #include "SessionDescription.h"
 #include "abnf/ParserContext.hpp"
+#include "abnf/ParserException.hpp"
 #include "abnf/Rule_session_description.hpp"
 #include "builders/SessionDescriptionBuilder.h"
 
@@ -11,17 +12,24 @@ std::shared_ptr<SessionDescription> SessionDescription::parse(const std::string&
 
 	auto rule = abnf::Rule_session_description::parse(context);
 
-	/*
 	if (!rule)
 	{
-		throw new ParserException(
-					"rule \"" + (std::string) context.getErrorStack().peek() + "\" failed",
-					context.text,
-					context.getErrorIndex(),
-					context.getErrorStack());
+		
+		
+		std::cout << context.getErrorStack().front()<< "\n";
+		std::cout << context.text<< "\n";
+		std::cout << context.getErrorIndex()<< "\n";
+		std::cout << context.getErrorStack().front() << "\n";
+		
+		throw new abnf::ParserException(
+			"rule \"" + (std::string) context.getErrorStack().front() + "\" failed",
+			context.text,
+			context.getErrorIndex(),
+			context.getErrorStack());
 	}
+	
 
-	if (context.text.length() > context.index)
+	/*if (context.text.length() > context.index)
 	{
 		ParserException primaryError =
 			new ParserException(

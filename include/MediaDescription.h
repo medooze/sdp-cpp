@@ -217,16 +217,23 @@ public:
 
 	void setProtoString(const std::string& proto)
 	{
-		size_t i = 0;
-		for (auto pos=proto.find("/"); pos!=std::string::npos; i=++pos)
+		size_t ini = 0;
+		size_t end = 0;
+		
+		//Tokenize
+		while(end!=std::string::npos)
 		{
-			//Add proto
-			this->proto.push_back(proto.substr(i, pos - i));
 			//find next
-			pos = proto.find("/", pos);
-			//If last
-			if (pos==std::string::npos)
-				this->proto.push_back(proto.substr(i, proto.length()));
+			end = proto.find("/", ini);
+			
+			//Get length
+			size_t len = end!=std::string::npos ? end - ini : proto.length() - ini;
+			
+			//Add proto
+			this->proto.push_back(proto.substr(ini, len));
+			
+			//Move
+			ini = end!=std::string::npos ? ++end : end;
 		}
 	}
 

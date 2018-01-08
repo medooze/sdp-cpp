@@ -23,7 +23,7 @@ void test1()
 	auto origin = std::make_shared<Origin>("-", 0L, 0L, "IN", "IP4", "127.0.0.1");
 	sdp.setOrigin(origin);
 	sdp.setSessionName("test");
-	sdp.addMedia(std::make_shared<MediaDescription>("aduio", 0, "UDP/AVP"));
+	sdp.addMedia(std::make_shared<MediaDescription>("audio", 0, "UDP/AVP"));
 	auto cloned = sdp.clone();
 
 	std::cout << sdp.toString();
@@ -50,7 +50,44 @@ void test2()
 	auto datachannel = sdp->getMedias().front();
 	auto sctpmap = datachannel->getAttribute<SCTPMapAttribute>("sctpmap");
 	std::cout << sctpmap->toString();
+	std::cout << sdp->toString();
 }
+
+void test3()
+{
+	FormatAttribute fmtp(99);
+
+	fmtp.setParameters("onlykey");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("  onlykey  ");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("key=value");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters(" key = value ");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("key1=value1;onlykey1");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("onlykey1 ; key1=value1;    onlykey2");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters(" key1 = value1 ; onlykey1 ");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("key1=value1;onlykey1;");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters("key1=value1;onlykey1;key2=value2;");
+	std::cout << fmtp.toString() << "\n";
+	
+	fmtp.setParameters(" key1 = value1 ; onlykey1 ; key2 = value2 ; ");
+	std::cout << fmtp.toString() << "\n";
+}
+
 
 int main(int argc, char** argv)
 {
@@ -59,13 +96,17 @@ int main(int argc, char** argv)
 
 	std::cout << "%TEST_STARTED% test1 (parser)" << std::endl;
 	test1();
-	std::cout << "%TEST_FINISHED% time=0 test1 (parser)" << std::endl;
+	std::cout << "%TEST_FINISHED% test1 (parser)" << std::endl;
 
 	std::cout << "%TEST_STARTED% test2 (parser)\n" << std::endl;
 	test2();
-	std::cout << "%TEST_FINISHED% time=0 test2 (parser)" << std::endl;
+	std::cout << "%TEST_FINISHED% test2 (parser)" << std::endl;
+	
+	std::cout << "%TEST_STARTED% test3 (parser)\n" << std::endl;
+	test3();
+	std::cout << "%TEST_FINISHED% test3 (parser)" << std::endl;
 
-	std::cout << "%SUITE_FINISHED% time=0" << std::endl;
+	std::cout << "%SUITE_FINISHED%" << std::endl;
 
 	return (EXIT_SUCCESS);
 }

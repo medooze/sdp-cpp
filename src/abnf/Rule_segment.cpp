@@ -2,8 +2,8 @@
  * Rule_segment.cpp
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Jan 07 16:41:36 CET 2018
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Mon Jan 08 13:30:55 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -16,6 +16,7 @@ using std::vector;
 
 #include "Rule_segment.hpp"
 #include "Visitor.hpp"
+#include "ParserAlternative.hpp"
 #include "ParserContext.hpp"
 
 #include "Rule_pchar.hpp"
@@ -54,43 +55,59 @@ const Rule_segment* Rule_segment::parse(ParserContext& context)
 
   bool parsed = true;
   int s0 = context.index;
-  vector<const Rule*> e0;
-  const Rule* rule;
+  ParserAlternative a0(s0);
 
+  vector<const ParserAlternative*> as1;
   parsed = false;
-  if (!parsed)
   {
+    int s1 = context.index;
+    ParserAlternative a1(s1);
+    parsed = true;
+    if (parsed)
     {
-      vector<const Rule*> e1;
-      int s1 = context.index;
-      parsed = true;
-      if (parsed)
+      bool f1 = true;
+      int c1 = 0;
+      while (f1)
       {
-        bool f1 = true;
-        int c1 = 0;
-        for (int i1 = 0; f1; i1++)
+        const Rule* rule = Rule_pchar::parse(context);
+        if ((f1 = rule != NULL))
         {
-          rule = Rule_pchar::parse(context);
-          if ((f1 = rule != NULL))
-          {
-            e1.push_back(rule);
-            c1++;
-          }
+          a1.add(*rule, context.index);
+          c1++;
+          delete rule;
         }
-        parsed = true;
       }
-      if (parsed)
-        e0.insert(e0.end(), e1.begin(), e1.end());
-      else
-        context.index = s1;
+      parsed = true;
     }
+    if (parsed)
+    {
+      as1.push_back(new ParserAlternative(a1));
+    }
+    context.index = s1;
   }
 
-  rule = NULL;
+  const ParserAlternative* b = ParserAlternative::getBest(as1);
+
+  if ((parsed = b != NULL))
+  {
+    a0.add(b->rules, b->end);
+    context.index = b->end;
+  }
+
+  for (vector<const ParserAlternative*>::const_iterator a = as1.begin(); a != as1.end(); a++)
+  {
+    delete *a;
+  }
+
+  const Rule* rule = NULL;
   if (parsed)
-    rule = new Rule_segment(context.text.substr(s0, context.index - s0), e0);
+  {
+    rule = new Rule_segment(context.text.substr(a0.start, a0.end - a0.start), a0.rules);
+  }
   else
+  {
     context.index = s0;
+  }
 
   context.pop("segment", parsed);
 

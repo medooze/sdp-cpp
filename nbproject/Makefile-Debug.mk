@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/SessionDescription.o \
 	${OBJECTDIR}/src/abnf/Parser.o \
+	${OBJECTDIR}/src/abnf/ParserAlternative.o \
 	${OBJECTDIR}/src/abnf/ParserContext.o \
 	${OBJECTDIR}/src/abnf/ParserException.o \
 	${OBJECTDIR}/src/abnf/Rule.o \
@@ -296,1127 +297,1132 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsdp-cpp.${CND_DLIB_EXT}: ${OBJECTF
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsdp-cpp.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
-${OBJECTDIR}/src/SessionDescription.o: src/SessionDescription.cpp
+${OBJECTDIR}/src/SessionDescription.o: src/SessionDescription.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SessionDescription.o src/SessionDescription.cpp
 
-${OBJECTDIR}/src/abnf/Parser.o: src/abnf/Parser.cpp
+${OBJECTDIR}/src/abnf/Parser.o: src/abnf/Parser.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Parser.o src/abnf/Parser.cpp
 
-${OBJECTDIR}/src/abnf/ParserContext.o: src/abnf/ParserContext.cpp
+${OBJECTDIR}/src/abnf/ParserAlternative.o: src/abnf/ParserAlternative.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}/src/abnf
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserAlternative.o src/abnf/ParserAlternative.cpp
+
+${OBJECTDIR}/src/abnf/ParserContext.o: src/abnf/ParserContext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserContext.o src/abnf/ParserContext.cpp
 
-${OBJECTDIR}/src/abnf/ParserException.o: src/abnf/ParserException.cpp
+${OBJECTDIR}/src/abnf/ParserException.o: src/abnf/ParserException.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserException.o src/abnf/ParserException.cpp
 
-${OBJECTDIR}/src/abnf/Rule.o: src/abnf/Rule.cpp
+${OBJECTDIR}/src/abnf/Rule.o: src/abnf/Rule.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule.o src/abnf/Rule.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ALPHA.o: src/abnf/Rule_ALPHA.cpp
+${OBJECTDIR}/src/abnf/Rule_ALPHA.o: src/abnf/Rule_ALPHA.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ALPHA.o src/abnf/Rule_ALPHA.cpp
 
-${OBJECTDIR}/src/abnf/Rule_BIT.o: src/abnf/Rule_BIT.cpp
+${OBJECTDIR}/src/abnf/Rule_BIT.o: src/abnf/Rule_BIT.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_BIT.o src/abnf/Rule_BIT.cpp
 
-${OBJECTDIR}/src/abnf/Rule_CFWS.o: src/abnf/Rule_CFWS.cpp
+${OBJECTDIR}/src/abnf/Rule_CFWS.o: src/abnf/Rule_CFWS.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_CFWS.o src/abnf/Rule_CFWS.cpp
 
-${OBJECTDIR}/src/abnf/Rule_CHAR.o: src/abnf/Rule_CHAR.cpp
+${OBJECTDIR}/src/abnf/Rule_CHAR.o: src/abnf/Rule_CHAR.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_CHAR.o src/abnf/Rule_CHAR.cpp
 
-${OBJECTDIR}/src/abnf/Rule_CR.o: src/abnf/Rule_CR.cpp
+${OBJECTDIR}/src/abnf/Rule_CR.o: src/abnf/Rule_CR.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_CR.o src/abnf/Rule_CR.cpp
 
-${OBJECTDIR}/src/abnf/Rule_CRLF.o: src/abnf/Rule_CRLF.cpp
+${OBJECTDIR}/src/abnf/Rule_CRLF.o: src/abnf/Rule_CRLF.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_CRLF.o src/abnf/Rule_CRLF.cpp
 
-${OBJECTDIR}/src/abnf/Rule_CTL.o: src/abnf/Rule_CTL.cpp
+${OBJECTDIR}/src/abnf/Rule_CTL.o: src/abnf/Rule_CTL.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_CTL.o src/abnf/Rule_CTL.cpp
 
-${OBJECTDIR}/src/abnf/Rule_DIGIT.o: src/abnf/Rule_DIGIT.cpp
+${OBJECTDIR}/src/abnf/Rule_DIGIT.o: src/abnf/Rule_DIGIT.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_DIGIT.o src/abnf/Rule_DIGIT.cpp
 
-${OBJECTDIR}/src/abnf/Rule_DQUOTE.o: src/abnf/Rule_DQUOTE.cpp
+${OBJECTDIR}/src/abnf/Rule_DQUOTE.o: src/abnf/Rule_DQUOTE.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_DQUOTE.o src/abnf/Rule_DQUOTE.cpp
 
-${OBJECTDIR}/src/abnf/Rule_EQUALS.o: src/abnf/Rule_EQUALS.cpp
+${OBJECTDIR}/src/abnf/Rule_EQUALS.o: src/abnf/Rule_EQUALS.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_EQUALS.o src/abnf/Rule_EQUALS.cpp
 
-${OBJECTDIR}/src/abnf/Rule_FQDN.o: src/abnf/Rule_FQDN.cpp
+${OBJECTDIR}/src/abnf/Rule_FQDN.o: src/abnf/Rule_FQDN.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_FQDN.o src/abnf/Rule_FQDN.cpp
 
-${OBJECTDIR}/src/abnf/Rule_FWS.o: src/abnf/Rule_FWS.cpp
+${OBJECTDIR}/src/abnf/Rule_FWS.o: src/abnf/Rule_FWS.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_FWS.o src/abnf/Rule_FWS.cpp
 
-${OBJECTDIR}/src/abnf/Rule_HEXDIG.o: src/abnf/Rule_HEXDIG.cpp
+${OBJECTDIR}/src/abnf/Rule_HEXDIG.o: src/abnf/Rule_HEXDIG.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_HEXDIG.o src/abnf/Rule_HEXDIG.cpp
 
-${OBJECTDIR}/src/abnf/Rule_HTAB.o: src/abnf/Rule_HTAB.cpp
+${OBJECTDIR}/src/abnf/Rule_HTAB.o: src/abnf/Rule_HTAB.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_HTAB.o src/abnf/Rule_HTAB.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IP4_multicast.o: src/abnf/Rule_IP4_multicast.cpp
+${OBJECTDIR}/src/abnf/Rule_IP4_multicast.o: src/abnf/Rule_IP4_multicast.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IP4_multicast.o src/abnf/Rule_IP4_multicast.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IP6_multicast.o: src/abnf/Rule_IP6_multicast.cpp
+${OBJECTDIR}/src/abnf/Rule_IP6_multicast.o: src/abnf/Rule_IP6_multicast.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IP6_multicast.o src/abnf/Rule_IP6_multicast.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IP_literal.o: src/abnf/Rule_IP_literal.cpp
+${OBJECTDIR}/src/abnf/Rule_IP_literal.o: src/abnf/Rule_IP_literal.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IP_literal.o src/abnf/Rule_IP_literal.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IPv4address.o: src/abnf/Rule_IPv4address.cpp
+${OBJECTDIR}/src/abnf/Rule_IPv4address.o: src/abnf/Rule_IPv4address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IPv4address.o src/abnf/Rule_IPv4address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IPv6address.o: src/abnf/Rule_IPv6address.cpp
+${OBJECTDIR}/src/abnf/Rule_IPv6address.o: src/abnf/Rule_IPv6address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IPv6address.o src/abnf/Rule_IPv6address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_IPvFuture.o: src/abnf/Rule_IPvFuture.cpp
+${OBJECTDIR}/src/abnf/Rule_IPvFuture.o: src/abnf/Rule_IPvFuture.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_IPvFuture.o src/abnf/Rule_IPvFuture.cpp
 
-${OBJECTDIR}/src/abnf/Rule_LF.o: src/abnf/Rule_LF.cpp
+${OBJECTDIR}/src/abnf/Rule_LF.o: src/abnf/Rule_LF.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_LF.o src/abnf/Rule_LF.cpp
 
-${OBJECTDIR}/src/abnf/Rule_LWSP.o: src/abnf/Rule_LWSP.cpp
+${OBJECTDIR}/src/abnf/Rule_LWSP.o: src/abnf/Rule_LWSP.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_LWSP.o src/abnf/Rule_LWSP.cpp
 
-${OBJECTDIR}/src/abnf/Rule_NO_WS_CTL.o: src/abnf/Rule_NO_WS_CTL.cpp
+${OBJECTDIR}/src/abnf/Rule_NO_WS_CTL.o: src/abnf/Rule_NO_WS_CTL.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_NO_WS_CTL.o src/abnf/Rule_NO_WS_CTL.cpp
 
-${OBJECTDIR}/src/abnf/Rule_OCTET.o: src/abnf/Rule_OCTET.cpp
+${OBJECTDIR}/src/abnf/Rule_OCTET.o: src/abnf/Rule_OCTET.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_OCTET.o src/abnf/Rule_OCTET.cpp
 
-${OBJECTDIR}/src/abnf/Rule_POS_DIGIT.o: src/abnf/Rule_POS_DIGIT.cpp
+${OBJECTDIR}/src/abnf/Rule_POS_DIGIT.o: src/abnf/Rule_POS_DIGIT.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_POS_DIGIT.o src/abnf/Rule_POS_DIGIT.cpp
 
-${OBJECTDIR}/src/abnf/Rule_SP.o: src/abnf/Rule_SP.cpp
+${OBJECTDIR}/src/abnf/Rule_SP.o: src/abnf/Rule_SP.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_SP.o src/abnf/Rule_SP.cpp
 
-${OBJECTDIR}/src/abnf/Rule_URI.o: src/abnf/Rule_URI.cpp
+${OBJECTDIR}/src/abnf/Rule_URI.o: src/abnf/Rule_URI.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_URI.o src/abnf/Rule_URI.cpp
 
-${OBJECTDIR}/src/abnf/Rule_URI_reference.o: src/abnf/Rule_URI_reference.cpp
+${OBJECTDIR}/src/abnf/Rule_URI_reference.o: src/abnf/Rule_URI_reference.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_URI_reference.o src/abnf/Rule_URI_reference.cpp
 
-${OBJECTDIR}/src/abnf/Rule_VCHAR.o: src/abnf/Rule_VCHAR.cpp
+${OBJECTDIR}/src/abnf/Rule_VCHAR.o: src/abnf/Rule_VCHAR.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_VCHAR.o src/abnf/Rule_VCHAR.cpp
 
-${OBJECTDIR}/src/abnf/Rule_WSP.o: src/abnf/Rule_WSP.cpp
+${OBJECTDIR}/src/abnf/Rule_WSP.o: src/abnf/Rule_WSP.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_WSP.o src/abnf/Rule_WSP.cpp
 
-${OBJECTDIR}/src/abnf/Rule_absolute_URI.o: src/abnf/Rule_absolute_URI.cpp
+${OBJECTDIR}/src/abnf/Rule_absolute_URI.o: src/abnf/Rule_absolute_URI.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_absolute_URI.o src/abnf/Rule_absolute_URI.cpp
 
-${OBJECTDIR}/src/abnf/Rule_addr_spec.o: src/abnf/Rule_addr_spec.cpp
+${OBJECTDIR}/src/abnf/Rule_addr_spec.o: src/abnf/Rule_addr_spec.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_addr_spec.o src/abnf/Rule_addr_spec.cpp
 
-${OBJECTDIR}/src/abnf/Rule_address_and_comment.o: src/abnf/Rule_address_and_comment.cpp
+${OBJECTDIR}/src/abnf/Rule_address_and_comment.o: src/abnf/Rule_address_and_comment.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_address_and_comment.o src/abnf/Rule_address_and_comment.cpp
 
-${OBJECTDIR}/src/abnf/Rule_addrtype.o: src/abnf/Rule_addrtype.cpp
+${OBJECTDIR}/src/abnf/Rule_addrtype.o: src/abnf/Rule_addrtype.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_addrtype.o src/abnf/Rule_addrtype.cpp
 
-${OBJECTDIR}/src/abnf/Rule_alpha_numeric.o: src/abnf/Rule_alpha_numeric.cpp
+${OBJECTDIR}/src/abnf/Rule_alpha_numeric.o: src/abnf/Rule_alpha_numeric.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_alpha_numeric.o src/abnf/Rule_alpha_numeric.cpp
 
-${OBJECTDIR}/src/abnf/Rule_app.o: src/abnf/Rule_app.cpp
+${OBJECTDIR}/src/abnf/Rule_app.o: src/abnf/Rule_app.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_app.o src/abnf/Rule_app.cpp
 
-${OBJECTDIR}/src/abnf/Rule_atext.o: src/abnf/Rule_atext.cpp
+${OBJECTDIR}/src/abnf/Rule_atext.o: src/abnf/Rule_atext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_atext.o src/abnf/Rule_atext.cpp
 
-${OBJECTDIR}/src/abnf/Rule_atom.o: src/abnf/Rule_atom.cpp
+${OBJECTDIR}/src/abnf/Rule_atom.o: src/abnf/Rule_atom.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_atom.o src/abnf/Rule_atom.cpp
 
-${OBJECTDIR}/src/abnf/Rule_att_field.o: src/abnf/Rule_att_field.cpp
+${OBJECTDIR}/src/abnf/Rule_att_field.o: src/abnf/Rule_att_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_att_field.o src/abnf/Rule_att_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_att_value.o: src/abnf/Rule_att_value.cpp
+${OBJECTDIR}/src/abnf/Rule_att_value.o: src/abnf/Rule_att_value.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_att_value.o src/abnf/Rule_att_value.cpp
 
-${OBJECTDIR}/src/abnf/Rule_attribute.o: src/abnf/Rule_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_attribute.o: src/abnf/Rule_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_attribute.o src/abnf/Rule_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_attribute_field.o: src/abnf/Rule_attribute_field.cpp
+${OBJECTDIR}/src/abnf/Rule_attribute_field.o: src/abnf/Rule_attribute_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_attribute_field.o src/abnf/Rule_attribute_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_attribute_fields.o: src/abnf/Rule_attribute_fields.cpp
+${OBJECTDIR}/src/abnf/Rule_attribute_fields.o: src/abnf/Rule_attribute_fields.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_attribute_fields.o src/abnf/Rule_attribute_fields.cpp
 
-${OBJECTDIR}/src/abnf/Rule_authority.o: src/abnf/Rule_authority.cpp
+${OBJECTDIR}/src/abnf/Rule_authority.o: src/abnf/Rule_authority.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_authority.o src/abnf/Rule_authority.cpp
 
-${OBJECTDIR}/src/abnf/Rule_bandwidth.o: src/abnf/Rule_bandwidth.cpp
+${OBJECTDIR}/src/abnf/Rule_bandwidth.o: src/abnf/Rule_bandwidth.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_bandwidth.o src/abnf/Rule_bandwidth.cpp
 
-${OBJECTDIR}/src/abnf/Rule_bandwidth_field.o: src/abnf/Rule_bandwidth_field.cpp
+${OBJECTDIR}/src/abnf/Rule_bandwidth_field.o: src/abnf/Rule_bandwidth_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_bandwidth_field.o src/abnf/Rule_bandwidth_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_bandwidth_fields.o: src/abnf/Rule_bandwidth_fields.cpp
+${OBJECTDIR}/src/abnf/Rule_bandwidth_fields.o: src/abnf/Rule_bandwidth_fields.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_bandwidth_fields.o src/abnf/Rule_bandwidth_fields.cpp
 
-${OBJECTDIR}/src/abnf/Rule_base64.o: src/abnf/Rule_base64.cpp
+${OBJECTDIR}/src/abnf/Rule_base64.o: src/abnf/Rule_base64.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_base64.o src/abnf/Rule_base64.cpp
 
-${OBJECTDIR}/src/abnf/Rule_base64_char.o: src/abnf/Rule_base64_char.cpp
+${OBJECTDIR}/src/abnf/Rule_base64_char.o: src/abnf/Rule_base64_char.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_base64_char.o src/abnf/Rule_base64_char.cpp
 
-${OBJECTDIR}/src/abnf/Rule_base64_key_type.o: src/abnf/Rule_base64_key_type.cpp
+${OBJECTDIR}/src/abnf/Rule_base64_key_type.o: src/abnf/Rule_base64_key_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_base64_key_type.o src/abnf/Rule_base64_key_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_base64_pad.o: src/abnf/Rule_base64_pad.cpp
+${OBJECTDIR}/src/abnf/Rule_base64_pad.o: src/abnf/Rule_base64_pad.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_base64_pad.o src/abnf/Rule_base64_pad.cpp
 
-${OBJECTDIR}/src/abnf/Rule_base64_unit.o: src/abnf/Rule_base64_unit.cpp
+${OBJECTDIR}/src/abnf/Rule_base64_unit.o: src/abnf/Rule_base64_unit.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_base64_unit.o src/abnf/Rule_base64_unit.cpp
 
-${OBJECTDIR}/src/abnf/Rule_bwtype.o: src/abnf/Rule_bwtype.cpp
+${OBJECTDIR}/src/abnf/Rule_bwtype.o: src/abnf/Rule_bwtype.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_bwtype.o src/abnf/Rule_bwtype.cpp
 
-${OBJECTDIR}/src/abnf/Rule_byte_string.o: src/abnf/Rule_byte_string.cpp
+${OBJECTDIR}/src/abnf/Rule_byte_string.o: src/abnf/Rule_byte_string.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_byte_string.o src/abnf/Rule_byte_string.cpp
 
-${OBJECTDIR}/src/abnf/Rule_cand_type.o: src/abnf/Rule_cand_type.cpp
+${OBJECTDIR}/src/abnf/Rule_cand_type.o: src/abnf/Rule_cand_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_cand_type.o src/abnf/Rule_cand_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_candidate_attribute.o: src/abnf/Rule_candidate_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_candidate_attribute.o: src/abnf/Rule_candidate_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_candidate_attribute.o src/abnf/Rule_candidate_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_candidate_types.o: src/abnf/Rule_candidate_types.cpp
+${OBJECTDIR}/src/abnf/Rule_candidate_types.o: src/abnf/Rule_candidate_types.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_candidate_types.o src/abnf/Rule_candidate_types.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ccontent.o: src/abnf/Rule_ccontent.cpp
+${OBJECTDIR}/src/abnf/Rule_ccontent.o: src/abnf/Rule_ccontent.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ccontent.o src/abnf/Rule_ccontent.cpp
 
-${OBJECTDIR}/src/abnf/Rule_clear_key_type.o: src/abnf/Rule_clear_key_type.cpp
+${OBJECTDIR}/src/abnf/Rule_clear_key_type.o: src/abnf/Rule_clear_key_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_clear_key_type.o src/abnf/Rule_clear_key_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_cname.o: src/abnf/Rule_cname.cpp
+${OBJECTDIR}/src/abnf/Rule_cname.o: src/abnf/Rule_cname.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_cname.o src/abnf/Rule_cname.cpp
 
-${OBJECTDIR}/src/abnf/Rule_cname_attr.o: src/abnf/Rule_cname_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_cname_attr.o: src/abnf/Rule_cname_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_cname_attr.o src/abnf/Rule_cname_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_comment.o: src/abnf/Rule_comment.cpp
+${OBJECTDIR}/src/abnf/Rule_comment.o: src/abnf/Rule_comment.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_comment.o src/abnf/Rule_comment.cpp
 
-${OBJECTDIR}/src/abnf/Rule_component_id.o: src/abnf/Rule_component_id.cpp
+${OBJECTDIR}/src/abnf/Rule_component_id.o: src/abnf/Rule_component_id.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_component_id.o src/abnf/Rule_component_id.cpp
 
-${OBJECTDIR}/src/abnf/Rule_connection_address.o: src/abnf/Rule_connection_address.cpp
+${OBJECTDIR}/src/abnf/Rule_connection_address.o: src/abnf/Rule_connection_address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_connection_address.o src/abnf/Rule_connection_address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_connection_field.o: src/abnf/Rule_connection_field.cpp
+${OBJECTDIR}/src/abnf/Rule_connection_field.o: src/abnf/Rule_connection_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_connection_field.o src/abnf/Rule_connection_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_crypto_attribute.o: src/abnf/Rule_crypto_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_crypto_attribute.o: src/abnf/Rule_crypto_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_crypto_attribute.o src/abnf/Rule_crypto_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_crypto_suite.o: src/abnf/Rule_crypto_suite.cpp
+${OBJECTDIR}/src/abnf/Rule_crypto_suite.o: src/abnf/Rule_crypto_suite.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_crypto_suite.o src/abnf/Rule_crypto_suite.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ctext.o: src/abnf/Rule_ctext.cpp
+${OBJECTDIR}/src/abnf/Rule_ctext.o: src/abnf/Rule_ctext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ctext.o src/abnf/Rule_ctext.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dcontent.o: src/abnf/Rule_dcontent.cpp
+${OBJECTDIR}/src/abnf/Rule_dcontent.o: src/abnf/Rule_dcontent.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dcontent.o src/abnf/Rule_dcontent.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dec_octet.o: src/abnf/Rule_dec_octet.cpp
+${OBJECTDIR}/src/abnf/Rule_dec_octet.o: src/abnf/Rule_dec_octet.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dec_octet.o src/abnf/Rule_dec_octet.cpp
 
-${OBJECTDIR}/src/abnf/Rule_decimal_uchar.o: src/abnf/Rule_decimal_uchar.cpp
+${OBJECTDIR}/src/abnf/Rule_decimal_uchar.o: src/abnf/Rule_decimal_uchar.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_decimal_uchar.o src/abnf/Rule_decimal_uchar.cpp
 
-${OBJECTDIR}/src/abnf/Rule_decimal_uchar_1xx.o: src/abnf/Rule_decimal_uchar_1xx.cpp
+${OBJECTDIR}/src/abnf/Rule_decimal_uchar_1xx.o: src/abnf/Rule_decimal_uchar_1xx.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_decimal_uchar_1xx.o src/abnf/Rule_decimal_uchar_1xx.cpp
 
-${OBJECTDIR}/src/abnf/Rule_decimal_uchar_25x.o: src/abnf/Rule_decimal_uchar_25x.cpp
+${OBJECTDIR}/src/abnf/Rule_decimal_uchar_25x.o: src/abnf/Rule_decimal_uchar_25x.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_decimal_uchar_25x.o src/abnf/Rule_decimal_uchar_25x.cpp
 
-${OBJECTDIR}/src/abnf/Rule_decimal_uchar_2xx.o: src/abnf/Rule_decimal_uchar_2xx.cpp
+${OBJECTDIR}/src/abnf/Rule_decimal_uchar_2xx.o: src/abnf/Rule_decimal_uchar_2xx.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_decimal_uchar_2xx.o src/abnf/Rule_decimal_uchar_2xx.cpp
 
-${OBJECTDIR}/src/abnf/Rule_direction.o: src/abnf/Rule_direction.cpp
+${OBJECTDIR}/src/abnf/Rule_direction.o: src/abnf/Rule_direction.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_direction.o src/abnf/Rule_direction.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dispname_and_address.o: src/abnf/Rule_dispname_and_address.cpp
+${OBJECTDIR}/src/abnf/Rule_dispname_and_address.o: src/abnf/Rule_dispname_and_address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dispname_and_address.o src/abnf/Rule_dispname_and_address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_domain.o: src/abnf/Rule_domain.cpp
+${OBJECTDIR}/src/abnf/Rule_domain.o: src/abnf/Rule_domain.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_domain.o src/abnf/Rule_domain.cpp
 
-${OBJECTDIR}/src/abnf/Rule_domain_literal.o: src/abnf/Rule_domain_literal.cpp
+${OBJECTDIR}/src/abnf/Rule_domain_literal.o: src/abnf/Rule_domain_literal.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_domain_literal.o src/abnf/Rule_domain_literal.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dot_atom.o: src/abnf/Rule_dot_atom.cpp
+${OBJECTDIR}/src/abnf/Rule_dot_atom.o: src/abnf/Rule_dot_atom.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dot_atom.o src/abnf/Rule_dot_atom.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dot_atom_text.o: src/abnf/Rule_dot_atom_text.cpp
+${OBJECTDIR}/src/abnf/Rule_dot_atom_text.o: src/abnf/Rule_dot_atom_text.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dot_atom_text.o src/abnf/Rule_dot_atom_text.cpp
 
-${OBJECTDIR}/src/abnf/Rule_dtext.o: src/abnf/Rule_dtext.cpp
+${OBJECTDIR}/src/abnf/Rule_dtext.o: src/abnf/Rule_dtext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_dtext.o src/abnf/Rule_dtext.cpp
 
-${OBJECTDIR}/src/abnf/Rule_email_address.o: src/abnf/Rule_email_address.cpp
+${OBJECTDIR}/src/abnf/Rule_email_address.o: src/abnf/Rule_email_address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_email_address.o src/abnf/Rule_email_address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_email_field.o: src/abnf/Rule_email_field.cpp
+${OBJECTDIR}/src/abnf/Rule_email_field.o: src/abnf/Rule_email_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_email_field.o src/abnf/Rule_email_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_email_fields.o: src/abnf/Rule_email_fields.cpp
+${OBJECTDIR}/src/abnf/Rule_email_fields.o: src/abnf/Rule_email_fields.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_email_fields.o src/abnf/Rule_email_fields.cpp
 
-${OBJECTDIR}/src/abnf/Rule_email_safe.o: src/abnf/Rule_email_safe.cpp
+${OBJECTDIR}/src/abnf/Rule_email_safe.o: src/abnf/Rule_email_safe.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_email_safe.o src/abnf/Rule_email_safe.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_att.o: src/abnf/Rule_extension_att.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_att.o: src/abnf/Rule_extension_att.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_att.o src/abnf/Rule_extension_att.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_att_name.o: src/abnf/Rule_extension_att_name.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_att_name.o: src/abnf/Rule_extension_att_name.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_att_name.o src/abnf/Rule_extension_att_name.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_att_value.o: src/abnf/Rule_extension_att_value.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_att_value.o: src/abnf/Rule_extension_att_value.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_att_value.o src/abnf/Rule_extension_att_value.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_attributes.o: src/abnf/Rule_extension_attributes.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_attributes.o: src/abnf/Rule_extension_attributes.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_attributes.o src/abnf/Rule_extension_attributes.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_identifier.o: src/abnf/Rule_extension_identifier.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_identifier.o: src/abnf/Rule_extension_identifier.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_identifier.o src/abnf/Rule_extension_identifier.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extension_name.o: src/abnf/Rule_extension_name.cpp
+${OBJECTDIR}/src/abnf/Rule_extension_name.o: src/abnf/Rule_extension_name.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extension_name.o src/abnf/Rule_extension_name.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extmap_attribute.o: src/abnf/Rule_extmap_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_extmap_attribute.o: src/abnf/Rule_extmap_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extmap_attribute.o src/abnf/Rule_extmap_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_extn_addr.o: src/abnf/Rule_extn_addr.cpp
+${OBJECTDIR}/src/abnf/Rule_extn_addr.o: src/abnf/Rule_extn_addr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_extn_addr.o src/abnf/Rule_extn_addr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fingerprint.o: src/abnf/Rule_fingerprint.cpp
+${OBJECTDIR}/src/abnf/Rule_fingerprint.o: src/abnf/Rule_fingerprint.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fingerprint.o src/abnf/Rule_fingerprint.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fingerprint_attribute.o: src/abnf/Rule_fingerprint_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_fingerprint_attribute.o: src/abnf/Rule_fingerprint_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fingerprint_attribute.o src/abnf/Rule_fingerprint_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fixed_len_time_unit.o: src/abnf/Rule_fixed_len_time_unit.cpp
+${OBJECTDIR}/src/abnf/Rule_fixed_len_time_unit.o: src/abnf/Rule_fixed_len_time_unit.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fixed_len_time_unit.o src/abnf/Rule_fixed_len_time_unit.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fmt.o: src/abnf/Rule_fmt.cpp
+${OBJECTDIR}/src/abnf/Rule_fmt.o: src/abnf/Rule_fmt.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fmt.o src/abnf/Rule_fmt.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fmtp_attr.o: src/abnf/Rule_fmtp_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_fmtp_attr.o: src/abnf/Rule_fmtp_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fmtp_attr.o src/abnf/Rule_fmtp_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_foundation.o: src/abnf/Rule_foundation.cpp
+${OBJECTDIR}/src/abnf/Rule_foundation.o: src/abnf/Rule_foundation.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_foundation.o src/abnf/Rule_foundation.cpp
 
-${OBJECTDIR}/src/abnf/Rule_fragment.o: src/abnf/Rule_fragment.cpp
+${OBJECTDIR}/src/abnf/Rule_fragment.o: src/abnf/Rule_fragment.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_fragment.o src/abnf/Rule_fragment.cpp
 
-${OBJECTDIR}/src/abnf/Rule_gen_attribute.o: src/abnf/Rule_gen_attribute.cpp
+${OBJECTDIR}/src/abnf/Rule_gen_attribute.o: src/abnf/Rule_gen_attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_gen_attribute.o src/abnf/Rule_gen_attribute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_gen_delims.o: src/abnf/Rule_gen_delims.cpp
+${OBJECTDIR}/src/abnf/Rule_gen_delims.o: src/abnf/Rule_gen_delims.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_gen_delims.o src/abnf/Rule_gen_delims.cpp
 
-${OBJECTDIR}/src/abnf/Rule_group_attr.o: src/abnf/Rule_group_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_group_attr.o: src/abnf/Rule_group_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_group_attr.o src/abnf/Rule_group_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_group_semantics.o: src/abnf/Rule_group_semantics.cpp
+${OBJECTDIR}/src/abnf/Rule_group_semantics.o: src/abnf/Rule_group_semantics.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_group_semantics.o src/abnf/Rule_group_semantics.cpp
 
-${OBJECTDIR}/src/abnf/Rule_h16.o: src/abnf/Rule_h16.cpp
+${OBJECTDIR}/src/abnf/Rule_h16.o: src/abnf/Rule_h16.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_h16.o src/abnf/Rule_h16.cpp
 
-${OBJECTDIR}/src/abnf/Rule_hash_func.o: src/abnf/Rule_hash_func.cpp
+${OBJECTDIR}/src/abnf/Rule_hash_func.o: src/abnf/Rule_hash_func.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_hash_func.o src/abnf/Rule_hash_func.cpp
 
-${OBJECTDIR}/src/abnf/Rule_hier_part.o: src/abnf/Rule_hier_part.cpp
+${OBJECTDIR}/src/abnf/Rule_hier_part.o: src/abnf/Rule_hier_part.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_hier_part.o src/abnf/Rule_hier_part.cpp
 
-${OBJECTDIR}/src/abnf/Rule_host.o: src/abnf/Rule_host.cpp
+${OBJECTDIR}/src/abnf/Rule_host.o: src/abnf/Rule_host.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_host.o src/abnf/Rule_host.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ice_char.o: src/abnf/Rule_ice_char.cpp
+${OBJECTDIR}/src/abnf/Rule_ice_char.o: src/abnf/Rule_ice_char.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ice_char.o src/abnf/Rule_ice_char.cpp
 
-${OBJECTDIR}/src/abnf/Rule_identification_tag.o: src/abnf/Rule_identification_tag.cpp
+${OBJECTDIR}/src/abnf/Rule_identification_tag.o: src/abnf/Rule_identification_tag.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_identification_tag.o src/abnf/Rule_identification_tag.cpp
 
-${OBJECTDIR}/src/abnf/Rule_information_field.o: src/abnf/Rule_information_field.cpp
+${OBJECTDIR}/src/abnf/Rule_information_field.o: src/abnf/Rule_information_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_information_field.o src/abnf/Rule_information_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_integer.o: src/abnf/Rule_integer.cpp
+${OBJECTDIR}/src/abnf/Rule_integer.o: src/abnf/Rule_integer.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_integer.o src/abnf/Rule_integer.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_field.o: src/abnf/Rule_key_field.cpp
+${OBJECTDIR}/src/abnf/Rule_key_field.o: src/abnf/Rule_key_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_field.o src/abnf/Rule_key_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_info.o: src/abnf/Rule_key_info.cpp
+${OBJECTDIR}/src/abnf/Rule_key_info.o: src/abnf/Rule_key_info.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_info.o src/abnf/Rule_key_info.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_lifetime.o: src/abnf/Rule_key_lifetime.cpp
+${OBJECTDIR}/src/abnf/Rule_key_lifetime.o: src/abnf/Rule_key_lifetime.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_lifetime.o src/abnf/Rule_key_lifetime.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_method.o: src/abnf/Rule_key_method.cpp
+${OBJECTDIR}/src/abnf/Rule_key_method.o: src/abnf/Rule_key_method.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_method.o src/abnf/Rule_key_method.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_method_ext.o: src/abnf/Rule_key_method_ext.cpp
+${OBJECTDIR}/src/abnf/Rule_key_method_ext.o: src/abnf/Rule_key_method_ext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_method_ext.o src/abnf/Rule_key_method_ext.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_mki.o: src/abnf/Rule_key_mki.cpp
+${OBJECTDIR}/src/abnf/Rule_key_mki.o: src/abnf/Rule_key_mki.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_mki.o src/abnf/Rule_key_mki.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_mki_length.o: src/abnf/Rule_key_mki_length.cpp
+${OBJECTDIR}/src/abnf/Rule_key_mki_length.o: src/abnf/Rule_key_mki_length.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_mki_length.o src/abnf/Rule_key_mki_length.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_mki_value.o: src/abnf/Rule_key_mki_value.cpp
+${OBJECTDIR}/src/abnf/Rule_key_mki_value.o: src/abnf/Rule_key_mki_value.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_mki_value.o src/abnf/Rule_key_mki_value.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_param.o: src/abnf/Rule_key_param.cpp
+${OBJECTDIR}/src/abnf/Rule_key_param.o: src/abnf/Rule_key_param.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_param.o src/abnf/Rule_key_param.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_params.o: src/abnf/Rule_key_params.cpp
+${OBJECTDIR}/src/abnf/Rule_key_params.o: src/abnf/Rule_key_params.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_params.o src/abnf/Rule_key_params.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_salt.o: src/abnf/Rule_key_salt.cpp
+${OBJECTDIR}/src/abnf/Rule_key_salt.o: src/abnf/Rule_key_salt.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_salt.o src/abnf/Rule_key_salt.cpp
 
-${OBJECTDIR}/src/abnf/Rule_key_type.o: src/abnf/Rule_key_type.cpp
+${OBJECTDIR}/src/abnf/Rule_key_type.o: src/abnf/Rule_key_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_key_type.o src/abnf/Rule_key_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_local_part.o: src/abnf/Rule_local_part.cpp
+${OBJECTDIR}/src/abnf/Rule_local_part.o: src/abnf/Rule_local_part.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_local_part.o src/abnf/Rule_local_part.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ls32.o: src/abnf/Rule_ls32.cpp
+${OBJECTDIR}/src/abnf/Rule_ls32.o: src/abnf/Rule_ls32.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ls32.o src/abnf/Rule_ls32.cpp
 
-${OBJECTDIR}/src/abnf/Rule_m1.o: src/abnf/Rule_m1.cpp
+${OBJECTDIR}/src/abnf/Rule_m1.o: src/abnf/Rule_m1.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_m1.o src/abnf/Rule_m1.cpp
 
-${OBJECTDIR}/src/abnf/Rule_media.o: src/abnf/Rule_media.cpp
+${OBJECTDIR}/src/abnf/Rule_media.o: src/abnf/Rule_media.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_media.o src/abnf/Rule_media.cpp
 
-${OBJECTDIR}/src/abnf/Rule_media_description.o: src/abnf/Rule_media_description.cpp
+${OBJECTDIR}/src/abnf/Rule_media_description.o: src/abnf/Rule_media_description.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_media_description.o src/abnf/Rule_media_description.cpp
 
-${OBJECTDIR}/src/abnf/Rule_media_descriptions.o: src/abnf/Rule_media_descriptions.cpp
+${OBJECTDIR}/src/abnf/Rule_media_descriptions.o: src/abnf/Rule_media_descriptions.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_media_descriptions.o src/abnf/Rule_media_descriptions.cpp
 
-${OBJECTDIR}/src/abnf/Rule_media_field.o: src/abnf/Rule_media_field.cpp
+${OBJECTDIR}/src/abnf/Rule_media_field.o: src/abnf/Rule_media_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_media_field.o src/abnf/Rule_media_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_mid_attr.o: src/abnf/Rule_mid_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_mid_attr.o: src/abnf/Rule_mid_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_mid_attr.o src/abnf/Rule_mid_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_name.o: src/abnf/Rule_name.cpp
+${OBJECTDIR}/src/abnf/Rule_name.o: src/abnf/Rule_name.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_name.o src/abnf/Rule_name.cpp
 
-${OBJECTDIR}/src/abnf/Rule_nettype.o: src/abnf/Rule_nettype.cpp
+${OBJECTDIR}/src/abnf/Rule_nettype.o: src/abnf/Rule_nettype.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_nettype.o src/abnf/Rule_nettype.cpp
 
-${OBJECTDIR}/src/abnf/Rule_non_ws_string.o: src/abnf/Rule_non_ws_string.cpp
+${OBJECTDIR}/src/abnf/Rule_non_ws_string.o: src/abnf/Rule_non_ws_string.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_non_ws_string.o src/abnf/Rule_non_ws_string.cpp
 
-${OBJECTDIR}/src/abnf/Rule_number_of_ports.o: src/abnf/Rule_number_of_ports.cpp
+${OBJECTDIR}/src/abnf/Rule_number_of_ports.o: src/abnf/Rule_number_of_ports.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_number_of_ports.o src/abnf/Rule_number_of_ports.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_FWS.o: src/abnf/Rule_obs_FWS.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_FWS.o: src/abnf/Rule_obs_FWS.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_FWS.o src/abnf/Rule_obs_FWS.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_char.o: src/abnf/Rule_obs_char.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_char.o: src/abnf/Rule_obs_char.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_char.o src/abnf/Rule_obs_char.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_domain.o: src/abnf/Rule_obs_domain.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_domain.o: src/abnf/Rule_obs_domain.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_domain.o src/abnf/Rule_obs_domain.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_local_part.o: src/abnf/Rule_obs_local_part.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_local_part.o: src/abnf/Rule_obs_local_part.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_local_part.o src/abnf/Rule_obs_local_part.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_qp.o: src/abnf/Rule_obs_qp.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_qp.o: src/abnf/Rule_obs_qp.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_qp.o src/abnf/Rule_obs_qp.cpp
 
-${OBJECTDIR}/src/abnf/Rule_obs_text.o: src/abnf/Rule_obs_text.cpp
+${OBJECTDIR}/src/abnf/Rule_obs_text.o: src/abnf/Rule_obs_text.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_obs_text.o src/abnf/Rule_obs_text.cpp
 
-${OBJECTDIR}/src/abnf/Rule_origin_field.o: src/abnf/Rule_origin_field.cpp
+${OBJECTDIR}/src/abnf/Rule_origin_field.o: src/abnf/Rule_origin_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_origin_field.o src/abnf/Rule_origin_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_param_list.o: src/abnf/Rule_param_list.cpp
+${OBJECTDIR}/src/abnf/Rule_param_list.o: src/abnf/Rule_param_list.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_param_list.o src/abnf/Rule_param_list.cpp
 
-${OBJECTDIR}/src/abnf/Rule_parameters.o: src/abnf/Rule_parameters.cpp
+${OBJECTDIR}/src/abnf/Rule_parameters.o: src/abnf/Rule_parameters.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_parameters.o src/abnf/Rule_parameters.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path.o: src/abnf/Rule_path.cpp
+${OBJECTDIR}/src/abnf/Rule_path.o: src/abnf/Rule_path.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path.o src/abnf/Rule_path.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path_abempty.o: src/abnf/Rule_path_abempty.cpp
+${OBJECTDIR}/src/abnf/Rule_path_abempty.o: src/abnf/Rule_path_abempty.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path_abempty.o src/abnf/Rule_path_abempty.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path_absolute.o: src/abnf/Rule_path_absolute.cpp
+${OBJECTDIR}/src/abnf/Rule_path_absolute.o: src/abnf/Rule_path_absolute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path_absolute.o src/abnf/Rule_path_absolute.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path_empty.o: src/abnf/Rule_path_empty.cpp
+${OBJECTDIR}/src/abnf/Rule_path_empty.o: src/abnf/Rule_path_empty.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path_empty.o src/abnf/Rule_path_empty.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path_noscheme.o: src/abnf/Rule_path_noscheme.cpp
+${OBJECTDIR}/src/abnf/Rule_path_noscheme.o: src/abnf/Rule_path_noscheme.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path_noscheme.o src/abnf/Rule_path_noscheme.cpp
 
-${OBJECTDIR}/src/abnf/Rule_path_rootless.o: src/abnf/Rule_path_rootless.cpp
+${OBJECTDIR}/src/abnf/Rule_path_rootless.o: src/abnf/Rule_path_rootless.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_path_rootless.o src/abnf/Rule_path_rootless.cpp
 
-${OBJECTDIR}/src/abnf/Rule_pchar.o: src/abnf/Rule_pchar.cpp
+${OBJECTDIR}/src/abnf/Rule_pchar.o: src/abnf/Rule_pchar.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_pchar.o src/abnf/Rule_pchar.cpp
 
-${OBJECTDIR}/src/abnf/Rule_pct_encoded.o: src/abnf/Rule_pct_encoded.cpp
+${OBJECTDIR}/src/abnf/Rule_pct_encoded.o: src/abnf/Rule_pct_encoded.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_pct_encoded.o src/abnf/Rule_pct_encoded.cpp
 
-${OBJECTDIR}/src/abnf/Rule_phone.o: src/abnf/Rule_phone.cpp
+${OBJECTDIR}/src/abnf/Rule_phone.o: src/abnf/Rule_phone.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_phone.o src/abnf/Rule_phone.cpp
 
-${OBJECTDIR}/src/abnf/Rule_phone_field.o: src/abnf/Rule_phone_field.cpp
+${OBJECTDIR}/src/abnf/Rule_phone_field.o: src/abnf/Rule_phone_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_phone_field.o src/abnf/Rule_phone_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_phone_fields.o: src/abnf/Rule_phone_fields.cpp
+${OBJECTDIR}/src/abnf/Rule_phone_fields.o: src/abnf/Rule_phone_fields.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_phone_fields.o src/abnf/Rule_phone_fields.cpp
 
-${OBJECTDIR}/src/abnf/Rule_phone_number.o: src/abnf/Rule_phone_number.cpp
+${OBJECTDIR}/src/abnf/Rule_phone_number.o: src/abnf/Rule_phone_number.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_phone_number.o src/abnf/Rule_phone_number.cpp
 
-${OBJECTDIR}/src/abnf/Rule_port.o: src/abnf/Rule_port.cpp
+${OBJECTDIR}/src/abnf/Rule_port.o: src/abnf/Rule_port.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_port.o src/abnf/Rule_port.cpp
 
-${OBJECTDIR}/src/abnf/Rule_previous_ssrc_attr.o: src/abnf/Rule_previous_ssrc_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_previous_ssrc_attr.o: src/abnf/Rule_previous_ssrc_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_previous_ssrc_attr.o src/abnf/Rule_previous_ssrc_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_priority.o: src/abnf/Rule_priority.cpp
+${OBJECTDIR}/src/abnf/Rule_priority.o: src/abnf/Rule_priority.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_priority.o src/abnf/Rule_priority.cpp
 
-${OBJECTDIR}/src/abnf/Rule_prompt_key_type.o: src/abnf/Rule_prompt_key_type.cpp
+${OBJECTDIR}/src/abnf/Rule_prompt_key_type.o: src/abnf/Rule_prompt_key_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_prompt_key_type.o src/abnf/Rule_prompt_key_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_proto.o: src/abnf/Rule_proto.cpp
+${OBJECTDIR}/src/abnf/Rule_proto.o: src/abnf/Rule_proto.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_proto.o src/abnf/Rule_proto.cpp
 
-${OBJECTDIR}/src/abnf/Rule_proto_version.o: src/abnf/Rule_proto_version.cpp
+${OBJECTDIR}/src/abnf/Rule_proto_version.o: src/abnf/Rule_proto_version.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_proto_version.o src/abnf/Rule_proto_version.cpp
 
-${OBJECTDIR}/src/abnf/Rule_qcontent.o: src/abnf/Rule_qcontent.cpp
+${OBJECTDIR}/src/abnf/Rule_qcontent.o: src/abnf/Rule_qcontent.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_qcontent.o src/abnf/Rule_qcontent.cpp
 
-${OBJECTDIR}/src/abnf/Rule_qtext.o: src/abnf/Rule_qtext.cpp
+${OBJECTDIR}/src/abnf/Rule_qtext.o: src/abnf/Rule_qtext.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_qtext.o src/abnf/Rule_qtext.cpp
 
-${OBJECTDIR}/src/abnf/Rule_query.o: src/abnf/Rule_query.cpp
+${OBJECTDIR}/src/abnf/Rule_query.o: src/abnf/Rule_query.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_query.o src/abnf/Rule_query.cpp
 
-${OBJECTDIR}/src/abnf/Rule_quoted_pair.o: src/abnf/Rule_quoted_pair.cpp
+${OBJECTDIR}/src/abnf/Rule_quoted_pair.o: src/abnf/Rule_quoted_pair.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_quoted_pair.o src/abnf/Rule_quoted_pair.cpp
 
-${OBJECTDIR}/src/abnf/Rule_quoted_string.o: src/abnf/Rule_quoted_string.cpp
+${OBJECTDIR}/src/abnf/Rule_quoted_string.o: src/abnf/Rule_quoted_string.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_quoted_string.o src/abnf/Rule_quoted_string.cpp
 
-${OBJECTDIR}/src/abnf/Rule_rate.o: src/abnf/Rule_rate.cpp
+${OBJECTDIR}/src/abnf/Rule_rate.o: src/abnf/Rule_rate.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_rate.o src/abnf/Rule_rate.cpp
 
-${OBJECTDIR}/src/abnf/Rule_reg_name.o: src/abnf/Rule_reg_name.cpp
+${OBJECTDIR}/src/abnf/Rule_reg_name.o: src/abnf/Rule_reg_name.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_reg_name.o src/abnf/Rule_reg_name.cpp
 
-${OBJECTDIR}/src/abnf/Rule_rel_addr.o: src/abnf/Rule_rel_addr.cpp
+${OBJECTDIR}/src/abnf/Rule_rel_addr.o: src/abnf/Rule_rel_addr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_rel_addr.o src/abnf/Rule_rel_addr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_rel_port.o: src/abnf/Rule_rel_port.cpp
+${OBJECTDIR}/src/abnf/Rule_rel_port.o: src/abnf/Rule_rel_port.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_rel_port.o src/abnf/Rule_rel_port.cpp
 
-${OBJECTDIR}/src/abnf/Rule_relative_part.o: src/abnf/Rule_relative_part.cpp
+${OBJECTDIR}/src/abnf/Rule_relative_part.o: src/abnf/Rule_relative_part.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_relative_part.o src/abnf/Rule_relative_part.cpp
 
-${OBJECTDIR}/src/abnf/Rule_relative_ref.o: src/abnf/Rule_relative_ref.cpp
+${OBJECTDIR}/src/abnf/Rule_relative_ref.o: src/abnf/Rule_relative_ref.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_relative_ref.o src/abnf/Rule_relative_ref.cpp
 
-${OBJECTDIR}/src/abnf/Rule_repeat_field.o: src/abnf/Rule_repeat_field.cpp
+${OBJECTDIR}/src/abnf/Rule_repeat_field.o: src/abnf/Rule_repeat_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_repeat_field.o src/abnf/Rule_repeat_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_repeat_interval.o: src/abnf/Rule_repeat_interval.cpp
+${OBJECTDIR}/src/abnf/Rule_repeat_interval.o: src/abnf/Rule_repeat_interval.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_repeat_interval.o src/abnf/Rule_repeat_interval.cpp
 
-${OBJECTDIR}/src/abnf/Rule_reserved.o: src/abnf/Rule_reserved.cpp
+${OBJECTDIR}/src/abnf/Rule_reserved.o: src/abnf/Rule_reserved.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_reserved.o src/abnf/Rule_reserved.cpp
 
-${OBJECTDIR}/src/abnf/Rule_rtpmap_attr.o: src/abnf/Rule_rtpmap_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_rtpmap_attr.o: src/abnf/Rule_rtpmap_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_rtpmap_attr.o src/abnf/Rule_rtpmap_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_scheme.o: src/abnf/Rule_scheme.cpp
+${OBJECTDIR}/src/abnf/Rule_scheme.o: src/abnf/Rule_scheme.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_scheme.o src/abnf/Rule_scheme.cpp
 
-${OBJECTDIR}/src/abnf/Rule_sctpmap_attr.o: src/abnf/Rule_sctpmap_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_sctpmap_attr.o: src/abnf/Rule_sctpmap_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_sctpmap_attr.o src/abnf/Rule_sctpmap_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_sctpmap_number.o: src/abnf/Rule_sctpmap_number.cpp
+${OBJECTDIR}/src/abnf/Rule_sctpmap_number.o: src/abnf/Rule_sctpmap_number.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_sctpmap_number.o src/abnf/Rule_sctpmap_number.cpp
 
-${OBJECTDIR}/src/abnf/Rule_segment.o: src/abnf/Rule_segment.cpp
+${OBJECTDIR}/src/abnf/Rule_segment.o: src/abnf/Rule_segment.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_segment.o src/abnf/Rule_segment.cpp
 
-${OBJECTDIR}/src/abnf/Rule_segment_nz.o: src/abnf/Rule_segment_nz.cpp
+${OBJECTDIR}/src/abnf/Rule_segment_nz.o: src/abnf/Rule_segment_nz.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_segment_nz.o src/abnf/Rule_segment_nz.cpp
 
-${OBJECTDIR}/src/abnf/Rule_segment_nz_nc.o: src/abnf/Rule_segment_nz_nc.cpp
+${OBJECTDIR}/src/abnf/Rule_segment_nz_nc.o: src/abnf/Rule_segment_nz_nc.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_segment_nz_nc.o src/abnf/Rule_segment_nz_nc.cpp
 
-${OBJECTDIR}/src/abnf/Rule_sess_id.o: src/abnf/Rule_sess_id.cpp
+${OBJECTDIR}/src/abnf/Rule_sess_id.o: src/abnf/Rule_sess_id.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_sess_id.o src/abnf/Rule_sess_id.cpp
 
-${OBJECTDIR}/src/abnf/Rule_sess_version.o: src/abnf/Rule_sess_version.cpp
+${OBJECTDIR}/src/abnf/Rule_sess_version.o: src/abnf/Rule_sess_version.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_sess_version.o src/abnf/Rule_sess_version.cpp
 
-${OBJECTDIR}/src/abnf/Rule_session_description.o: src/abnf/Rule_session_description.cpp
+${OBJECTDIR}/src/abnf/Rule_session_description.o: src/abnf/Rule_session_description.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_session_description.o src/abnf/Rule_session_description.cpp
 
-${OBJECTDIR}/src/abnf/Rule_session_name_field.o: src/abnf/Rule_session_name_field.cpp
+${OBJECTDIR}/src/abnf/Rule_session_name_field.o: src/abnf/Rule_session_name_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_session_name_field.o src/abnf/Rule_session_name_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_session_param.o: src/abnf/Rule_session_param.cpp
+${OBJECTDIR}/src/abnf/Rule_session_param.o: src/abnf/Rule_session_param.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_session_param.o src/abnf/Rule_session_param.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ssrc_attr.o: src/abnf/Rule_ssrc_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_ssrc_attr.o: src/abnf/Rule_ssrc_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ssrc_attr.o src/abnf/Rule_ssrc_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ssrc_group_attr.o: src/abnf/Rule_ssrc_group_attr.cpp
+${OBJECTDIR}/src/abnf/Rule_ssrc_group_attr.o: src/abnf/Rule_ssrc_group_attr.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ssrc_group_attr.o src/abnf/Rule_ssrc_group_attr.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ssrc_group_semantics.o: src/abnf/Rule_ssrc_group_semantics.cpp
+${OBJECTDIR}/src/abnf/Rule_ssrc_group_semantics.o: src/abnf/Rule_ssrc_group_semantics.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ssrc_group_semantics.o src/abnf/Rule_ssrc_group_semantics.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ssrc_id.o: src/abnf/Rule_ssrc_id.cpp
+${OBJECTDIR}/src/abnf/Rule_ssrc_id.o: src/abnf/Rule_ssrc_id.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ssrc_id.o src/abnf/Rule_ssrc_id.cpp
 
-${OBJECTDIR}/src/abnf/Rule_start_time.o: src/abnf/Rule_start_time.cpp
+${OBJECTDIR}/src/abnf/Rule_start_time.o: src/abnf/Rule_start_time.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_start_time.o src/abnf/Rule_start_time.cpp
 
-${OBJECTDIR}/src/abnf/Rule_stop_time.o: src/abnf/Rule_stop_time.cpp
+${OBJECTDIR}/src/abnf/Rule_stop_time.o: src/abnf/Rule_stop_time.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_stop_time.o src/abnf/Rule_stop_time.cpp
 
-${OBJECTDIR}/src/abnf/Rule_streams.o: src/abnf/Rule_streams.cpp
+${OBJECTDIR}/src/abnf/Rule_streams.o: src/abnf/Rule_streams.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_streams.o src/abnf/Rule_streams.cpp
 
-${OBJECTDIR}/src/abnf/Rule_sub_delims.o: src/abnf/Rule_sub_delims.cpp
+${OBJECTDIR}/src/abnf/Rule_sub_delims.o: src/abnf/Rule_sub_delims.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_sub_delims.o src/abnf/Rule_sub_delims.cpp
 
-${OBJECTDIR}/src/abnf/Rule_tag.o: src/abnf/Rule_tag.cpp
+${OBJECTDIR}/src/abnf/Rule_tag.o: src/abnf/Rule_tag.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_tag.o src/abnf/Rule_tag.cpp
 
-${OBJECTDIR}/src/abnf/Rule_text.o: src/abnf/Rule_text.cpp
+${OBJECTDIR}/src/abnf/Rule_text.o: src/abnf/Rule_text.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_text.o src/abnf/Rule_text.cpp
 
-${OBJECTDIR}/src/abnf/Rule_time.o: src/abnf/Rule_time.cpp
+${OBJECTDIR}/src/abnf/Rule_time.o: src/abnf/Rule_time.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_time.o src/abnf/Rule_time.cpp
 
-${OBJECTDIR}/src/abnf/Rule_time_field.o: src/abnf/Rule_time_field.cpp
+${OBJECTDIR}/src/abnf/Rule_time_field.o: src/abnf/Rule_time_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_time_field.o src/abnf/Rule_time_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_time_fields.o: src/abnf/Rule_time_fields.cpp
+${OBJECTDIR}/src/abnf/Rule_time_fields.o: src/abnf/Rule_time_fields.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_time_fields.o src/abnf/Rule_time_fields.cpp
 
-${OBJECTDIR}/src/abnf/Rule_time_repeat_field.o: src/abnf/Rule_time_repeat_field.cpp
+${OBJECTDIR}/src/abnf/Rule_time_repeat_field.o: src/abnf/Rule_time_repeat_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_time_repeat_field.o src/abnf/Rule_time_repeat_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_token.o: src/abnf/Rule_token.cpp
+${OBJECTDIR}/src/abnf/Rule_token.o: src/abnf/Rule_token.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_token.o src/abnf/Rule_token.cpp
 
-${OBJECTDIR}/src/abnf/Rule_transport.o: src/abnf/Rule_transport.cpp
+${OBJECTDIR}/src/abnf/Rule_transport.o: src/abnf/Rule_transport.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_transport.o src/abnf/Rule_transport.cpp
 
-${OBJECTDIR}/src/abnf/Rule_transport_extension.o: src/abnf/Rule_transport_extension.cpp
+${OBJECTDIR}/src/abnf/Rule_transport_extension.o: src/abnf/Rule_transport_extension.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_transport_extension.o src/abnf/Rule_transport_extension.cpp
 
-${OBJECTDIR}/src/abnf/Rule_ttl.o: src/abnf/Rule_ttl.cpp
+${OBJECTDIR}/src/abnf/Rule_ttl.o: src/abnf/Rule_ttl.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_ttl.o src/abnf/Rule_ttl.cpp
 
-${OBJECTDIR}/src/abnf/Rule_typed_time.o: src/abnf/Rule_typed_time.cpp
+${OBJECTDIR}/src/abnf/Rule_typed_time.o: src/abnf/Rule_typed_time.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_typed_time.o src/abnf/Rule_typed_time.cpp
 
-${OBJECTDIR}/src/abnf/Rule_unicast_address.o: src/abnf/Rule_unicast_address.cpp
+${OBJECTDIR}/src/abnf/Rule_unicast_address.o: src/abnf/Rule_unicast_address.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_unicast_address.o src/abnf/Rule_unicast_address.cpp
 
-${OBJECTDIR}/src/abnf/Rule_unreserved.o: src/abnf/Rule_unreserved.cpp
+${OBJECTDIR}/src/abnf/Rule_unreserved.o: src/abnf/Rule_unreserved.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_unreserved.o src/abnf/Rule_unreserved.cpp
 
-${OBJECTDIR}/src/abnf/Rule_uri_field.o: src/abnf/Rule_uri_field.cpp
+${OBJECTDIR}/src/abnf/Rule_uri_field.o: src/abnf/Rule_uri_field.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_uri_field.o src/abnf/Rule_uri_field.cpp
 
-${OBJECTDIR}/src/abnf/Rule_uri_key_type.o: src/abnf/Rule_uri_key_type.cpp
+${OBJECTDIR}/src/abnf/Rule_uri_key_type.o: src/abnf/Rule_uri_key_type.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_uri_key_type.o src/abnf/Rule_uri_key_type.cpp
 
-${OBJECTDIR}/src/abnf/Rule_userinfo.o: src/abnf/Rule_userinfo.cpp
+${OBJECTDIR}/src/abnf/Rule_userinfo.o: src/abnf/Rule_userinfo.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_userinfo.o src/abnf/Rule_userinfo.cpp
 
-${OBJECTDIR}/src/abnf/Rule_username.o: src/abnf/Rule_username.cpp
+${OBJECTDIR}/src/abnf/Rule_username.o: src/abnf/Rule_username.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_username.o src/abnf/Rule_username.cpp
 
-${OBJECTDIR}/src/abnf/Rule_word.o: src/abnf/Rule_word.cpp
+${OBJECTDIR}/src/abnf/Rule_word.o: src/abnf/Rule_word.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_word.o src/abnf/Rule_word.cpp
 
-${OBJECTDIR}/src/abnf/Rule_zone_adjustments.o: src/abnf/Rule_zone_adjustments.cpp
+${OBJECTDIR}/src/abnf/Rule_zone_adjustments.o: src/abnf/Rule_zone_adjustments.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Rule_zone_adjustments.o src/abnf/Rule_zone_adjustments.cpp
 
-${OBJECTDIR}/src/abnf/Terminal_NumericValue.o: src/abnf/Terminal_NumericValue.cpp
+${OBJECTDIR}/src/abnf/Terminal_NumericValue.o: src/abnf/Terminal_NumericValue.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Terminal_NumericValue.o src/abnf/Terminal_NumericValue.cpp
 
-${OBJECTDIR}/src/abnf/Terminal_StringValue.o: src/abnf/Terminal_StringValue.cpp
+${OBJECTDIR}/src/abnf/Terminal_StringValue.o: src/abnf/Terminal_StringValue.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Terminal_StringValue.o src/abnf/Terminal_StringValue.cpp
 
-${OBJECTDIR}/src/builders/Builder.o: src/builders/Builder.cpp
+${OBJECTDIR}/src/builders/Builder.o: src/builders/Builder.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/builders
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/Builder.o src/builders/Builder.cpp
 
-${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o: src/builders/SessionDescriptionBuilder.cpp
+${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o: src/builders/SessionDescriptionBuilder.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/src/builders
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/builders/SessionDescriptionBuilder.o src/builders/SessionDescriptionBuilder.cpp
@@ -1463,6 +1469,19 @@ ${OBJECTDIR}/src/abnf/Parser_nomain.o: ${OBJECTDIR}/src/abnf/Parser.o src/abnf/P
 	    $(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Parser_nomain.o src/abnf/Parser.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/src/abnf/Parser.o ${OBJECTDIR}/src/abnf/Parser_nomain.o;\
+	fi
+
+${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o: ${OBJECTDIR}/src/abnf/ParserAlternative.o src/abnf/ParserAlternative.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/abnf
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/abnf/ParserAlternative.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -s -Iinclude -std=c++14 -fPIC  -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o src/abnf/ParserAlternative.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/abnf/ParserAlternative.o ${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o;\
 	fi
 
 ${OBJECTDIR}/src/abnf/ParserContext_nomain.o: ${OBJECTDIR}/src/abnf/ParserContext.o src/abnf/ParserContext.cpp 

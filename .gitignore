@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/src/abnf/Displayer.cpp
+/src/abnf/Displayer.hpp
+/src/abnf/ParserAlternative.cpp
+/src/abnf/ParserAlternative.hpp
+/src/abnf/XmlDisplayer.cpp
+/src/abnf/XmlDisplayer.hpp

@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <stack>
 
 namespace sdp
 {
@@ -20,7 +21,7 @@ public:
 		this->fmt = fmt;
 	}
 
-	FormatAttribute(int fmt, std::string parameters)
+	FormatAttribute(int fmt, const std::string& parameters)
 	{
 		this->fmt = fmt;
 		//Set them
@@ -52,7 +53,7 @@ public:
 		for (auto param : parameters)
 		{
 			//Add param
-			if (param.first.empty())
+			if (params.empty())
 				params += " " + param.first;
 			else
 				params += "; " + param.first;
@@ -88,43 +89,90 @@ public:
 		return parameters;
 	}
 
-	void setParameters(std::string parameters)
+	void setParameters(const std::string& parameters)
 	{
-		/*TODO:!!/
-		//Split by ;
-		for (std::string param : parameters.split(";"))
-		{
-			//Remove spaces, and split by =
-			std::string[] vals = param.trim().split("=");
-			//Add to map
-			this->parameters.put(vals[0].trim(), vals.length > 1 ? vals[1].trim() : null);
-		}
+		size_t size = parameters.length();
+		size_t ini = 0;
+		size_t sep = 0;
+		size_t end = 0;
 		
-		size_t i = 0;
-		for (auto pos=parameters.find(";"); pos!=std::string::npos; i=++pos)
+		//Clear parameters
+		this->parameters.clear();
+		
+		//Tokenize
+		while(end!=std::string::npos)
 		{
-			//Add proto
-			this->parameters.push_back(parameters.substr(i, pos - i));
-			//find next
-			pos = parameters.find("/", pos);
-			//If last
-			if (pos==std::string::npos)
-				this->parameters.push_back(parameters.substr(i, parameters.length()));
+			//Skip spaces
+			while (ini<size && parameters[ini]==' ')
+				++ini;
+			//Check size
+			if (ini==size)
+				//All white
+				break;
+				
+			//find param separator
+			end = parameters.find(";", ini);
+			
+			//Get until separator or end of line
+			sep = end!=std::string::npos ? end-1 : size-1;
+			
+			//Remove trailing spaces
+			while (ini<sep && parameters[sep]==' ')
+				--sep;
+			
+			//If it is not all white spaces
+			if (ini!=sep)
+			{
+				std::string key;
+				std::string val;
+				
+				//Find key-value separator
+				size_t mid = parameters.find_first_of("=;",ini);
+
+				//Check if it is <key,val> or just <key>
+				if (mid<end && mid!=std::string::npos)
+				{
+					//Skip sepearator
+					size_t kini = ini;
+					size_t kend = mid-1;
+					size_t vini = mid+1;
+					size_t vend = sep;
+
+					//Remove trailing spaces in key
+					while (kini<kend && parameters[kend]==' ')
+						--kend;
+					
+					//Remove leading spaces in value
+					while (vini<vend && parameters[vini]==' ')
+						++vini;
+					
+					//Get key and val
+					key = parameters.substr(kini,kend-kini+1);
+					val = parameters.substr(vini,vend-vini+1);
+				} else {
+					//Just key
+					key = parameters.substr(ini,sep-ini+1);
+				}
+				//Add parameter
+				addParameter(key,val);
+			}
+			
+			//Move
+			ini = end!=std::string::npos ? ++end : end;
 		}
-		 * */
 	}
 
-	void addParameter(std::string parameter)
+	void addParameter(const std::string& parameter)
 	{
 		parameters[parameter] = "";
 	}
 
-	void addParameter(std::string key, std::string val)
+	void addParameter(const std::string& key, const std::string& val)
 	{
 		parameters[key] = val;
 	}
 
-	void addParameter(std::string key, int val)
+	void addParameter(const std::string& key, int val)
 	{
 		addParameter(key, std::to_string(val));
 	}
@@ -136,6 +184,7 @@ public:
 
 private:
 	int fmt = -1;
+	//TODO: Maybe move to std::vector<std::pair<std::string,std::string> to keep order, or not.
 	std::map<std::string, std::string> parameters;
 };
 

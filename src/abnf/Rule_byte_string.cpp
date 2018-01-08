@@ -2,8 +2,8 @@
  * Rule_byte_string.cpp
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Jan 07 16:41:36 CET 2018
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Mon Jan 08 13:30:55 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -16,6 +16,7 @@ using std::vector;
 
 #include "Rule_byte_string.hpp"
 #include "Visitor.hpp"
+#include "ParserAlternative.hpp"
 #include "ParserContext.hpp"
 
 #include "Terminal_NumericValue.hpp"
@@ -54,210 +55,249 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
 
   bool parsed = true;
   int s0 = context.index;
-  vector<const Rule*> e0;
-  const Rule* rule;
+  ParserAlternative a0(s0);
 
+  vector<const ParserAlternative*> as1;
   parsed = false;
-  if (!parsed)
   {
+    int s1 = context.index;
+    ParserAlternative a1(s1);
+    parsed = true;
+    if (parsed)
     {
-      vector<const Rule*> e1;
-      int s1 = context.index;
-      parsed = true;
-      if (parsed)
+      bool f1 = true;
+      int c1 = 0;
+      for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        bool f1 = true;
-        int c1 = 0;
-        for (int i1 = 0; i1 < 1 && f1; i1++)
+        unsigned int g1 = context.index;
+        vector<const ParserAlternative*> as2;
+        parsed = false;
         {
-          unsigned int g1 = context.index;
-          parsed = false;
-          if (!parsed)
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
           {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+              if ((f2 = rule != NULL))
               {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
               }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
             }
+            parsed = c2 == 1;
           }
-          if (!parsed)
+          if (parsed)
           {
-            {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
-              {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
-              }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
-            }
+            as2.push_back(new ParserAlternative(a2));
           }
-          if (!parsed)
-          {
-            {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
-              {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x0E-FF", "[\\x0E-\\xFF]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
-              }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
-            }
-          }
-          if (context.index > g1) c1++;
-          f1 = c1 > i1;
+          context.index = s2;
         }
-        for (int i1 = 0; f1; i1++)
         {
-          unsigned int g1 = context.index;
-          parsed = false;
-          if (!parsed)
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
           {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+              if ((f2 = rule != NULL))
               {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
               }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
             }
+            parsed = c2 == 1;
           }
-          if (!parsed)
+          if (parsed)
           {
-            {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
-              {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
-              }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
-            }
+            as2.push_back(new ParserAlternative(a2));
           }
-          if (!parsed)
-          {
-            {
-              vector<const Rule*> e2;
-              int s2 = context.index;
-              parsed = true;
-              if (parsed)
-              {
-                bool f2 = true;
-                int c2 = 0;
-                for (int i2 = 0; i2 < 1 && f2; i2++)
-                {
-                  rule = Terminal_NumericValue::parse(context, "%x0E-FF", "[\\x0E-\\xFF]", 1);
-                  if ((f2 = rule != NULL))
-                  {
-                    e2.push_back(rule);
-                    c2++;
-                  }
-                }
-                parsed = c2 == 1;
-              }
-              if (parsed)
-                e1.insert(e1.end(), e2.begin(), e2.end());
-              else
-                context.index = s2;
-            }
-          }
-          if (context.index > g1) c1++;
-          f1 = c1 > i1;
+          context.index = s2;
         }
-        parsed = c1 >= 1;
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
+            {
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", "[\\x0E-\\x7E]", 1);
+              if ((f2 = rule != NULL))
+              {
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
+              }
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+
+        const ParserAlternative* b = ParserAlternative::getBest(as2);
+
+        if ((parsed = b != NULL))
+        {
+          a1.add(b->rules, b->end);
+          context.index = b->end;
+        }
+
+        for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
+        {
+          delete *a;
+        }
+
+        f1 = context.index > g1;
+        if (parsed) c1++;
       }
-      if (parsed)
-        e0.insert(e0.end(), e1.begin(), e1.end());
-      else
-        context.index = s1;
+      while (f1)
+      {
+        unsigned int g1 = context.index;
+        vector<const ParserAlternative*> as2;
+        parsed = false;
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
+            {
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+              if ((f2 = rule != NULL))
+              {
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
+              }
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
+            {
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+              if ((f2 = rule != NULL))
+              {
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
+              }
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            for (int i2 = 0; i2 < 1 && f2; i2++)
+            {
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", "[\\x0E-\\x7E]", 1);
+              if ((f2 = rule != NULL))
+              {
+                a2.add(*rule, context.index);
+                c2++;
+                delete rule;
+              }
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+
+        const ParserAlternative* b = ParserAlternative::getBest(as2);
+
+        if ((parsed = b != NULL))
+        {
+          a1.add(b->rules, b->end);
+          context.index = b->end;
+        }
+
+        for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
+        {
+          delete *a;
+        }
+
+        f1 = context.index > g1;
+        if (parsed) c1++;
+      }
+      parsed = c1 >= 1;
     }
+    if (parsed)
+    {
+      as1.push_back(new ParserAlternative(a1));
+    }
+    context.index = s1;
   }
 
-  rule = NULL;
+  const ParserAlternative* b = ParserAlternative::getBest(as1);
+
+  if ((parsed = b != NULL))
+  {
+    a0.add(b->rules, b->end);
+    context.index = b->end;
+  }
+
+  for (vector<const ParserAlternative*>::const_iterator a = as1.begin(); a != as1.end(); a++)
+  {
+    delete *a;
+  }
+
+  const Rule* rule = NULL;
   if (parsed)
-    rule = new Rule_byte_string(context.text.substr(s0, context.index - s0), e0);
+  {
+    rule = new Rule_byte_string(context.text.substr(a0.start, a0.end - a0.start), a0.rules);
+  }
   else
+  {
     context.index = s0;
+  }
 
   context.pop("byte-string", parsed);
 

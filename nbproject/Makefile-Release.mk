@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/SessionDescription.o \
 	${OBJECTDIR}/src/abnf/Parser.o \
+	${OBJECTDIR}/src/abnf/ParserAlternative.o \
 	${OBJECTDIR}/src/abnf/ParserContext.o \
 	${OBJECTDIR}/src/abnf/ParserException.o \
 	${OBJECTDIR}/src/abnf/Rule.o \
@@ -305,6 +306,11 @@ ${OBJECTDIR}/src/abnf/Parser.o: src/abnf/Parser.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Parser.o src/abnf/Parser.cpp
+
+${OBJECTDIR}/src/abnf/ParserAlternative.o: src/abnf/ParserAlternative.cpp
+	${MKDIR} -p ${OBJECTDIR}/src/abnf
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserAlternative.o src/abnf/ParserAlternative.cpp
 
 ${OBJECTDIR}/src/abnf/ParserContext.o: src/abnf/ParserContext.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/abnf
@@ -1463,6 +1469,19 @@ ${OBJECTDIR}/src/abnf/Parser_nomain.o: ${OBJECTDIR}/src/abnf/Parser.o src/abnf/P
 	    $(COMPILE.cc) -O2 -fPIC  -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/Parser_nomain.o src/abnf/Parser.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/src/abnf/Parser.o ${OBJECTDIR}/src/abnf/Parser_nomain.o;\
+	fi
+
+${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o: ${OBJECTDIR}/src/abnf/ParserAlternative.o src/abnf/ParserAlternative.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/abnf
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/abnf/ParserAlternative.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -fPIC  -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o src/abnf/ParserAlternative.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/abnf/ParserAlternative.o ${OBJECTDIR}/src/abnf/ParserAlternative_nomain.o;\
 	fi
 
 ${OBJECTDIR}/src/abnf/ParserContext_nomain.o: ${OBJECTDIR}/src/abnf/ParserContext.o src/abnf/ParserContext.cpp 

@@ -33,10 +33,10 @@ public:
 	virtual	std::string getValue() override
 	{
 
-		std::string value = number + " " + app;
+		std::string value = std::to_string(number) + " " + app;
 
 		if (streams>0)
-			value += " " + streams;
+			value += " " + std::to_string(streams);
 
 		return value;
 	}

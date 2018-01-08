@@ -2,8 +2,8 @@
  * ParserContext.cpp
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Jan 07 16:41:36 CET 2018
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Mon Jan 08 13:30:55 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -46,9 +46,9 @@ void ParserContext::push(const string& rulename, const string& trace)
 
   if (traceOn)
   {
-    string sample = text.substr(index, (index + 10 > text.length() ? text.length() : 10));
+    string sample = text.substr(index, (index + 10 > text.length() ? text.length() - index : 10));
 
-    regex rx("[^[:print:]]");
+    regex rx("[\\x00-\\x1F]");
     sample = regex_replace(sample, rx, string(" "));
 
     cout << "-> " << ++level << ": " << rulename << "(" << trace << ")" << endl;

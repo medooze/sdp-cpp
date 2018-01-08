@@ -2,8 +2,8 @@
  * ParserException.cpp
  * -----------------------------------------------------------------------------
  *
- * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Sun Jan 07 16:41:36 CET 2018
+ * Producer : com.parse2.aparse.Parser 2.5
+ * Produced : Mon Jan 08 13:30:55 CET 2018
  *
  * -----------------------------------------------------------------------------
  */
@@ -38,7 +38,7 @@ ParserException::ParserException(
   text60 = text.substr(start, end - start);
   index60 = (index < 30) ? index : 30;
 
-  regex rx("[^[:print:]]");
+  regex rx("[\\x00-\\x1F]");
   text60 = regex_replace(text60, rx, string(" "));
 }
 
