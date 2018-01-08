@@ -30,7 +30,7 @@ void main()
 			"a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:CoKH4lo5t34SYU0pqeJGwes2gJCEWKFmLUv/q0sN|2^48\r\n"
 			"a=sctpmap:5000 webrtc-datachannel 1024\r\n");
 	} catch (const std::exception& e) { 
-	     std::cout << e.what();
+		std::cout << e.what();
 	}
 }
 ```

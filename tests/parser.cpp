@@ -14,6 +14,8 @@
 #include "SessionDescription.h"
 #include "SCTPMapAttribute.h"
 #include <iostream>
+#include <fstream>
+#include <streambuf>
 
 using namespace sdp;
 
@@ -88,6 +90,15 @@ void test3()
 	std::cout << fmtp.toString() << "\n";
 }
 
+void testSDP(const char* path)
+{
+	std::ifstream file(path);
+	std::string str((std::istreambuf_iterator<char>(file)),std::istreambuf_iterator<char>());
+	
+	auto sdp = SessionDescription::parse(str);
+	
+	std::cout << sdp->toString();
+}
 
 int main(int argc, char** argv)
 {
@@ -105,6 +116,19 @@ int main(int argc, char** argv)
 	std::cout << "%TEST_STARTED% test3 (parser)\n" << std::endl;
 	test3();
 	std::cout << "%TEST_FINISHED% test3 (parser)" << std::endl;
+	
+	std::cout << "%TEST_STARTED% testSDP chrome(parser)\n" << std::endl;
+	testSDP("sdps/chrome.sdp");
+	std::cout << "%TEST_FINISHED% testSDP (parser)" << std::endl;
+	
+	
+	std::cout << "%TEST_STARTED% testSDP firefox (parser)\n" << std::endl;
+	testSDP("sdps/firefox.sdp");
+	std::cout << "%TEST_FINISHED% testSDP (parser)" << std::endl;
+	
+	std::cout << "%TEST_STARTED% testSDP simulcast (parser)\n" << std::endl;
+	testSDP("sdps/simulcast.sdp");
+	std::cout << "%TEST_FINISHED% testSDP (parser)" << std::endl;
 
 	std::cout << "%SUITE_FINISHED%" << std::endl;
 
