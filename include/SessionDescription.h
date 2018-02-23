@@ -8,7 +8,7 @@
 #include "Connection.h"
 #include "Attribute.h"
 #include "Key.h"
-#include "Time.h"
+#include "Timing.h"
 #include "MediaDescription.h"
 
 namespace sdp {

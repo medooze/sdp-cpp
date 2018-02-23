@@ -17,6 +17,10 @@
 #include "RTPMapAttribute.h"
 #include "Key.h"
 
+#if defined(_WIN32) || defined(_WIN64) 
+#define strcasecmp _stricmp 
+#endif
+
 namespace sdp
 {
 
@@ -396,7 +400,7 @@ public:
 		//For each attribute
 		for (auto attr : attributes)
 			//Check if the one searhced
-			if (strcasecmp(attr->getField().c_str(),key.c_str())==0)
+			if (strcasecmp(attr->getField().c_str(), key.c_str())==0)
 				//Found
 				return true;
 		//Not found
