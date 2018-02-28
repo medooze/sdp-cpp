@@ -11,6 +11,8 @@ class PreviousSSRCAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<PreviousSSRCAttribute>;
+public:
 	PreviousSSRCAttribute() = default;
 	~PreviousSSRCAttribute() = default;
 	

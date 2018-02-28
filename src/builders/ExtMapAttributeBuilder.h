@@ -53,7 +53,7 @@ public:
 		//Get value
 		std::string value = rule->spelling;
 		//Set type
-		extmap->setName(value);
+		extmap->setUri(value);
 		//Return it
 		return NULL;
 	}

@@ -10,6 +10,8 @@ namespace sdp
 class Origin 
 {
 public:
+	using shared = std::shared_ptr<Origin>;
+public:
 	Origin() = default;
 	Origin(const std::string& username, int64_t sessId, int64_t sessVersion, const std::string& nettype, const std::string& addrtype, const std::string& address)
 	{

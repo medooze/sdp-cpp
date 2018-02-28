@@ -11,6 +11,8 @@ class CandidateAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<CandidateAttribute>;
+public:
 
 	class Extension
 	{

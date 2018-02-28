@@ -14,6 +14,8 @@ class SSRCGroupAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<SSRCGroupAttribute>;
+public:
 	SSRCGroupAttribute() = default;
 
 	SSRCGroupAttribute(const std::string& semantics)

@@ -30,7 +30,7 @@ public:
 	void* visit(const Rule_ssrc_id* rule)
 	{
 		//Get type
-		int64_t ssrcId = std::stol(rule->spelling);
+		int64_t ssrcId = std::stoll(rule->spelling);
 		//Set type
 		ssrc->setSSRC(ssrcId);
 		//Return it

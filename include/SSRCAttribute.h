@@ -10,6 +10,8 @@ class SSRCAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<SSRCAttribute>;
+public:
 	SSRCAttribute() = default;
 	SSRCAttribute(int64_t SSRC, const std::string& attrField, const std::string& attrValue)
 	{

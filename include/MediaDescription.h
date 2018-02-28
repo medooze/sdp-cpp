@@ -27,6 +27,8 @@ namespace sdp
 class MediaDescription
 {
 public:
+	using shared = std::shared_ptr<MediaDescription>;
+public:
 	MediaDescription() = default;
 
 	MediaDescription(const std::string& media, int port, const std::string& proto)
@@ -299,7 +301,7 @@ public:
 		return std::shared_ptr<T>();
 	}
 	
-	template<typename T>
+	template<typename T = Attribute>
 	std::shared_ptr<T> getAttribute()
 	{
 		//For each attribute
@@ -314,6 +316,25 @@ public:
 		}
 		//Not found
 		return std::shared_ptr<T>();
+	}
+
+	template<typename T = Attribute>
+	std::vector<std::shared_ptr<T>> getAttributes()
+	{
+		//Create list
+		auto attrs = std::vector<std::shared_ptr<T>>();
+		//For each attribute
+		for (auto attr : attributes)
+		{
+			//Try to convert it
+			auto t = std::dynamic_pointer_cast<T>(attr);
+			//If it was that type
+			if (t)
+				//Add it
+				attrs.push_back(t);
+		}
+		//Done
+		return attrs;
 	}
 
 	template<typename T = Attribute>

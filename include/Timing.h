@@ -9,6 +9,8 @@ namespace sdp
 class Time
 {
 public:
+	using shared = std::shared_ptr<Time>;
+public:
 	Time() = default;
 
 	Time(int start, int stop)

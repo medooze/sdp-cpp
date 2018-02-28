@@ -13,6 +13,8 @@ class CryptoAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<CryptoAttribute>;
+public:
 
 	class KeyParam
 	{

@@ -10,6 +10,8 @@ class MidAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<MidAttribute>;
+public:
 
 	MidAttribute() = default;
 

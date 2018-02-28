@@ -41,7 +41,7 @@ public:
 	void* visit(const Rule_sess_id* rule)
 	{
 		//Generate
-		int64_t sessId = std::stol(rule->spelling);
+		int64_t sessId = std::stoll(rule->spelling);
 		//Set it
 		origin->setSessId(sessId);
 		//Return it
@@ -52,7 +52,7 @@ public:
 	void* visit(const Rule_sess_version* rule)
 	{
 		//Generate
-		int64_t sessVersion = std::stol(rule->spelling);
+		int64_t sessVersion = std::stoll(rule->spelling);
 		//Sset it
 		origin->setSessVersion(sessVersion);
 		//Return it

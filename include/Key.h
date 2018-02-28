@@ -7,6 +7,8 @@ namespace sdp
 class Key
 {
 public:
+	using shared = std::shared_ptr<Key>;
+public:
 
 	Key() = default;
 

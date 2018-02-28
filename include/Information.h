@@ -10,6 +10,8 @@ namespace sdp
 class Information
 {
 public:
+	using shared = std::shared_ptr<Information>;
+public:
 	Information() = default;
 
 	Information(const std::string& text)
