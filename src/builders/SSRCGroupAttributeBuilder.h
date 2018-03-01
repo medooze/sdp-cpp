@@ -30,9 +30,9 @@ public:
 	void* visit(const Rule_ssrc_id* rule)
 	{
 		//Get type
-		int64_t ssrcId = std::stoll(rule->spelling);
+		uint32_t ssrc = std::stoll(rule->spelling);
 		//Set type
-		group->addSSRCId(ssrcId);
+		group->addSSRC(ssrc);
 		//Return it
 		return NULL;
 	}

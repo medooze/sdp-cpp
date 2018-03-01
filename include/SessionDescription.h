@@ -99,6 +99,13 @@ public:
 		return attrs;
 	}
 
+	template<typename Type, class ...Args>
+	void addAttribute(Args... args)
+	{
+		//Add attribute
+		addAttribute(std::make_shared<Type>(Type{ std::forward<Args>(args)... }));
+	}
+
 
 	std::vector<Attribute::shared> getAttributes();
 	

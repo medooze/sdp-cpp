@@ -368,6 +368,13 @@ public:
 		addBandwidth(std::make_shared<Bandwidth>(type, bandwidth));
 	}
 
+	template<typename Type, class ...Args>
+	void addAttribute(Args... args)
+	{
+		//Add attribute
+		addAttribute(std::make_shared<Type>(Type{ std::forward<Args>(args)... }));
+	}
+
 	void addAttribute(const std::string& field)
 	{
 		//Add attribute

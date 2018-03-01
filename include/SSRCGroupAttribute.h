@@ -23,16 +23,16 @@ public:
 		this->semantics = semantics;
 	}
 
-	SSRCGroupAttribute(const std::string&, const std::vector<int64_t>& ssrcs)
+	SSRCGroupAttribute(const std::string&, const std::vector<uint32_t>& ssrcs)
 	{
 		this->semantics = semantics;
-		this->SSRCIds = ssrcs;
+		this->ssrcs = ssrcs;
 	}
 	virtual ~SSRCGroupAttribute() = default;
 
 	virtual std::shared_ptr<Attribute> clone()
 	{
-		return std::make_shared<SSRCGroupAttribute>(semantics, SSRCIds);
+		return std::make_shared<SSRCGroupAttribute>(semantics, ssrcs);
 	}
 
 	virtual std::string toString() override
@@ -51,24 +51,24 @@ public:
 	virtual std::string getValue() override
 	{
 		std::string value = semantics;
-		for (auto id : SSRCIds)
-			value += " " + std::to_string(id);
+		for (auto sssrc : ssrcs)
+			value += " " + std::to_string(sssrc);
 		return value;
 	}
 
-	std::vector<int64_t> getSSRCIds()
+	std::vector<uint32_t> getSSRCs()
 	{
-		return SSRCIds;
+		return ssrcs;
 	}
 
-	void setSSRCIds(const std::vector<int64_t>& SSRCIds)
+	void setSSRCs(const std::vector<uint32_t>& ssrcs)
 	{
-		this->SSRCIds = SSRCIds;
+		this->ssrcs = ssrcs;
 	}
 
-	void addSSRCId(int64_t ssrcId)
+	void addSSRC(uint32_t ssrc)
 	{
-		SSRCIds.push_back(ssrcId);
+		ssrcs.push_back(ssrc);
 	}
 
 	std::string getSemantics()
@@ -83,7 +83,7 @@ public:
 
 private:
 	std::string semantics;
-	std::vector<int64_t> SSRCIds;
+	std::vector<uint32_t> ssrcs;
 
 };
 

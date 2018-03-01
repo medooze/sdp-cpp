@@ -13,9 +13,9 @@ public:
 	using shared = std::shared_ptr<SSRCAttribute>;
 public:
 	SSRCAttribute() = default;
-	SSRCAttribute(int64_t SSRC, const std::string& attrField, const std::string& attrValue)
+	SSRCAttribute(uint32_t ssrc, const std::string& attrField, const std::string& attrValue)
 	{
-		this->SSRC = SSRC;
+		this->ssrc = ssrc;
 		this->attrField = attrField;
 		this->attrValue = attrValue;
 	}
@@ -23,7 +23,7 @@ public:
 
 	virtual std::shared_ptr<Attribute> clone() override
 	{
-		return std::make_shared<SSRCAttribute>(SSRC, attrField, attrValue);
+		return std::make_shared<SSRCAttribute>(ssrc, attrField, attrValue);
 	}
 
 	virtual	std::string toString() override
@@ -41,17 +41,17 @@ public:
 
 	virtual	std::string getValue() override
 	{
-		return std::to_string(SSRC) + " " + attrField + (!attrValue.empty() ? ":" + attrValue : "");
+		return std::to_string(ssrc) + " " + attrField + (!attrValue.empty() ? ":" + attrValue : "");
 	}
 
-	int64_t getSSRC()
+	uint32_t getSSRC()
 	{
-		return SSRC;
+		return ssrc;
 	}
 
-	void setSSRC(int64_t SSRC)
+	void setSSRC(uint32_t ssrc)
 	{
-		this->SSRC = SSRC;
+		this->ssrc = ssrc;
 	}
 
 	std::string getAttrField()
@@ -75,7 +75,7 @@ public:
 	}
 
 private:
-	int64_t SSRC = 0;
+	uint32_t ssrc = 0;
 	std::string attrField;
 	std::string attrValue;
 };

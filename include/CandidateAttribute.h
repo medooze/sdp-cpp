@@ -46,7 +46,7 @@ public:
 	CandidateAttribute() = default;
 	virtual ~CandidateAttribute() = default;
 
-	CandidateAttribute(const std::string& fundation, int componentId, const std::string& transport, int priority, const std::string&, int port, const std::string& type)
+	CandidateAttribute(const std::string& fundation, int componentId, const std::string& transport, int priority, const std::string& address, int port, const std::string& type)
 	{
 		this->fundation = fundation;
 		this->componentId = componentId;
