@@ -69,7 +69,7 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", "[\\x41-\\x5A]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", 0x41,0x5A, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -95,7 +95,7 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x61-7A", "[\\x61-\\x7A]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x61-7A", 0x61,0x7A, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

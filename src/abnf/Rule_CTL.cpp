@@ -69,7 +69,7 @@ const Rule_CTL* Rule_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x00-1F", "[\\x00-\\x1F]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x00-1F", 0x00,0x1F, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -95,7 +95,7 @@ const Rule_CTL* Rule_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x7F", "[\\x7F]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x7F", 0x7F, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

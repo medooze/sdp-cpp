@@ -69,7 +69,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d1-8", "[\\x01-\\x08]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d1-8", 0x01,0x08, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -95,7 +95,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d11", "[\\x0b]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d11", 0x0b, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -121,7 +121,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d12", "[\\x0c]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d12", 0x0c, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -147,7 +147,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d14-31", "[\\x0e-\\x1f]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d14-31", 0x0e,0x1f, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -173,7 +173,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d127", "[\\x7f]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d127", 0x7f, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

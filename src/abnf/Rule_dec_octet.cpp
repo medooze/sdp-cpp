@@ -97,7 +97,7 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", "[\\x31-\\x39]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", 0x31,0x39, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -197,7 +197,7 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-34", "[\\x30-\\x34]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-34", 0x30,0x34, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -255,7 +255,7 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-35", "[\\x30-\\x35]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-35", 0x30,0x35, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

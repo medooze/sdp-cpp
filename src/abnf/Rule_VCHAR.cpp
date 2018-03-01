@@ -69,7 +69,7 @@ const Rule_VCHAR* Rule_VCHAR::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x21-7E", "[\\x21-\\x7E]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x21-7E", 0x21,0x7E, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

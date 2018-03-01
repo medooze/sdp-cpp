@@ -69,7 +69,7 @@ const Rule_CR* Rule_CR::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x0D", "[\\x0D]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x0D", 0x0D, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

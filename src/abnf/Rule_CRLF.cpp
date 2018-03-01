@@ -52,62 +52,29 @@ void* Rule_CRLF::accept(Visitor& visitor) const
 const Rule_CRLF* Rule_CRLF::parse(ParserContext& context)
 {
   context.push("CRLF");
+  
+  bool parsed = false;
 
-  bool parsed = true;
-  int s0 = context.index;
-  ParserAlternative a0(s0);
-
-  vector<const ParserAlternative*> as1;
-  parsed = false;
-  {
-    int s1 = context.index;
-    ParserAlternative a1(s1);
-    parsed = true;
-    if (parsed)
-    {
-      bool f1 = true;
-      int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
-      {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d13.10", "(\\x0d\\x0a)", 2);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
-      }
-      parsed = c1 == 1;
-    }
-    if (parsed)
-    {
-      as1.push_back(new ParserAlternative(a1));
-    }
-    context.index = s1;
-  }
-
-  const ParserAlternative* b = ParserAlternative::getBest(as1);
-
-  if ((parsed = b != NULL))
-  {
-    a0.add(b->rules, b->end);
-    context.index = b->end;
-  }
-
-  for (vector<const ParserAlternative*>::const_iterator a = as1.begin(); a != as1.end(); a++)
-  {
-    delete *a;
-  }
-
+  size_t length = 2;
+  
   const Rule* rule = NULL;
-  if (parsed)
+
+  try
   {
-    rule = new Rule_CRLF(context.text.substr(a0.start, a0.end - a0.start), a0.rules);
+    if (context.index + length <= context.text.length())
+    {
+      string value = context.text.substr(context.index, length);
+      
+      parsed = (value=="\r\n");
+
+      if (parsed)
+      {
+        context.index += length;
+        rule = new Rule_CRLF(value, vector<const Rule*>());
+      }
+    }
   }
-  else
-  {
-    context.index = s0;
-  }
+  catch (...) {}
 
   context.pop("CRLF", parsed);
 

@@ -82,7 +82,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01,0x09, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -108,7 +108,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B,0x0C, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -134,7 +134,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", "[\\x0E-\\x7E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E,0x7E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -182,7 +182,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01,0x09, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -208,7 +208,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B,0x0C, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -234,7 +234,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", "[\\x0E-\\x7E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E,0x7E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);

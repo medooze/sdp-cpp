@@ -78,7 +78,7 @@ const Rule_origin_field* Rule_origin_field::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x6f", "[\\x6f]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x6f", 0x6f, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

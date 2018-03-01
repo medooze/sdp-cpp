@@ -69,7 +69,7 @@ const Rule_POS_DIGIT* Rule_POS_DIGIT::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", "[\\x31-\\x39]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", 0x31,0x39, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

@@ -72,7 +72,7 @@ const Rule_information_field* Rule_information_field::parse(ParserContext& conte
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x69", "[\\x69]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x69", 0x69, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

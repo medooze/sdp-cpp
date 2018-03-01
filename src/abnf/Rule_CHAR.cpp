@@ -69,7 +69,7 @@ const Rule_CHAR* Rule_CHAR::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x01-7F", "[\\x01-\\x7F]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x01-7F", 0x01,0x7F, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
