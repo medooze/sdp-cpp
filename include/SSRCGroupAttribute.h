@@ -23,7 +23,7 @@ public:
 		this->semantics = semantics;
 	}
 
-	SSRCGroupAttribute(const std::string&, const std::vector<uint32_t>& ssrcs)
+	SSRCGroupAttribute(const std::string& semantics, const std::vector<uint32_t>& ssrcs)
 	{
 		this->semantics = semantics;
 		this->ssrcs = ssrcs;

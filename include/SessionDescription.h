@@ -150,6 +150,8 @@ public:
 	void setKey(const Key::shared key);
 	void setMedias(const std::vector<MediaDescription::shared>& medias);
 	void addMedia(const MediaDescription::shared& media);
+	MediaDescription::shared getMedia(const std::string& media);
+	MediaDescription::shared getMediaById(const std::string& id);
 	
 private:
 	int version;

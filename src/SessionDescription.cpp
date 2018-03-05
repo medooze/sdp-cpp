@@ -338,3 +338,23 @@ void SessionDescription::addAttribute(const std::string& attr, const std::string
 	addAttribute(std::make_shared<BaseAttribute>(attr, value));
 }
 
+MediaDescription::shared SessionDescription::getMedia(const std::string& type)
+{
+	for (auto media : medias)
+		if (type == media->getMedia())
+			return media;
+	return nullptr;
+}
+
+MediaDescription::shared SessionDescription::getMediaById(const std::string& id)
+{
+	for (auto media : medias)
+	{
+		//Get mid attribute
+		auto mid = media->getAttribute("mid");
+		if (mid && id == mid->getValue())
+			return media;
+	}
+		
+	return nullptr;
+}
