@@ -2,7 +2,7 @@
 #define _SDP_IMPL_TIME_BUILDER_H_
 
 #include "Builder.h"
-#include "../../include/Time.h"
+#include "../../include/Timing.h"
 
 using namespace sdp;
 using namespace abnf;

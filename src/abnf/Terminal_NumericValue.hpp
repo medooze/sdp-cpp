@@ -33,8 +33,15 @@ public:
   static const Terminal_NumericValue* parse(
     ParserContext& context,
     const std::string& spelling,
-    const std::string& pattern,
+    uint8_t from,
+    uint8_t to,
     int length);
+
+  static const Terminal_NumericValue* parse(
+	  ParserContext& context,
+	  const std::string& spelling,
+	  uint8_t val,
+	  int length);
 
   void* accept(Visitor& visitor) const;
 };

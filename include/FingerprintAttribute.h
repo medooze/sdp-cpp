@@ -10,6 +10,8 @@ class FingerprintAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<FingerprintAttribute>;
+public:
 
 	FingerprintAttribute() = default;
 	FingerprintAttribute(const std::string& hashFunc, const std::string& fingerprint)

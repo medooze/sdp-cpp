@@ -40,12 +40,22 @@ void* Terminal_NumericValue::accept(Visitor& visitor) const
 }
 
 const Terminal_NumericValue* Terminal_NumericValue::parse(
+	ParserContext& context,
+	const string& spelling,
+	uint8_t val,
+	int length)
+{
+  return parse(context, spelling, val, val, length);
+}
+
+const Terminal_NumericValue* Terminal_NumericValue::parse(
   ParserContext& context,
   const string& spelling,
-  const string& pattern,
+  uint8_t from,
+  uint8_t to,
   int length)
 {
-  context.push("NumericValue", spelling + "," + pattern);
+  context.push("NumericValue", spelling);
 
   bool parsed = false;
 
@@ -53,16 +63,15 @@ const Terminal_NumericValue* Terminal_NumericValue::parse(
 
   try
   {
-    if (context.index + length <= context.text.length())
+    if (context.index + 1 <= context.text.length())
     {
-      string value = context.text.substr(context.index, length);
+      string value = context.text.substr(context.index, 1);
 
-      regex rx(pattern);
-      parsed = regex_match(value, rx);
-
+      parsed = (from<=value.c_str()[0] && value.c_str()[0]<=to);
+      
       if (parsed)
       {
-        context.index += length;
+        context.index ++;
         numericValue = new Terminal_NumericValue(value, vector<const Rule*>());
       }
     }

@@ -11,6 +11,8 @@ class CNameAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<CNameAttribute>;	
+public:
 	CNameAttribute() = default;
 	virtual ~CNameAttribute() = default;
 

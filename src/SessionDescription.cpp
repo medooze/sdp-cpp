@@ -138,56 +138,6 @@ std::vector<std::shared_ptr<Attribute>> SessionDescription::getAttributes()
 	return attributes;
 }
 
-template<typename T = Attribute>
-std::shared_ptr<T> SessionDescription::getAttribute(const std::string& key)
-{
-	//For each attribute
-	for (auto attr : attributes)
-		//Check if the one searhced
-		if (strcasecmp(attr->getField().c_str(),key.c_str())==0)
-			//Try to convert it
-			return std::dynamic_pointer_cast<T>(attr);
-	//Not found
-	return std::shared_ptr<T>();
-}
-template<typename T>
-std::shared_ptr<T> SessionDescription::getAttribute()
-{
-	//For each attribute
-	for (auto attr : attributes)
-	{
-		//Try to convert it
-		auto t = std::dynamic_pointer_cast<T>(attr);
-		//If it is from this type
-		if (t)
-			//Found
-			return t;
-	}
-	//Not found
-	return std::shared_ptr<T>();
-}
-
-template<typename T = Attribute>
-std::vector<std::shared_ptr<T>> SessionDescription::getAttributes(const std::string& key)
-{
-	//Create list
-	auto attrs = std::vector<std::shared_ptr<T>>();
-	//For each attribute
-	for (auto attr : attributes)
-		//Check if the one searhced
-		if (strcasecmp(attr->getField().c_str(),key.c_str())==0)
-		{
-			//Try to convert it
-			auto t = std::dynamic_pointer_cast<T>(attr);
-			//If it was that type
-			if (t)
-				//Add it
-				attrs.push_back(t);
-		}
-	//Done
-	return attrs;
-}
-	
 void SessionDescription::setAttributes(const std::vector<std::shared_ptr<Attribute>>& attributes)
 {
 	this->attributes = attributes;
@@ -388,3 +338,23 @@ void SessionDescription::addAttribute(const std::string& attr, const std::string
 	addAttribute(std::make_shared<BaseAttribute>(attr, value));
 }
 
+MediaDescription::shared SessionDescription::getMedia(const std::string& type)
+{
+	for (auto media : medias)
+		if (type == media->getMedia())
+			return media;
+	return nullptr;
+}
+
+MediaDescription::shared SessionDescription::getMediaById(const std::string& id)
+{
+	for (auto media : medias)
+	{
+		//Get mid attribute
+		auto mid = media->getAttribute("mid");
+		if (mid && id == mid->getValue())
+			return media;
+	}
+		
+	return nullptr;
+}

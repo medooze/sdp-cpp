@@ -96,7 +96,7 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d33-39", "[\\x21-\\x27]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d33-39", 0x21,0x27, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -122,7 +122,7 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d42-91", "[\\x2a-\\x5b]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d42-91", 0x2a,0x5b, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -148,7 +148,7 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d93-126", "[\\x5d-\\x7e]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%d93-126", 0x5d,0x7e, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

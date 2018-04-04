@@ -14,6 +14,8 @@ class FormatAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<FormatAttribute>;
+public:
 	FormatAttribute() = default;
 
 	FormatAttribute(int fmt)

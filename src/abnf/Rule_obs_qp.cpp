@@ -99,7 +99,7 @@ const Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%d0-127", "[\\x00-\\x7f]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%d0-127", 0x00,0x7f, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);

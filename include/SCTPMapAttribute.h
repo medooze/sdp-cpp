@@ -9,6 +9,8 @@ class SCTPMapAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<SCTPMapAttribute>;
+public:
 
 	SCTPMapAttribute() = default;
 

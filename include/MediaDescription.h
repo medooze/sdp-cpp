@@ -17,11 +17,17 @@
 #include "RTPMapAttribute.h"
 #include "Key.h"
 
+#if defined(_WIN32) || defined(_WIN64) 
+#define strcasecmp _stricmp 
+#endif
+
 namespace sdp
 {
 
 class MediaDescription
 {
+public:
+	using shared = std::shared_ptr<MediaDescription>;
 public:
 	MediaDescription() = default;
 
@@ -295,7 +301,7 @@ public:
 		return std::shared_ptr<T>();
 	}
 	
-	template<typename T>
+	template<typename T = Attribute>
 	std::shared_ptr<T> getAttribute()
 	{
 		//For each attribute
@@ -310,6 +316,25 @@ public:
 		}
 		//Not found
 		return std::shared_ptr<T>();
+	}
+
+	template<typename T = Attribute>
+	std::vector<std::shared_ptr<T>> getAttributes()
+	{
+		//Create list
+		auto attrs = std::vector<std::shared_ptr<T>>();
+		//For each attribute
+		for (auto attr : attributes)
+		{
+			//Try to convert it
+			auto t = std::dynamic_pointer_cast<T>(attr);
+			//If it was that type
+			if (t)
+				//Add it
+				attrs.push_back(t);
+		}
+		//Done
+		return attrs;
 	}
 
 	template<typename T = Attribute>
@@ -341,6 +366,13 @@ public:
 	void addBandwidth(const std::string& type, const std::string& bandwidth)
 	{
 		addBandwidth(std::make_shared<Bandwidth>(type, bandwidth));
+	}
+
+	template<typename Type, class ...Args>
+	void addAttribute(Args... args)
+	{
+		//Add attribute
+		addAttribute(std::make_shared<Type>(Type{ std::forward<Args>(args)... }));
 	}
 
 	void addAttribute(const std::string& field)
@@ -396,7 +428,7 @@ public:
 		//For each attribute
 		for (auto attr : attributes)
 			//Check if the one searhced
-			if (strcasecmp(attr->getField().c_str(),key.c_str())==0)
+			if (strcasecmp(attr->getField().c_str(), key.c_str())==0)
 				//Found
 				return true;
 		//Not found

@@ -72,7 +72,7 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", "[\\x73]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

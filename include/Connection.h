@@ -9,6 +9,8 @@ namespace sdp
 class Connection
 {
 public:
+	using shared = std::shared_ptr<Connection>;
+public:
 	Connection() = default;
 
 	Connection(const std::string &netType, const std::string &addrType, const std::string & address)

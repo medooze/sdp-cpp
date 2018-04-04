@@ -75,7 +75,7 @@ const Rule_connection_field* Rule_connection_field::parse(ParserContext& context
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x63", "[\\x63]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x63", 0x63, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

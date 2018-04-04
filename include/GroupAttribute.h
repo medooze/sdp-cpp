@@ -12,6 +12,8 @@ class GroupAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<GroupAttribute>;
+public:
 	GroupAttribute() = default;
 
 	GroupAttribute(std::string semantics)

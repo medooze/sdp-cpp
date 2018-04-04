@@ -9,6 +9,8 @@ class RTPMapAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<RTPMapAttribute>;
+public:
 	RTPMapAttribute() = default;
 
 	RTPMapAttribute(int format, std::string name, int rate, std::string parameters)

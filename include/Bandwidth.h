@@ -9,6 +9,8 @@ namespace sdp
 class Bandwidth
 {
 public:
+	using shared = std::shared_ptr<Bandwidth>;
+public:
 	Bandwidth() = default;
 
 	Bandwidth(const std::string& type, const std::string& bandwidth)

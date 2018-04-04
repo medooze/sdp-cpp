@@ -13,25 +13,27 @@ class ExtMapAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<ExtMapAttribute>;
+public:
 	ExtMapAttribute() = default;
 
-	ExtMapAttribute(int id, const std::string& name)
+	ExtMapAttribute(int id, const std::string& uri)
 	{
 		this->id = id;
-		this->name = name;
+		this->uri = uri;
 	}
 
-	ExtMapAttribute(int id, const std::string& direction, const std::string& name, const std::string& attributes)
+	ExtMapAttribute(int id, const std::string& direction, const std::string& uri, const std::string& attributes)
 	{
 		this->id = id;
 		this->direction = direction;
-		this->name = name;
+		this->uri = uri;
 		this->attributes = attributes;
 	}
 
 	virtual std::shared_ptr<Attribute> clone() override
 	{
-		return std::make_shared<ExtMapAttribute>(id, direction, name, attributes);
+		return std::make_shared<ExtMapAttribute>(id, direction, uri, attributes);
 	}
 
 	virtual std::string getField() override
@@ -41,7 +43,7 @@ public:
 
 	virtual std::string getValue() override
 	{
-		return std::to_string(id) + (!direction.empty() ? "/" + direction : "") + " " + name + (!attributes.empty() ? " " + attributes : "");
+		return std::to_string(id) + (!direction.empty() ? "/" + direction : "") + " " + uri + (!attributes.empty() ? " " + attributes : "");
 	}
 
 	virtual std::string toString() override
@@ -72,14 +74,14 @@ public:
 		this->id = id;
 	}
 
-	std::string getName()
+	std::string getUri()
 	{
-		return name;
+		return uri;
 	}
 
-	void setName(const std::string& name)
+	void setUri(const std::string& uri)
 	{
-		this->name = name;
+		this->uri = uri;
 	}
 
 	std::string getAttributes()
@@ -95,7 +97,7 @@ public:
 private:
 	int id = 0;
 	std::string direction;
-	std::string name;
+	std::string uri;
 	std::string attributes;
 
 };

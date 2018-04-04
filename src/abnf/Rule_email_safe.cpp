@@ -69,7 +69,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", "[\\x01-\\x09]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01,0x09, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -95,7 +95,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", "[\\x0B-\\x0C]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B,0x0C, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -121,7 +121,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-27", "[\\x0E-\\x27]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-27", 0x0E,0x27, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -147,7 +147,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-3B", "[\\x2A-\\x3B]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-3B", 0x2A,0x3B, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -173,7 +173,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x3D", "[\\x3D]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x3D", 0x3D, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -199,7 +199,7 @@ const Rule_email_safe* Rule_email_safe::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x3F-FF", "[\\x3F-\\xFF]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x3F-FF", 0x3F,0xFF, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

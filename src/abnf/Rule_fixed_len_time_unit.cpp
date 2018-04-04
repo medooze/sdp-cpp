@@ -69,7 +69,7 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x64", "[\\x64]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x64", 0x64, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -95,7 +95,7 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x68", "[\\x68]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x68", 0x68, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -121,7 +121,7 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x6d", "[\\x6d]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x6d", 0x6d, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);
@@ -147,7 +147,7 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", "[\\x73]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

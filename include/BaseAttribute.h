@@ -11,6 +11,8 @@ class BaseAttribute :
 	public Attribute
 {
 public:
+	using shared = std::shared_ptr<BaseAttribute>;
+public:
 	BaseAttribute() = default;
 	virtual ~BaseAttribute() = default;
 

@@ -109,7 +109,7 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", "[\\x80-\\xFF]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80,0xFF, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -183,7 +183,7 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", "[\\x80-\\xFF]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80,0xFF, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);

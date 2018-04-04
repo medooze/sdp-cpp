@@ -72,7 +72,7 @@ const Rule_email_field* Rule_email_field::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x65", "[\\x65]", 1);
+        const Rule* rule = Terminal_NumericValue::parse(context, "%x65", 0x65, 1);
         if ((f1 = rule != NULL))
         {
           a1.add(*rule, context.index);

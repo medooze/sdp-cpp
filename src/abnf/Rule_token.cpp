@@ -82,7 +82,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x21", "[\\x21]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x21", 0x21, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -108,7 +108,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x23-27", "[\\x23-\\x27]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x23-27", 0x23,0x27, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -134,7 +134,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-2B", "[\\x2A-\\x2B]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-2B", 0x2A,0x2B, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -160,7 +160,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x2D-2E", "[\\x2D-\\x2E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x2D-2E", 0x2D,0x2E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -186,7 +186,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", "[\\x30-\\x39]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", 0x30,0x39, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -212,7 +212,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", "[\\x41-\\x5A]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", 0x41,0x5A, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -238,7 +238,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x5E-7E", "[\\x5E-\\x7E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x5E-7E", 0x5E,0x7E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -286,7 +286,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x21", "[\\x21]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x21", 0x21, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -312,7 +312,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x23-27", "[\\x23-\\x27]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x23-27", 0x23,0x27, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -338,7 +338,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-2B", "[\\x2A-\\x2B]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x2A-2B", 0x2A,0x2B, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -364,7 +364,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x2D-2E", "[\\x2D-\\x2E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x2D-2E", 0x2D,0x2E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -390,7 +390,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", "[\\x30-\\x39]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", 0x30,0x39, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -416,7 +416,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", "[\\x41-\\x5A]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", 0x41,0x5A, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);
@@ -442,7 +442,7 @@ const Rule_token* Rule_token::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x5E-7E", "[\\x5E-\\x7E]", 1);
+              const Rule* rule = Terminal_NumericValue::parse(context, "%x5E-7E", 0x5E,0x7E, 1);
               if ((f2 = rule != NULL))
               {
                 a2.add(*rule, context.index);

@@ -10,6 +10,8 @@ namespace sdp
 class SessionName 
 {
 public:
+	using shared = std::shared_ptr<SessionName>;
+public:
 	SessionName()
 	{
 	}
