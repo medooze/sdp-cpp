@@ -76,7 +76,7 @@ public:
 		//Create media line
 		std::string value = "m=" + media + " " + std::to_string(port);
 		if (numberOfPorts>0)
-			value += "/" + numberOfPorts;
+			value += "/" + std::to_string(numberOfPorts);
 		value += " ";
 		bool first = true;
 		for (std::string p : proto)
