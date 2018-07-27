@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_foundation::Rule_foundation(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_foundation& Rule_foundation::operator=(const Rule_foundation& rule)
   return *this;
 }
 
-const Rule_foundation* Rule_foundation::clone() const
+Rule* Rule_foundation::clone() const
 {
   return new Rule_foundation(this->spelling, this->rules);
 }
 
-void* Rule_foundation::accept(Visitor& visitor) const
+void* Rule_foundation::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_foundation* Rule_foundation::parse(ParserContext& context)
+Rule_foundation* Rule_foundation::parse(ParserContext& context)
 {
   context.push("foundation");
 
@@ -69,22 +69,20 @@ const Rule_foundation* Rule_foundation::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Rule_ice_char::parse(context);
+        Rule* rule = Rule_ice_char::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       for (int i1 = 1; i1 < 32 && f1; i1++)
       {
-        const Rule* rule = Rule_ice_char::parse(context);
+        Rule* rule = Rule_ice_char::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 >= 1;
@@ -109,7 +107,7 @@ const Rule_foundation* Rule_foundation::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_foundation(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

@@ -28,7 +28,7 @@ using namespace abnf;
 
 Rule_proto_version::Rule_proto_version(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -42,17 +42,17 @@ Rule_proto_version& Rule_proto_version::operator=(const Rule_proto_version& rule
   return *this;
 }
 
-const Rule_proto_version* Rule_proto_version::clone() const
+Rule* Rule_proto_version::clone() const
 {
   return new Rule_proto_version(this->spelling, this->rules);
 }
 
-void* Rule_proto_version::accept(Visitor& visitor) const
+void* Rule_proto_version::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
+Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
 {
   context.push("proto-version");
 
@@ -70,15 +70,23 @@ const Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x76", 0x76, 0x76);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x76", 0x76, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
+      }
+      parsed = c1 == 1;
+    }
+    if (parsed)
+    {
+      bool f1 = true;
+      int c1 = 0;
+      Rule* rule = Terminal_StringValue::parse(context, "=");
+      if ((f1 = rule != NULL))
+      {
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -88,38 +96,20 @@ const Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "=");
+        Rule* rule = Rule_DIGIT::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
-        }
-      }
-      parsed = c1 == 1;
-    }
-    if (parsed)
-    {
-      bool f1 = true;
-      int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
-      {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
         }
       }
       while (f1)
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
+        Rule* rule = Rule_DIGIT::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 >= 1;
@@ -128,15 +118,11 @@ const Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_CRLF::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_CRLF::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -160,7 +146,7 @@ const Rule_proto_version* Rule_proto_version::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_proto_version(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

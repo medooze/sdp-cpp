@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_ALPHA::Rule_ALPHA(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_ALPHA& Rule_ALPHA::operator=(const Rule_ALPHA& rule)
   return *this;
 }
 
-const Rule_ALPHA* Rule_ALPHA::clone() const
+Rule* Rule_ALPHA::clone() const
 {
   return new Rule_ALPHA(this->spelling, this->rules);
 }
 
-void* Rule_ALPHA::accept(Visitor& visitor) const
+void* Rule_ALPHA::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
+Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
 {
   context.push("ALPHA");
 
@@ -67,15 +67,11 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", 0x41, 0x5A);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x41-5A", 0x41,0x5A, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -93,15 +89,11 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x61-7A", 0x61, 0x7A);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x61-7A", 0x61,0x7A, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -125,7 +117,7 @@ const Rule_ALPHA* Rule_ALPHA::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_ALPHA(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

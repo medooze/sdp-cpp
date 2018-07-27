@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_email_safe : public Rule
 {
 public:
-  Rule_email_safe(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_email_safe(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_email_safe(const Rule_email_safe& rule);
 
   Rule_email_safe& operator=(const Rule_email_safe& rule);
 
-  const Rule_email_safe* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_email_safe* parse(ParserContext& context);
+  static Rule_email_safe* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

@@ -22,21 +22,21 @@ using namespace abnf;
 
 Terminal_StringValue::Terminal_StringValue(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
-const Terminal_StringValue* Terminal_StringValue::clone(void) const
+Rule* Terminal_StringValue::clone(void) const
 {
   return new Terminal_StringValue(this->spelling, this->rules);
 }
 
-void* Terminal_StringValue::accept(Visitor& visitor) const
+void* Terminal_StringValue::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Terminal_StringValue* Terminal_StringValue::parse(
+Terminal_StringValue* Terminal_StringValue::parse(
   ParserContext& context,
   const string& pattern)
 {
@@ -57,7 +57,7 @@ const Terminal_StringValue* Terminal_StringValue::parse(
       if (parsed)
       {
         context.index += pattern.length();
-        stringValue = new Terminal_StringValue(value, vector<const Rule*>());
+        stringValue = new Terminal_StringValue(value, vector<Rule*>());
       }
     }
   }

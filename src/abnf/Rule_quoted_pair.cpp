@@ -27,7 +27,7 @@ using namespace abnf;
 
 Rule_quoted_pair::Rule_quoted_pair(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -41,17 +41,17 @@ Rule_quoted_pair& Rule_quoted_pair::operator=(const Rule_quoted_pair& rule)
   return *this;
 }
 
-const Rule_quoted_pair* Rule_quoted_pair::clone() const
+Rule* Rule_quoted_pair::clone() const
 {
   return new Rule_quoted_pair(this->spelling, this->rules);
 }
 
-void* Rule_quoted_pair::accept(Visitor& visitor) const
+void* Rule_quoted_pair::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_quoted_pair* Rule_quoted_pair::parse(ParserContext& context)
+Rule_quoted_pair* Rule_quoted_pair::parse(ParserContext& context)
 {
   context.push("quoted-pair");
 
@@ -69,70 +69,59 @@ const Rule_quoted_pair* Rule_quoted_pair::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      unsigned int g1 = context.index;
+      vector<const ParserAlternative*> as2;
+      parsed = false;
       {
-        unsigned int g1 = context.index;
-        vector<const ParserAlternative*> as2;
-        parsed = false;
+        int s2 = context.index;
+        ParserAlternative a2(s2);
+        parsed = true;
+        if (parsed)
         {
-          int s2 = context.index;
-          ParserAlternative a2(s2);
-          parsed = true;
-          if (parsed)
+          bool f2 = true;
+          int c2 = 0;
+          Rule* rule = Terminal_StringValue::parse(context, "\\");
+          if ((f2 = rule != NULL))
           {
-            bool f2 = true;
-            int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
-            {
-              const Rule* rule = Terminal_StringValue::parse(context, "\\");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
-            }
-            parsed = c2 == 1;
+            a2.add(rule, context.index);
+            c2++;
           }
-          if (parsed)
-          {
-            bool f2 = true;
-            int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
-            {
-              const Rule* rule = Rule_text::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
-            }
-            parsed = c2 == 1;
-          }
-          if (parsed)
-          {
-            as2.push_back(new ParserAlternative(a2));
-          }
-          context.index = s2;
+          parsed = c2 == 1;
         }
-
-        const ParserAlternative* b = ParserAlternative::getBest(as2);
-
-        if ((parsed = b != NULL))
+        if (parsed)
         {
-          a1.add(b->rules, b->end);
-          context.index = b->end;
+          bool f2 = true;
+          int c2 = 0;
+          Rule* rule = Rule_text::parse(context);
+          if ((f2 = rule != NULL))
+          {
+            a2.add(rule, context.index);
+            c2++;
+          }
+          parsed = c2 == 1;
         }
-
-        for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
+        if (parsed)
         {
-          delete *a;
+          as2.push_back(new ParserAlternative(a2));
         }
-
-        f1 = context.index > g1;
-        if (parsed) c1++;
+        context.index = s2;
       }
+
+      const ParserAlternative* b = ParserAlternative::getBest(as2);
+
+      if ((parsed = b != NULL))
+      {
+        a1.add(b->rules, b->end);
+        context.index = b->end;
+      }
+
+      for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
+      {
+        delete *a;
+      }
+
+      f1 = context.index > g1;
+      if (parsed) c1++;
       parsed = c1 == 1;
     }
     if (parsed)
@@ -149,15 +138,11 @@ const Rule_quoted_pair* Rule_quoted_pair::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_obs_qp::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_obs_qp::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -181,7 +166,7 @@ const Rule_quoted_pair* Rule_quoted_pair::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_quoted_pair(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

@@ -22,18 +22,18 @@ class Rule
 {
 public:
   std::string spelling;
-  std::vector<const Rule*> rules;
+  std::vector<Rule*> rules;
 
-  Rule(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule(const Rule& rule);
 
   Rule& operator=(const Rule& rule);
 
   virtual ~Rule();
 
-  virtual const Rule* clone(void) const = 0;
+  virtual Rule* clone(void) const = 0;
 
-  virtual void* accept(Visitor& visitor) const = 0;
+  virtual void* accept(Visitor& visitor) = 0;
 };
 
 }

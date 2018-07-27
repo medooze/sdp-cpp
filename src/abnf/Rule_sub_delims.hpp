@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_sub_delims : public Rule
 {
 public:
-  Rule_sub_delims(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_sub_delims(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_sub_delims(const Rule_sub_delims& rule);
 
   Rule_sub_delims& operator=(const Rule_sub_delims& rule);
 
-  const Rule_sub_delims* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_sub_delims* parse(ParserContext& context);
+  static Rule_sub_delims* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

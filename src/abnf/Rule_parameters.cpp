@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_parameters::Rule_parameters(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_parameters& Rule_parameters::operator=(const Rule_parameters& rule)
   return *this;
 }
 
-const Rule_parameters* Rule_parameters::clone() const
+Rule* Rule_parameters::clone() const
 {
   return new Rule_parameters(this->spelling, this->rules);
 }
 
-void* Rule_parameters::accept(Visitor& visitor) const
+void* Rule_parameters::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_parameters* Rule_parameters::parse(ParserContext& context)
+Rule_parameters* Rule_parameters::parse(ParserContext& context)
 {
   context.push("parameters");
 
@@ -67,15 +67,11 @@ const Rule_parameters* Rule_parameters::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_token::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_token::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -99,7 +95,7 @@ const Rule_parameters* Rule_parameters::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_parameters(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_LWSP : public Rule
 {
 public:
-  Rule_LWSP(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_LWSP(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_LWSP(const Rule_LWSP& rule);
 
   Rule_LWSP& operator=(const Rule_LWSP& rule);
 
-  const Rule_LWSP* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_LWSP* parse(ParserContext& context);
+  static Rule_LWSP* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

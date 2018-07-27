@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_base64_unit::Rule_base64_unit(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_base64_unit& Rule_base64_unit::operator=(const Rule_base64_unit& rule)
   return *this;
 }
 
-const Rule_base64_unit* Rule_base64_unit::clone() const
+Rule* Rule_base64_unit::clone() const
 {
   return new Rule_base64_unit(this->spelling, this->rules);
 }
 
-void* Rule_base64_unit::accept(Visitor& visitor) const
+void* Rule_base64_unit::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_base64_unit* Rule_base64_unit::parse(ParserContext& context)
+Rule_base64_unit* Rule_base64_unit::parse(ParserContext& context)
 {
   context.push("base64-unit");
 
@@ -69,12 +69,11 @@ const Rule_base64_unit* Rule_base64_unit::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 4 && f1; i1++)
       {
-        const Rule* rule = Rule_base64_char::parse(context);
+        Rule* rule = Rule_base64_char::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 == 4;
@@ -99,7 +98,7 @@ const Rule_base64_unit* Rule_base64_unit::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_base64_unit(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

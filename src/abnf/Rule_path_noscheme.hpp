@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_path_noscheme : public Rule
 {
 public:
-  Rule_path_noscheme(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_path_noscheme(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_path_noscheme(const Rule_path_noscheme& rule);
 
   Rule_path_noscheme& operator=(const Rule_path_noscheme& rule);
 
-  const Rule_path_noscheme* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_path_noscheme* parse(ParserContext& context);
+  static Rule_path_noscheme* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

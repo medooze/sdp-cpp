@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_DIGIT::Rule_DIGIT(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_DIGIT& Rule_DIGIT::operator=(const Rule_DIGIT& rule)
   return *this;
 }
 
-const Rule_DIGIT* Rule_DIGIT::clone() const
+Rule* Rule_DIGIT::clone() const
 {
   return new Rule_DIGIT(this->spelling, this->rules);
 }
 
-void* Rule_DIGIT::accept(Visitor& visitor) const
+void* Rule_DIGIT::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_DIGIT* Rule_DIGIT::parse(ParserContext& context)
+Rule_DIGIT* Rule_DIGIT::parse(ParserContext& context)
 {
   context.push("DIGIT");
 
@@ -67,15 +67,11 @@ const Rule_DIGIT* Rule_DIGIT::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", 0x30, 0x39);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-39", 0x30,0x39, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -99,7 +95,7 @@ const Rule_DIGIT* Rule_DIGIT::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_DIGIT(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

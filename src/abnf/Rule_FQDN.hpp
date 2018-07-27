@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_FQDN : public Rule
 {
 public:
-  Rule_FQDN(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_FQDN(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_FQDN(const Rule_FQDN& rule);
 
   Rule_FQDN& operator=(const Rule_FQDN& rule);
 
-  const Rule_FQDN* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_FQDN* parse(ParserContext& context);
+  static Rule_FQDN* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

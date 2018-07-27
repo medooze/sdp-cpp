@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_fingerprint : public Rule
 {
 public:
-  Rule_fingerprint(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_fingerprint(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_fingerprint(const Rule_fingerprint& rule);
 
   Rule_fingerprint& operator=(const Rule_fingerprint& rule);
 
-  const Rule_fingerprint* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_fingerprint* parse(ParserContext& context);
+  static Rule_fingerprint* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

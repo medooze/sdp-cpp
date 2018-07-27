@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_fingerprint::Rule_fingerprint(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_fingerprint& Rule_fingerprint::operator=(const Rule_fingerprint& rule)
   return *this;
 }
 
-const Rule_fingerprint* Rule_fingerprint::clone() const
+Rule* Rule_fingerprint::clone() const
 {
   return new Rule_fingerprint(this->spelling, this->rules);
 }
 
-void* Rule_fingerprint::accept(Visitor& visitor) const
+void* Rule_fingerprint::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
+Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
 {
   context.push("fingerprint");
 
@@ -70,12 +70,11 @@ const Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 2 && f1; i1++)
       {
-        const Rule* rule = Rule_HEXDIG::parse(context);
+        Rule* rule = Rule_HEXDIG::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 == 2;
@@ -97,15 +96,11 @@ const Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, ":");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, ":");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -115,12 +110,11 @@ const Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
             int c2 = 0;
             for (int i2 = 0; i2 < 2 && f2; i2++)
             {
-              const Rule* rule = Rule_HEXDIG::parse(context);
+              Rule* rule = Rule_HEXDIG::parse(context);
               if ((f2 = rule != NULL))
               {
-                a2.add(*rule, context.index);
+                a2.add(rule, context.index);
                 c2++;
-                delete rule;
               }
             }
             parsed = c2 == 2;
@@ -170,7 +164,7 @@ const Rule_fingerprint* Rule_fingerprint::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_fingerprint(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

@@ -26,15 +26,15 @@ class Terminal_StringValue : public Rule
 public:
   Terminal_StringValue(
     const std::string& spelling, 
-    const std::vector<const Rule*>& rules);
+    const std::vector<Rule*>& rules);
 
-  const Terminal_StringValue* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Terminal_StringValue* parse(
+  static Terminal_StringValue* parse(
     ParserContext& context,
     const std::string& pattern);
 
-  void* accept(Visitor& visitor) const ;
+  virtual void* accept(Visitor& visitor) ;
 };
 
 }

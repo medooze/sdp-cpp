@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_path_absolute : public Rule
 {
 public:
-  Rule_path_absolute(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_path_absolute(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_path_absolute(const Rule_path_absolute& rule);
 
   Rule_path_absolute& operator=(const Rule_path_absolute& rule);
 
-  const Rule_path_absolute* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_path_absolute* parse(ParserContext& context);
+  static Rule_path_absolute* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

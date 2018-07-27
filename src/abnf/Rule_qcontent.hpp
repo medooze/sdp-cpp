@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_qcontent : public Rule
 {
 public:
-  Rule_qcontent(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_qcontent(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_qcontent(const Rule_qcontent& rule);
 
   Rule_qcontent& operator=(const Rule_qcontent& rule);
 
-  const Rule_qcontent* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_qcontent* parse(ParserContext& context);
+  static Rule_qcontent* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_repeat_interval : public Rule
 {
 public:
-  Rule_repeat_interval(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_repeat_interval(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_repeat_interval(const Rule_repeat_interval& rule);
 
   Rule_repeat_interval& operator=(const Rule_repeat_interval& rule);
 
-  const Rule_repeat_interval* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_repeat_interval* parse(ParserContext& context);
+  static Rule_repeat_interval* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

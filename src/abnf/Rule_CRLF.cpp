@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_CRLF::Rule_CRLF(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_CRLF& Rule_CRLF::operator=(const Rule_CRLF& rule)
   return *this;
 }
 
-const Rule_CRLF* Rule_CRLF::clone() const
+Rule* Rule_CRLF::clone() const
 {
   return new Rule_CRLF(this->spelling, this->rules);
 }
 
-void* Rule_CRLF::accept(Visitor& visitor) const
+void* Rule_CRLF::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_CRLF* Rule_CRLF::parse(ParserContext& context)
+Rule_CRLF* Rule_CRLF::parse(ParserContext& context)
 {
   context.push("CRLF");
   
@@ -70,7 +70,7 @@ const Rule_CRLF* Rule_CRLF::parse(ParserContext& context)
       if (parsed)
       {
         context.index += length;
-        rule = new Rule_CRLF(value, vector<const Rule*>());
+        rule = new Rule_CRLF(value, vector<Rule*>());
       }
     }
   }

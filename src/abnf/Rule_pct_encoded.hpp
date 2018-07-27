@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_pct_encoded : public Rule
 {
 public:
-  Rule_pct_encoded(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_pct_encoded(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_pct_encoded(const Rule_pct_encoded& rule);
 
   Rule_pct_encoded& operator=(const Rule_pct_encoded& rule);
 
-  const Rule_pct_encoded* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_pct_encoded* parse(ParserContext& context);
+  static Rule_pct_encoded* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

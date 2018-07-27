@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_OCTET : public Rule
 {
 public:
-  Rule_OCTET(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_OCTET(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_OCTET(const Rule_OCTET& rule);
 
   Rule_OCTET& operator=(const Rule_OCTET& rule);
 
-  const Rule_OCTET* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_OCTET* parse(ParserContext& context);
+  static Rule_OCTET* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

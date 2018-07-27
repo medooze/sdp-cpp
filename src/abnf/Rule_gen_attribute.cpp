@@ -38,7 +38,7 @@ using namespace abnf;
 
 Rule_gen_attribute::Rule_gen_attribute(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -52,17 +52,17 @@ Rule_gen_attribute& Rule_gen_attribute::operator=(const Rule_gen_attribute& rule
   return *this;
 }
 
-const Rule_gen_attribute* Rule_gen_attribute::clone() const
+Rule* Rule_gen_attribute::clone() const
 {
   return new Rule_gen_attribute(this->spelling, this->rules);
 }
 
-void* Rule_gen_attribute::accept(Visitor& visitor) const
+void* Rule_gen_attribute::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
+Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
 {
   context.push("gen-attribute");
 
@@ -80,15 +80,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_mid_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_mid_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -106,15 +102,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_group_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_group_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -132,15 +124,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_ssrc_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_ssrc_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -158,15 +146,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_ssrc_group_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_ssrc_group_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -184,15 +168,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_cname_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_cname_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -210,15 +190,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_previous_ssrc_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_previous_ssrc_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -236,15 +212,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_rtpmap_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_rtpmap_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -262,15 +234,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_fmtp_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_fmtp_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -288,15 +256,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_crypto_attribute::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_crypto_attribute::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -314,15 +278,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_candidate_attribute::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_candidate_attribute::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -340,15 +300,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_extmap_attribute::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_extmap_attribute::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -366,15 +322,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_fingerprint_attribute::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_fingerprint_attribute::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -392,15 +344,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_sctpmap_attr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_sctpmap_attr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -418,15 +366,11 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_attribute::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_attribute::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -450,7 +394,7 @@ const Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_gen_attribute(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

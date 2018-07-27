@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_key_mki_value : public Rule
 {
 public:
-  Rule_key_mki_value(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_key_mki_value(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_key_mki_value(const Rule_key_mki_value& rule);
 
   Rule_key_mki_value& operator=(const Rule_key_mki_value& rule);
 
-  const Rule_key_mki_value* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_key_mki_value* parse(ParserContext& context);
+  static Rule_key_mki_value* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

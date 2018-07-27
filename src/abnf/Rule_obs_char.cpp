@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_obs_char::Rule_obs_char(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_obs_char& Rule_obs_char::operator=(const Rule_obs_char& rule)
   return *this;
 }
 
-const Rule_obs_char* Rule_obs_char::clone() const
+Rule* Rule_obs_char::clone() const
 {
   return new Rule_obs_char(this->spelling, this->rules);
 }
 
-void* Rule_obs_char::accept(Visitor& visitor) const
+void* Rule_obs_char::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
+Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
 {
   context.push("obs-char");
 
@@ -67,15 +67,11 @@ const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d0-9", 0x0, 0x9);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d0-9", 0x00,0x09, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -93,15 +89,11 @@ const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d11", 0xb, 0xb);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d11", 0x0b, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -119,15 +111,11 @@ const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d12", 0xc, 0xc);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d12", 0x0c, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -145,15 +133,11 @@ const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d14-127", 0xe, 0x7f);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d14-127", 0x0e,0x7f, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -177,7 +161,7 @@ const Rule_obs_char* Rule_obs_char::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_obs_char(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

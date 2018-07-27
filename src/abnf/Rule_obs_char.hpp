@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_obs_char : public Rule
 {
 public:
-  Rule_obs_char(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_obs_char(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_obs_char(const Rule_obs_char& rule);
 
   Rule_obs_char& operator=(const Rule_obs_char& rule);
 
-  const Rule_obs_char* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_obs_char* parse(ParserContext& context);
+  static Rule_obs_char* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

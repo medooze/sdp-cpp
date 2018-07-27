@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_obs_domain::Rule_obs_domain(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_obs_domain& Rule_obs_domain::operator=(const Rule_obs_domain& rule)
   return *this;
 }
 
-const Rule_obs_domain* Rule_obs_domain::clone() const
+Rule* Rule_obs_domain::clone() const
 {
   return new Rule_obs_domain(this->spelling, this->rules);
 }
 
-void* Rule_obs_domain::accept(Visitor& visitor) const
+void* Rule_obs_domain::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
+Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
 {
   context.push("obs-domain");
 
@@ -68,15 +68,11 @@ const Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_atom::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_atom::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -97,15 +93,11 @@ const Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, ".");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, ".");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -113,15 +105,11 @@ const Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_atom::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_atom::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -170,7 +158,7 @@ const Rule_obs_domain* Rule_obs_domain::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_obs_domain(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

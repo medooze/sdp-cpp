@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_DIGIT : public Rule
 {
 public:
-  Rule_DIGIT(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_DIGIT(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_DIGIT(const Rule_DIGIT& rule);
 
   Rule_DIGIT& operator=(const Rule_DIGIT& rule);
 
-  const Rule_DIGIT* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_DIGIT* parse(ParserContext& context);
+  static Rule_DIGIT* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

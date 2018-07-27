@@ -27,7 +27,7 @@ using namespace abnf;
 
 Rule_reg_name::Rule_reg_name(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -41,17 +41,17 @@ Rule_reg_name& Rule_reg_name::operator=(const Rule_reg_name& rule)
   return *this;
 }
 
-const Rule_reg_name* Rule_reg_name::clone() const
+Rule* Rule_reg_name::clone() const
 {
   return new Rule_reg_name(this->spelling, this->rules);
 }
 
-void* Rule_reg_name::accept(Visitor& visitor) const
+void* Rule_reg_name::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
+Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
 {
   context.push("reg-name");
 
@@ -82,15 +82,11 @@ const Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_unreserved::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_unreserved::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -108,15 +104,11 @@ const Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_pct_encoded::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_pct_encoded::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -134,15 +126,11 @@ const Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_sub_delims::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_sub_delims::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -191,7 +179,7 @@ const Rule_reg_name* Rule_reg_name::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_reg_name(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

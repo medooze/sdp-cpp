@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_alpha_numeric::Rule_alpha_numeric(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_alpha_numeric& Rule_alpha_numeric::operator=(const Rule_alpha_numeric& rule
   return *this;
 }
 
-const Rule_alpha_numeric* Rule_alpha_numeric::clone() const
+Rule* Rule_alpha_numeric::clone() const
 {
   return new Rule_alpha_numeric(this->spelling, this->rules);
 }
 
-void* Rule_alpha_numeric::accept(Visitor& visitor) const
+void* Rule_alpha_numeric::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_alpha_numeric* Rule_alpha_numeric::parse(ParserContext& context)
+Rule_alpha_numeric* Rule_alpha_numeric::parse(ParserContext& context)
 {
   context.push("alpha-numeric");
 
@@ -68,15 +68,11 @@ const Rule_alpha_numeric* Rule_alpha_numeric::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_ALPHA::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_ALPHA::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_alpha_numeric* Rule_alpha_numeric::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_DIGIT::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -126,7 +118,7 @@ const Rule_alpha_numeric* Rule_alpha_numeric::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_alpha_numeric(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

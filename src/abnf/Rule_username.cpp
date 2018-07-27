@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_username::Rule_username(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_username& Rule_username::operator=(const Rule_username& rule)
   return *this;
 }
 
-const Rule_username* Rule_username::clone() const
+Rule* Rule_username::clone() const
 {
   return new Rule_username(this->spelling, this->rules);
 }
 
-void* Rule_username::accept(Visitor& visitor) const
+void* Rule_username::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_username* Rule_username::parse(ParserContext& context)
+Rule_username* Rule_username::parse(ParserContext& context)
 {
   context.push("username");
 
@@ -67,15 +67,11 @@ const Rule_username* Rule_username::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_non_ws_string::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_non_ws_string::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -99,7 +95,7 @@ const Rule_username* Rule_username::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_username(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

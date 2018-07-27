@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_clear_key_type : public Rule
 {
 public:
-  Rule_clear_key_type(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_clear_key_type(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_clear_key_type(const Rule_clear_key_type& rule);
 
   Rule_clear_key_type& operator=(const Rule_clear_key_type& rule);
 
-  const Rule_clear_key_type* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_clear_key_type* parse(ParserContext& context);
+  static Rule_clear_key_type* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

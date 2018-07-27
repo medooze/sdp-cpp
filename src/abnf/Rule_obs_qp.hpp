@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_obs_qp : public Rule
 {
 public:
-  Rule_obs_qp(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_obs_qp(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_obs_qp(const Rule_obs_qp& rule);
 
   Rule_obs_qp& operator=(const Rule_obs_qp& rule);
 
-  const Rule_obs_qp* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_obs_qp* parse(ParserContext& context);
+  static Rule_obs_qp* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

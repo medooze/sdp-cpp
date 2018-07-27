@@ -248,7 +248,7 @@ using std::transform;
 
 using namespace abnf;
 
-typedef const Rule* (*pParser)(ParserContext&);
+typedef Rule* (*pParser)(ParserContext&);
 
 static map<string, pParser> buildParserMap(void)
 {
@@ -476,24 +476,24 @@ static map<string, pParser> buildParserMap(void)
 
 static map<string, pParser> parsers = buildParserMap();
 
-const Rule* Parser::parse(const string& rulename, const string& text)
+Rule* Parser::parse(const string& rulename, const string& text)
 {
   return parse(rulename, text, false);
 }
 
-const Rule* Parser::parse(const string& rulename, istream& in)
+Rule* Parser::parse(const string& rulename, istream& in)
 {
   return parse(rulename, in, false);
 }
 
-const Rule* Parser::parse(const string& rulename, const string& text, bool trace)
+Rule* Parser::parse(const string& rulename, const string& text, bool trace)
 {
   string lcRulename(rulename);
   transform(lcRulename.begin(), lcRulename.end(), lcRulename.begin(), tolower);
 
   ParserContext context(text, trace);
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
 
   pParser parser = parsers[lcRulename];
 
@@ -544,7 +544,7 @@ const Rule* Parser::parse(const string& rulename, const string& text, bool trace
   return rule;
 }
 
-const Rule* Parser::parse(const string& rulename, istream& in, bool trace)
+Rule* Parser::parse(const string& rulename, istream& in, bool trace)
 {
   string out;
   int ch;

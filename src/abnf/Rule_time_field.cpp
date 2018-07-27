@@ -30,7 +30,7 @@ using namespace abnf;
 
 Rule_time_field::Rule_time_field(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -44,17 +44,17 @@ Rule_time_field& Rule_time_field::operator=(const Rule_time_field& rule)
   return *this;
 }
 
-const Rule_time_field* Rule_time_field::clone() const
+Rule* Rule_time_field::clone() const
 {
   return new Rule_time_field(this->spelling, this->rules);
 }
 
-void* Rule_time_field::accept(Visitor& visitor) const
+void* Rule_time_field::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_time_field* Rule_time_field::parse(ParserContext& context)
+Rule_time_field* Rule_time_field::parse(ParserContext& context)
 {
   context.push("time-field");
 
@@ -72,15 +72,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x74", 0x74, 0x74);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x74", 0x74, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -88,15 +84,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "=");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "=");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -104,15 +96,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_start_time::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_start_time::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -120,15 +108,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -136,15 +120,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_stop_time::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_stop_time::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -152,15 +132,11 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_CRLF::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_CRLF::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -184,7 +160,7 @@ const Rule_time_field* Rule_time_field::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_time_field(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

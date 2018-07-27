@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_reserved : public Rule
 {
 public:
-  Rule_reserved(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_reserved(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_reserved(const Rule_reserved& rule);
 
   Rule_reserved& operator=(const Rule_reserved& rule);
 
-  const Rule_reserved* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_reserved* parse(ParserContext& context);
+  static Rule_reserved* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

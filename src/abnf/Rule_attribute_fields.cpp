@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_attribute_fields::Rule_attribute_fields(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_attribute_fields& Rule_attribute_fields::operator=(const Rule_attribute_fie
   return *this;
 }
 
-const Rule_attribute_fields* Rule_attribute_fields::clone() const
+Rule* Rule_attribute_fields::clone() const
 {
   return new Rule_attribute_fields(this->spelling, this->rules);
 }
 
-void* Rule_attribute_fields::accept(Visitor& visitor) const
+void* Rule_attribute_fields::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_attribute_fields* Rule_attribute_fields::parse(ParserContext& context)
+Rule_attribute_fields* Rule_attribute_fields::parse(ParserContext& context)
 {
   context.push("attribute-fields");
 
@@ -80,15 +80,11 @@ const Rule_attribute_fields* Rule_attribute_fields::parse(ParserContext& context
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_attribute_field::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_attribute_field::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -137,7 +133,7 @@ const Rule_attribute_fields* Rule_attribute_fields::parse(ParserContext& context
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_attribute_fields(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

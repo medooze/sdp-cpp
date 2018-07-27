@@ -26,7 +26,7 @@ start(start), end(start)
 ParserAlternative::ParserAlternative(const ParserAlternative& alternative) :
 start(alternative.start), end(alternative.end)
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = alternative.rules.begin(); r != alternative.rules.end(); r++)
     this->rules.push_back((*r)->clone());
@@ -39,7 +39,7 @@ ParserAlternative& ParserAlternative::operator=(const ParserAlternative& alterna
     start = alternative.start;
     end = alternative.end;
 
-    vector<const Rule*>::const_iterator r;
+    vector<Rule*>::const_iterator r;
 
     for (r = rules.begin(); r != rules.end(); r++)
       delete *r;
@@ -54,21 +54,21 @@ ParserAlternative& ParserAlternative::operator=(const ParserAlternative& alterna
 
 ParserAlternative::~ParserAlternative()
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = rules.begin(); r != rules.end(); r++)
     delete *r;
 }
 
-void ParserAlternative::add(const Rule& rule, unsigned int end)
+void ParserAlternative::add(Rule* rule, unsigned int end)
 {
-  rules.push_back(rule.clone());
+  rules.push_back(rule);
   this->end = end;
 }
 
-void ParserAlternative::add(const std::vector<const Rule*>& rules, unsigned int end)
+void ParserAlternative::add(const std::vector<Rule*>& rules, unsigned int end)
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = rules.begin(); r != rules.end(); r++)
     this->rules.push_back((*r)->clone());

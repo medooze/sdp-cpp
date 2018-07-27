@@ -21,11 +21,11 @@ class Rule;
 class Parser
 {
 public:
-  static const Rule* parse(const std::string& rulename, const std::string& text);
-  static const Rule* parse(const std::string& rulename, std::istream& in);
+  static Rule* parse(const std::string& rulename, const std::string& text);
+  static Rule* parse(const std::string& rulename, std::istream& in);
 
-  static const Rule* parse(const std::string& rulename, const std::string& text, bool trace);
-  static const Rule* parse(const std::string& rulename, std::istream& in, bool trace);
+  static Rule* parse(const std::string& rulename, const std::string& text, bool trace);
+  static Rule* parse(const std::string& rulename, std::istream& in, bool trace);
 };
 
 }

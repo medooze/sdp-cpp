@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_key_mki_length::Rule_key_mki_length(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_key_mki_length& Rule_key_mki_length::operator=(const Rule_key_mki_length& r
   return *this;
 }
 
-const Rule_key_mki_length* Rule_key_mki_length::clone() const
+Rule* Rule_key_mki_length::clone() const
 {
   return new Rule_key_mki_length(this->spelling, this->rules);
 }
 
-void* Rule_key_mki_length::accept(Visitor& visitor) const
+void* Rule_key_mki_length::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_key_mki_length* Rule_key_mki_length::parse(ParserContext& context)
+Rule_key_mki_length* Rule_key_mki_length::parse(ParserContext& context)
 {
   context.push("key-mki-length");
 
@@ -69,22 +69,20 @@ const Rule_key_mki_length* Rule_key_mki_length::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
+        Rule* rule = Rule_DIGIT::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       for (int i1 = 1; i1 < 3 && f1; i1++)
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
+        Rule* rule = Rule_DIGIT::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 >= 1;
@@ -109,7 +107,7 @@ const Rule_key_mki_length* Rule_key_mki_length::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_key_mki_length(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

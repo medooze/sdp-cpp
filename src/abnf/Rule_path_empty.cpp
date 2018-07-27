@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_path_empty::Rule_path_empty(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_path_empty& Rule_path_empty::operator=(const Rule_path_empty& rule)
   return *this;
 }
 
-const Rule_path_empty* Rule_path_empty::clone() const
+Rule* Rule_path_empty::clone() const
 {
   return new Rule_path_empty(this->spelling, this->rules);
 }
 
-void* Rule_path_empty::accept(Visitor& visitor) const
+void* Rule_path_empty::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_path_empty* Rule_path_empty::parse(ParserContext& context)
+Rule_path_empty* Rule_path_empty::parse(ParserContext& context)
 {
   context.push("path-empty");
 
@@ -69,12 +69,11 @@ const Rule_path_empty* Rule_path_empty::parse(ParserContext& context)
       int c1 = 0;
       while (f1)
       {
-        const Rule* rule = Rule_pchar::parse(context);
+        Rule* rule = Rule_pchar::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = true;
@@ -99,7 +98,7 @@ const Rule_path_empty* Rule_path_empty::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_path_empty(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

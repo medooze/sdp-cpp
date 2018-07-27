@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_fixed_len_time_unit::Rule_fixed_len_time_unit(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_fixed_len_time_unit& Rule_fixed_len_time_unit::operator=(const Rule_fixed_l
   return *this;
 }
 
-const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::clone() const
+Rule* Rule_fixed_len_time_unit::clone() const
 {
   return new Rule_fixed_len_time_unit(this->spelling, this->rules);
 }
 
-void* Rule_fixed_len_time_unit::accept(Visitor& visitor) const
+void* Rule_fixed_len_time_unit::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& context)
+Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& context)
 {
   context.push("fixed-len-time-unit");
 
@@ -67,15 +67,11 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x64", 0x64, 0x64);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x64", 0x64, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -93,15 +89,11 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x68", 0x68, 0x68);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x68", 0x68, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -119,15 +111,11 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x6d", 0x6d, 0x6d);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x6d", 0x6d, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -145,15 +133,11 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 0x73);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -177,7 +161,7 @@ const Rule_fixed_len_time_unit* Rule_fixed_len_time_unit::parse(ParserContext& c
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_fixed_len_time_unit(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

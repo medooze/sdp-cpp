@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_decimal_uchar_2xx : public Rule
 {
 public:
-  Rule_decimal_uchar_2xx(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_decimal_uchar_2xx(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_decimal_uchar_2xx(const Rule_decimal_uchar_2xx& rule);
 
   Rule_decimal_uchar_2xx& operator=(const Rule_decimal_uchar_2xx& rule);
 
-  const Rule_decimal_uchar_2xx* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_decimal_uchar_2xx* parse(ParserContext& context);
+  static Rule_decimal_uchar_2xx* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

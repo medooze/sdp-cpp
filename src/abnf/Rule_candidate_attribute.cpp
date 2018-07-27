@@ -36,7 +36,7 @@ using namespace abnf;
 
 Rule_candidate_attribute::Rule_candidate_attribute(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -50,17 +50,17 @@ Rule_candidate_attribute& Rule_candidate_attribute::operator=(const Rule_candida
   return *this;
 }
 
-const Rule_candidate_attribute* Rule_candidate_attribute::clone() const
+Rule* Rule_candidate_attribute::clone() const
 {
   return new Rule_candidate_attribute(this->spelling, this->rules);
 }
 
-void* Rule_candidate_attribute::accept(Visitor& visitor) const
+void* Rule_candidate_attribute::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& context)
+Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& context)
 {
   context.push("candidate-attribute");
 
@@ -78,15 +78,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "candidate");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "candidate");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, ":");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, ":");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -110,15 +102,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_foundation::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_foundation::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -126,15 +114,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -142,15 +126,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_component_id::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_component_id::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -158,15 +138,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -174,15 +150,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_transport::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_transport::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -190,15 +162,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -206,15 +174,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_priority::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_priority::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -222,15 +186,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -238,15 +198,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_connection_address::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_connection_address::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -254,15 +210,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -270,15 +222,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_port::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_port::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -286,15 +234,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_SP::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_SP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -302,15 +246,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_cand_type::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_cand_type::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -331,15 +271,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_SP::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_SP::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -347,15 +283,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, "raddr");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, "raddr");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -363,15 +295,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_SP::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_SP::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -379,15 +307,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_rel_addr::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_rel_addr::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -433,15 +357,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_SP::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_SP::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -449,15 +369,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, "rport");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, "rport");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -465,15 +381,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_SP::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_SP::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -481,15 +393,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_rel_port::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_rel_port::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -535,15 +443,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_SP::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_SP::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -551,15 +455,11 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_extension_att::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_extension_att::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -608,7 +508,7 @@ const Rule_candidate_attribute* Rule_candidate_attribute::parse(ParserContext& c
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_candidate_attribute(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

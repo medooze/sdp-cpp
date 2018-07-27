@@ -18,10 +18,10 @@ using std::vector;
 
 using namespace abnf;
 
-Rule::Rule(const string& spelling, const vector<const Rule*>& rules) :
+Rule::Rule(const string& spelling, const vector<Rule*>& rules) :
 spelling(spelling)
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = rules.begin(); r != rules.end(); r++)
     this->rules.push_back((*r)->clone());
@@ -30,7 +30,7 @@ spelling(spelling)
 Rule::Rule(const Rule& rule) :
 spelling(rule.spelling)
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = rule.rules.begin(); r != rule.rules.end(); r++)
     this->rules.push_back((*r)->clone());
@@ -42,7 +42,7 @@ Rule& Rule::operator=(const Rule& rule)
   {
     spelling = rule.spelling;
 
-    vector<const Rule*>::const_iterator r;
+    vector<Rule*>::const_iterator r;
 
     for (r = rules.begin(); r != rules.end(); r++)
       delete *r;
@@ -57,7 +57,7 @@ Rule& Rule::operator=(const Rule& rule)
 
 Rule::~Rule()
 {
-  vector<const Rule*>::const_iterator r;
+  vector<Rule*>::const_iterator r;
 
   for (r = rules.begin(); r != rules.end(); r++)
     delete *r;

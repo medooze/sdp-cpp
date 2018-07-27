@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_HEXDIG::Rule_HEXDIG(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_HEXDIG& Rule_HEXDIG::operator=(const Rule_HEXDIG& rule)
   return *this;
 }
 
-const Rule_HEXDIG* Rule_HEXDIG::clone() const
+Rule* Rule_HEXDIG::clone() const
 {
   return new Rule_HEXDIG(this->spelling, this->rules);
 }
 
-void* Rule_HEXDIG::accept(Visitor& visitor) const
+void* Rule_HEXDIG::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
+Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
 {
   context.push("HEXDIG");
 
@@ -68,15 +68,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_DIGIT::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "A");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "A");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -120,15 +112,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "B");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "B");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -146,15 +134,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "C");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "C");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -172,15 +156,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "D");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "D");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -198,15 +178,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "E");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "E");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -224,15 +200,11 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "F");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "F");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -256,7 +228,7 @@ const Rule_HEXDIG* Rule_HEXDIG::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_HEXDIG(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

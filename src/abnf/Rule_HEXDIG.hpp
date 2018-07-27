@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_HEXDIG : public Rule
 {
 public:
-  Rule_HEXDIG(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_HEXDIG(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_HEXDIG(const Rule_HEXDIG& rule);
 
   Rule_HEXDIG& operator=(const Rule_HEXDIG& rule);
 
-  const Rule_HEXDIG* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_HEXDIG* parse(ParserContext& context);
+  static Rule_HEXDIG* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

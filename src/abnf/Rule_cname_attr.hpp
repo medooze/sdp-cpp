@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_cname_attr : public Rule
 {
 public:
-  Rule_cname_attr(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_cname_attr(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_cname_attr(const Rule_cname_attr& rule);
 
   Rule_cname_attr& operator=(const Rule_cname_attr& rule);
 
-  const Rule_cname_attr* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_cname_attr* parse(ParserContext& context);
+  static Rule_cname_attr* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

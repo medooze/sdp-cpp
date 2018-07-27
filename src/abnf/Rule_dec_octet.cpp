@@ -27,7 +27,7 @@ using namespace abnf;
 
 Rule_dec_octet::Rule_dec_octet(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -41,17 +41,17 @@ Rule_dec_octet& Rule_dec_octet::operator=(const Rule_dec_octet& rule)
   return *this;
 }
 
-const Rule_dec_octet* Rule_dec_octet::clone() const
+Rule* Rule_dec_octet::clone() const
 {
   return new Rule_dec_octet(this->spelling, this->rules);
 }
 
-void* Rule_dec_octet::accept(Visitor& visitor) const
+void* Rule_dec_octet::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
+Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
 {
   context.push("dec-octet");
 
@@ -69,15 +69,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_DIGIT::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -95,15 +91,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", 0x31, 0x39);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x31-39", 0x31,0x39, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -111,15 +103,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_DIGIT::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -137,15 +125,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "1");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "1");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -155,12 +139,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
       int c1 = 0;
       for (int i1 = 0; i1 < 2 && f1; i1++)
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
+        Rule* rule = Rule_DIGIT::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 == 2;
@@ -179,15 +162,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "2");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "2");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -195,15 +174,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x30-34", 0x30, 0x34);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-34", 0x30,0x34, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -211,15 +186,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_DIGIT::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_DIGIT::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -237,15 +208,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "25");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "25");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -253,15 +220,11 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x30-35", 0x30, 0x35);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x30-35", 0x30,0x35, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -285,7 +248,7 @@ const Rule_dec_octet* Rule_dec_octet::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_dec_octet(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

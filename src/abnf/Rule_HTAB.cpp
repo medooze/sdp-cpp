@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_HTAB::Rule_HTAB(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_HTAB& Rule_HTAB::operator=(const Rule_HTAB& rule)
   return *this;
 }
 
-const Rule_HTAB* Rule_HTAB::clone() const
+Rule* Rule_HTAB::clone() const
 {
   return new Rule_HTAB(this->spelling, this->rules);
 }
 
-void* Rule_HTAB::accept(Visitor& visitor) const
+void* Rule_HTAB::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_HTAB* Rule_HTAB::parse(ParserContext& context)
+Rule_HTAB* Rule_HTAB::parse(ParserContext& context)
 {
   context.push("HTAB");
 
@@ -67,15 +67,11 @@ const Rule_HTAB* Rule_HTAB::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x09", 0x09, 0x09);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x09", 0x09, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -99,7 +95,7 @@ const Rule_HTAB* Rule_HTAB::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_HTAB(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

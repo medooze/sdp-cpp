@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_crypto_attribute : public Rule
 {
 public:
-  Rule_crypto_attribute(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_crypto_attribute(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_crypto_attribute(const Rule_crypto_attribute& rule);
 
   Rule_crypto_attribute& operator=(const Rule_crypto_attribute& rule);
 
-  const Rule_crypto_attribute* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_crypto_attribute* parse(ParserContext& context);
+  static Rule_crypto_attribute* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

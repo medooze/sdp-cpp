@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_IPv6address : public Rule
 {
 public:
-  Rule_IPv6address(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_IPv6address(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_IPv6address(const Rule_IPv6address& rule);
 
   Rule_IPv6address& operator=(const Rule_IPv6address& rule);
 
-  const Rule_IPv6address* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_IPv6address* parse(ParserContext& context);
+  static Rule_IPv6address* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

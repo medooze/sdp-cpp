@@ -30,7 +30,7 @@ using namespace abnf;
 
 Rule_crypto_attribute::Rule_crypto_attribute(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -44,17 +44,17 @@ Rule_crypto_attribute& Rule_crypto_attribute::operator=(const Rule_crypto_attrib
   return *this;
 }
 
-const Rule_crypto_attribute* Rule_crypto_attribute::clone() const
+Rule* Rule_crypto_attribute::clone() const
 {
   return new Rule_crypto_attribute(this->spelling, this->rules);
 }
 
-void* Rule_crypto_attribute::accept(Visitor& visitor) const
+void* Rule_crypto_attribute::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context)
+Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context)
 {
   context.push("crypto-attribute");
 
@@ -72,15 +72,23 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "crypto:");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "crypto:");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
+      }
+      parsed = c1 == 1;
+    }
+    if (parsed)
+    {
+      bool f1 = true;
+      int c1 = 0;
+      Rule* rule = Rule_tag::parse(context);
+      if ((f1 = rule != NULL))
+      {
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -90,38 +98,20 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Rule_tag::parse(context);
+        Rule* rule = Rule_WSP::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
-        }
-      }
-      parsed = c1 == 1;
-    }
-    if (parsed)
-    {
-      bool f1 = true;
-      int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
-      {
-        const Rule* rule = Rule_WSP::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
         }
       }
       while (f1)
       {
-        const Rule* rule = Rule_WSP::parse(context);
+        Rule* rule = Rule_WSP::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 >= 1;
@@ -130,15 +120,11 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_crypto_suite::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_crypto_suite::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -148,22 +134,20 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
       int c1 = 0;
       for (int i1 = 0; i1 < 1 && f1; i1++)
       {
-        const Rule* rule = Rule_WSP::parse(context);
+        Rule* rule = Rule_WSP::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       while (f1)
       {
-        const Rule* rule = Rule_WSP::parse(context);
+        Rule* rule = Rule_WSP::parse(context);
         if ((f1 = rule != NULL))
         {
-          a1.add(*rule, context.index);
+          a1.add(rule, context.index);
           c1++;
-          delete rule;
         }
       }
       parsed = c1 >= 1;
@@ -172,15 +156,11 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_key_params::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_key_params::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -203,22 +183,20 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
             int c2 = 0;
             for (int i2 = 0; i2 < 1 && f2; i2++)
             {
-              const Rule* rule = Rule_WSP::parse(context);
+              Rule* rule = Rule_WSP::parse(context);
               if ((f2 = rule != NULL))
               {
-                a2.add(*rule, context.index);
+                a2.add(rule, context.index);
                 c2++;
-                delete rule;
               }
             }
             while (f2)
             {
-              const Rule* rule = Rule_WSP::parse(context);
+              Rule* rule = Rule_WSP::parse(context);
               if ((f2 = rule != NULL))
               {
-                a2.add(*rule, context.index);
+                a2.add(rule, context.index);
                 c2++;
-                delete rule;
               }
             }
             parsed = c2 >= 1;
@@ -227,15 +205,11 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_session_param::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_session_param::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -284,7 +258,7 @@ const Rule_crypto_attribute* Rule_crypto_attribute::parse(ParserContext& context
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_crypto_attribute(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

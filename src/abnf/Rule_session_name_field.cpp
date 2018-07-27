@@ -28,7 +28,7 @@ using namespace abnf;
 
 Rule_session_name_field::Rule_session_name_field(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -42,17 +42,17 @@ Rule_session_name_field& Rule_session_name_field::operator=(const Rule_session_n
   return *this;
 }
 
-const Rule_session_name_field* Rule_session_name_field::clone() const
+Rule* Rule_session_name_field::clone() const
 {
   return new Rule_session_name_field(this->spelling, this->rules);
 }
 
-void* Rule_session_name_field::accept(Visitor& visitor) const
+void* Rule_session_name_field::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& context)
+Rule_session_name_field* Rule_session_name_field::parse(ParserContext& context)
 {
   context.push("session-name-field");
 
@@ -70,15 +70,11 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 0x73);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%x73", 0x73, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -86,15 +82,11 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "=");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "=");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -102,15 +94,11 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_text::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_text::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -118,15 +106,11 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_CRLF::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_CRLF::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -150,7 +134,7 @@ const Rule_session_name_field* Rule_session_name_field::parse(ParserContext& con
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_session_name_field(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

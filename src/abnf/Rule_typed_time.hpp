@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_typed_time : public Rule
 {
 public:
-  Rule_typed_time(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_typed_time(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_typed_time(const Rule_typed_time& rule);
 
   Rule_typed_time& operator=(const Rule_typed_time& rule);
 
-  const Rule_typed_time* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_typed_time* parse(ParserContext& context);
+  static Rule_typed_time* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

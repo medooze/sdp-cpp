@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_candidate_types::Rule_candidate_types(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_candidate_types& Rule_candidate_types::operator=(const Rule_candidate_types
   return *this;
 }
 
-const Rule_candidate_types* Rule_candidate_types::clone() const
+Rule* Rule_candidate_types::clone() const
 {
   return new Rule_candidate_types(this->spelling, this->rules);
 }
 
-void* Rule_candidate_types::accept(Visitor& visitor) const
+void* Rule_candidate_types::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
+Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
 {
   context.push("candidate-types");
 
@@ -68,15 +68,11 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "host");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "host");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "srflx");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "srflx");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -120,15 +112,11 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "prflx");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "prflx");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -146,15 +134,11 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "relay");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "relay");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -172,15 +156,11 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_token::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_token::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -204,7 +184,7 @@ const Rule_candidate_types* Rule_candidate_types::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_candidate_types(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

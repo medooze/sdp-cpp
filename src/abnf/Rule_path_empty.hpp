@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_path_empty : public Rule
 {
 public:
-  Rule_path_empty(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_path_empty(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_path_empty(const Rule_path_empty& rule);
 
   Rule_path_empty& operator=(const Rule_path_empty& rule);
 
-  const Rule_path_empty* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_path_empty* parse(ParserContext& context);
+  static Rule_path_empty* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_number_of_ports : public Rule
 {
 public:
-  Rule_number_of_ports(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_number_of_ports(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_number_of_ports(const Rule_number_of_ports& rule);
 
   Rule_number_of_ports& operator=(const Rule_number_of_ports& rule);
 
-  const Rule_number_of_ports* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_number_of_ports* parse(ParserContext& context);
+  static Rule_number_of_ports* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

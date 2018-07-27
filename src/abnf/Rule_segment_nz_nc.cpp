@@ -28,7 +28,7 @@ using namespace abnf;
 
 Rule_segment_nz_nc::Rule_segment_nz_nc(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -42,17 +42,17 @@ Rule_segment_nz_nc& Rule_segment_nz_nc::operator=(const Rule_segment_nz_nc& rule
   return *this;
 }
 
-const Rule_segment_nz_nc* Rule_segment_nz_nc::clone() const
+Rule* Rule_segment_nz_nc::clone() const
 {
   return new Rule_segment_nz_nc(this->spelling, this->rules);
 }
 
-void* Rule_segment_nz_nc::accept(Visitor& visitor) const
+void* Rule_segment_nz_nc::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
+Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
 {
   context.push("segment-nz-nc");
 
@@ -83,15 +83,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_unreserved::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_unreserved::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -109,15 +105,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_pct_encoded::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_pct_encoded::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -135,15 +127,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_sub_delims::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_sub_delims::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -161,15 +149,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, "@");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, "@");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -209,15 +193,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_unreserved::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_unreserved::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -235,15 +215,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_pct_encoded::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_pct_encoded::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -261,15 +237,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_sub_delims::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_sub_delims::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -287,15 +259,11 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_StringValue::parse(context, "@");
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_StringValue::parse(context, "@");
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -344,7 +312,7 @@ const Rule_segment_nz_nc* Rule_segment_nz_nc::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_segment_nz_nc(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

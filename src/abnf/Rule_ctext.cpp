@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_ctext::Rule_ctext(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_ctext& Rule_ctext::operator=(const Rule_ctext& rule)
   return *this;
 }
 
-const Rule_ctext* Rule_ctext::clone() const
+Rule* Rule_ctext::clone() const
 {
   return new Rule_ctext(this->spelling, this->rules);
 }
 
-void* Rule_ctext::accept(Visitor& visitor) const
+void* Rule_ctext::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_ctext* Rule_ctext::parse(ParserContext& context)
+Rule_ctext* Rule_ctext::parse(ParserContext& context)
 {
   context.push("ctext");
 
@@ -68,15 +68,11 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_NO_WS_CTL::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_NO_WS_CTL::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d33-39", 0x21, 0x27);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d33-39", 0x21,0x27, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -120,15 +112,11 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d42-91", 0x2a, 0x5b);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d42-91", 0x2a,0x5b, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -146,15 +134,11 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d93-126", 0x5d, 0x7e);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d93-126", 0x5d,0x7e, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -178,7 +162,7 @@ const Rule_ctext* Rule_ctext::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_ctext(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

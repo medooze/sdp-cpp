@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_attribute_field : public Rule
 {
 public:
-  Rule_attribute_field(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_attribute_field(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_attribute_field(const Rule_attribute_field& rule);
 
   Rule_attribute_field& operator=(const Rule_attribute_field& rule);
 
-  const Rule_attribute_field* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_attribute_field* parse(ParserContext& context);
+  static Rule_attribute_field* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

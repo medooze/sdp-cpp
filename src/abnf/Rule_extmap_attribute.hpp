@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_extmap_attribute : public Rule
 {
 public:
-  Rule_extmap_attribute(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_extmap_attribute(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_extmap_attribute(const Rule_extmap_attribute& rule);
 
   Rule_extmap_attribute& operator=(const Rule_extmap_attribute& rule);
 
-  const Rule_extmap_attribute* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_extmap_attribute* parse(ParserContext& context);
+  static Rule_extmap_attribute* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

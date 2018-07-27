@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_nettype : public Rule
 {
 public:
-  Rule_nettype(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_nettype(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_nettype(const Rule_nettype& rule);
 
   Rule_nettype& operator=(const Rule_nettype& rule);
 
-  const Rule_nettype* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_nettype* parse(ParserContext& context);
+  static Rule_nettype* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_non_ws_string::Rule_non_ws_string(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_non_ws_string& Rule_non_ws_string::operator=(const Rule_non_ws_string& rule
   return *this;
 }
 
-const Rule_non_ws_string* Rule_non_ws_string::clone() const
+Rule* Rule_non_ws_string::clone() const
 {
   return new Rule_non_ws_string(this->spelling, this->rules);
 }
 
-void* Rule_non_ws_string::accept(Visitor& visitor) const
+void* Rule_non_ws_string::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
+Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
 {
   context.push("non-ws-string");
 
@@ -81,15 +81,11 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_VCHAR::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_VCHAR::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -107,15 +103,11 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80, 0xFF);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80,0xFF, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -155,15 +147,11 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_VCHAR::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_VCHAR::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -181,15 +169,11 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80, 0xFF);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80,0xFF, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -238,7 +222,7 @@ const Rule_non_ws_string* Rule_non_ws_string::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_non_ws_string(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

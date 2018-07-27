@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_bandwidth : public Rule
 {
 public:
-  Rule_bandwidth(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_bandwidth(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_bandwidth(const Rule_bandwidth& rule);
 
   Rule_bandwidth& operator=(const Rule_bandwidth& rule);
 
-  const Rule_bandwidth* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_bandwidth* parse(ParserContext& context);
+  static Rule_bandwidth* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

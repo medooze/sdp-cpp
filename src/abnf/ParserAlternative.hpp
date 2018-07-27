@@ -21,7 +21,7 @@ namespace abnf {
 class ParserAlternative
 {
 public:
-  std::vector<const Rule*> rules;
+  std::vector<Rule*> rules;
   unsigned int start;
   unsigned int end;
 
@@ -32,8 +32,8 @@ public:
 
   ~ParserAlternative();
 
-  void add(const Rule& rule, unsigned int end);
-  void add(const std::vector<const Rule*>& rules, unsigned int end);
+  void add(Rule* rule, unsigned int end);
+  void add(const std::vector<Rule*>& rules, unsigned int end);
 
   static const ParserAlternative* getBest(vector<const ParserAlternative*> alternatives);
 };

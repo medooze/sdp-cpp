@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_port : public Rule
 {
 public:
-  Rule_port(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_port(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_port(const Rule_port& rule);
 
   Rule_port& operator=(const Rule_port& rule);
 
-  const Rule_port* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_port* parse(ParserContext& context);
+  static Rule_port* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

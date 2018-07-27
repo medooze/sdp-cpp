@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_byte_string::Rule_byte_string(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_byte_string& Rule_byte_string::operator=(const Rule_byte_string& rule)
   return *this;
 }
 
-const Rule_byte_string* Rule_byte_string::clone() const
+Rule* Rule_byte_string::clone() const
 {
   return new Rule_byte_string(this->spelling, this->rules);
 }
 
-void* Rule_byte_string::accept(Visitor& visitor) const
+void* Rule_byte_string::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
+Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
 {
   context.push("byte-string");
 
@@ -80,15 +80,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01, 0x09);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01,0x09, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -106,15 +102,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B, 0x0C);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B,0x0C, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -132,15 +124,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E, 0x7E);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E,0x7E, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -180,15 +168,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01, 0x09);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x01-09", 0x01,0x09, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -206,15 +190,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B, 0x0C);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0B-0C", 0x0B,0x0C, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -232,15 +212,11 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E, 0x7E);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E,0x7E, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -289,7 +265,7 @@ const Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_byte_string(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

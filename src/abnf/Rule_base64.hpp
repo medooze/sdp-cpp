@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_base64 : public Rule
 {
 public:
-  Rule_base64(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_base64(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_base64(const Rule_base64& rule);
 
   Rule_base64& operator=(const Rule_base64& rule);
 
-  const Rule_base64* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_base64* parse(ParserContext& context);
+  static Rule_base64* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

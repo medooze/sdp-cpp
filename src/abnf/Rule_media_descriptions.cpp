@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_media_descriptions::Rule_media_descriptions(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_media_descriptions& Rule_media_descriptions::operator=(const Rule_media_des
   return *this;
 }
 
-const Rule_media_descriptions* Rule_media_descriptions::clone() const
+Rule* Rule_media_descriptions::clone() const
 {
   return new Rule_media_descriptions(this->spelling, this->rules);
 }
 
-void* Rule_media_descriptions::accept(Visitor& visitor) const
+void* Rule_media_descriptions::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_media_descriptions* Rule_media_descriptions::parse(ParserContext& context)
+Rule_media_descriptions* Rule_media_descriptions::parse(ParserContext& context)
 {
   context.push("media-descriptions");
 
@@ -80,15 +80,11 @@ const Rule_media_descriptions* Rule_media_descriptions::parse(ParserContext& con
           {
             bool f2 = true;
             int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
+            Rule* rule = Rule_media_description::parse(context);
+            if ((f2 = rule != NULL))
             {
-              const Rule* rule = Rule_media_description::parse(context);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
+              a2.add(rule, context.index);
+              c2++;
             }
             parsed = c2 == 1;
           }
@@ -137,7 +133,7 @@ const Rule_media_descriptions* Rule_media_descriptions::parse(ParserContext& con
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_media_descriptions(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

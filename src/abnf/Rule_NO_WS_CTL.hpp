@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_NO_WS_CTL : public Rule
 {
 public:
-  Rule_NO_WS_CTL(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_NO_WS_CTL(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_NO_WS_CTL(const Rule_NO_WS_CTL& rule);
 
   Rule_NO_WS_CTL& operator=(const Rule_NO_WS_CTL& rule);
 
-  const Rule_NO_WS_CTL* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_NO_WS_CTL* parse(ParserContext& context);
+  static Rule_NO_WS_CTL* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

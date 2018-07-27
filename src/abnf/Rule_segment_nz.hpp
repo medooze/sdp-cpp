@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_segment_nz : public Rule
 {
 public:
-  Rule_segment_nz(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_segment_nz(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_segment_nz(const Rule_segment_nz& rule);
 
   Rule_segment_nz& operator=(const Rule_segment_nz& rule);
 
-  const Rule_segment_nz* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_segment_nz* parse(ParserContext& context);
+  static Rule_segment_nz* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

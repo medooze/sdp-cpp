@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_ssrc_group_semantics : public Rule
 {
 public:
-  Rule_ssrc_group_semantics(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_ssrc_group_semantics(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_ssrc_group_semantics(const Rule_ssrc_group_semantics& rule);
 
   Rule_ssrc_group_semantics& operator=(const Rule_ssrc_group_semantics& rule);
 
-  const Rule_ssrc_group_semantics* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_ssrc_group_semantics* parse(ParserContext& context);
+  static Rule_ssrc_group_semantics* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

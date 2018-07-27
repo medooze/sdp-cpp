@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_start_time::Rule_start_time(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_start_time& Rule_start_time::operator=(const Rule_start_time& rule)
   return *this;
 }
 
-const Rule_start_time* Rule_start_time::clone() const
+Rule* Rule_start_time::clone() const
 {
   return new Rule_start_time(this->spelling, this->rules);
 }
 
-void* Rule_start_time::accept(Visitor& visitor) const
+void* Rule_start_time::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_start_time* Rule_start_time::parse(ParserContext& context)
+Rule_start_time* Rule_start_time::parse(ParserContext& context)
 {
   context.push("start-time");
 
@@ -68,15 +68,11 @@ const Rule_start_time* Rule_start_time::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_time::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_time::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -94,15 +90,11 @@ const Rule_start_time* Rule_start_time::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "0");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "0");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -126,7 +118,7 @@ const Rule_start_time* Rule_start_time::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_start_time(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

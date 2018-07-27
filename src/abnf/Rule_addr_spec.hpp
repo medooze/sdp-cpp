@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_addr_spec : public Rule
 {
 public:
-  Rule_addr_spec(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_addr_spec(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_addr_spec(const Rule_addr_spec& rule);
 
   Rule_addr_spec& operator=(const Rule_addr_spec& rule);
 
-  const Rule_addr_spec* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_addr_spec* parse(ParserContext& context);
+  static Rule_addr_spec* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

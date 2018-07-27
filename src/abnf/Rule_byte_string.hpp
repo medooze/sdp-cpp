@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_byte_string : public Rule
 {
 public:
-  Rule_byte_string(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_byte_string(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_byte_string(const Rule_byte_string& rule);
 
   Rule_byte_string& operator=(const Rule_byte_string& rule);
 
-  const Rule_byte_string* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_byte_string* parse(ParserContext& context);
+  static Rule_byte_string* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

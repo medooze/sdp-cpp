@@ -25,37 +25,27 @@ using namespace abnf;
 
 Terminal_NumericValue::Terminal_NumericValue(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
-const Terminal_NumericValue* Terminal_NumericValue::clone(void) const
+Rule* Terminal_NumericValue::clone(void) const
 {
   return new Terminal_NumericValue(this->spelling, this->rules);
 }
 
-void* Terminal_NumericValue::accept(Visitor& visitor) const
+void* Terminal_NumericValue::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Terminal_NumericValue* Terminal_NumericValue::parse(
-	ParserContext& context,
-	const string& spelling,
-	uint8_t val,
-	int length)
-{
-  return parse(context, spelling, val, val, length);
-}
-
-const Terminal_NumericValue* Terminal_NumericValue::parse(
+Terminal_NumericValue* Terminal_NumericValue::parse(
   ParserContext& context,
   const string& spelling,
   uint8_t from,
-  uint8_t to,
-  int length)
+  uint8_t to)
 {
-  context.push("NumericValue", spelling);
+  context.push("NumericValue", spelling );
 
   bool parsed = false;
 
@@ -65,14 +55,14 @@ const Terminal_NumericValue* Terminal_NumericValue::parse(
   {
     if (context.index + 1 <= context.text.length())
     {
-      string value = context.text.substr(context.index, 1);
+      char value = context.text.at(context.index);
 
-      parsed = (from<=value.c_str()[0] && value.c_str()[0]<=to);
-      
+      parsed = (from<=value && value<=to);
+
       if (parsed)
       {
-        context.index ++;
-        numericValue = new Terminal_NumericValue(value, vector<const Rule*>());
+        context.index += 1;
+        numericValue = new Terminal_NumericValue(string(1,value), vector<Rule*>());
       }
     }
   }

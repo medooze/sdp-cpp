@@ -25,7 +25,7 @@ using namespace abnf;
 
 Rule_NO_WS_CTL::Rule_NO_WS_CTL(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -39,17 +39,17 @@ Rule_NO_WS_CTL& Rule_NO_WS_CTL::operator=(const Rule_NO_WS_CTL& rule)
   return *this;
 }
 
-const Rule_NO_WS_CTL* Rule_NO_WS_CTL::clone() const
+Rule* Rule_NO_WS_CTL::clone() const
 {
   return new Rule_NO_WS_CTL(this->spelling, this->rules);
 }
 
-void* Rule_NO_WS_CTL::accept(Visitor& visitor) const
+void* Rule_NO_WS_CTL::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
+Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
 {
   context.push("NO-WS-CTL");
 
@@ -67,15 +67,11 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d1-8", 0x1, 0x8);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d1-8", 0x01,0x08, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -93,15 +89,11 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d11", 0xb, 0xb);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d11", 0x0b, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -119,15 +111,11 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d12", 0xc, 0xc);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d12", 0x0c, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -145,15 +133,11 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d14-31", 0xe, 0x1f);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d14-31", 0x0e,0x1f, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -171,15 +155,11 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_NumericValue::parse(context, "%d127", 0x7f, 0x7f);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_NumericValue::parse(context, "%d127", 0x7f, 1);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -203,7 +183,7 @@ const Rule_NO_WS_CTL* Rule_NO_WS_CTL::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_NO_WS_CTL(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

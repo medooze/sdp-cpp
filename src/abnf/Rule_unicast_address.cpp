@@ -28,7 +28,7 @@ using namespace abnf;
 
 Rule_unicast_address::Rule_unicast_address(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -42,17 +42,17 @@ Rule_unicast_address& Rule_unicast_address::operator=(const Rule_unicast_address
   return *this;
 }
 
-const Rule_unicast_address* Rule_unicast_address::clone() const
+Rule* Rule_unicast_address::clone() const
 {
   return new Rule_unicast_address(this->spelling, this->rules);
 }
 
-void* Rule_unicast_address::accept(Visitor& visitor) const
+void* Rule_unicast_address::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
+Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
 {
   context.push("unicast-address");
 
@@ -70,15 +70,11 @@ const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IPv4address::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IPv4address::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -96,15 +92,11 @@ const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IPv6address::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IPv6address::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -122,15 +114,11 @@ const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_FQDN::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_FQDN::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -148,15 +136,11 @@ const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_extn_addr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_extn_addr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -180,7 +164,7 @@ const Rule_unicast_address* Rule_unicast_address::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_unicast_address(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

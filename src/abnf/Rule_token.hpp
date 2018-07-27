@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_token : public Rule
 {
 public:
-  Rule_token(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_token(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_token(const Rule_token& rule);
 
   Rule_token& operator=(const Rule_token& rule);
 
-  const Rule_token* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_token* parse(ParserContext& context);
+  static Rule_token* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

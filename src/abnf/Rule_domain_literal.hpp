@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_domain_literal : public Rule
 {
 public:
-  Rule_domain_literal(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_domain_literal(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_domain_literal(const Rule_domain_literal& rule);
 
   Rule_domain_literal& operator=(const Rule_domain_literal& rule);
 
-  const Rule_domain_literal* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_domain_literal* parse(ParserContext& context);
+  static Rule_domain_literal* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

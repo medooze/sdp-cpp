@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_key_salt : public Rule
 {
 public:
-  Rule_key_salt(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_key_salt(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_key_salt(const Rule_key_salt& rule);
 
   Rule_key_salt& operator=(const Rule_key_salt& rule);
 
-  const Rule_key_salt* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_key_salt* parse(ParserContext& context);
+  static Rule_key_salt* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

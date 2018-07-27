@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_transport_extension : public Rule
 {
 public:
-  Rule_transport_extension(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_transport_extension(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_transport_extension(const Rule_transport_extension& rule);
 
   Rule_transport_extension& operator=(const Rule_transport_extension& rule);
 
-  const Rule_transport_extension* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_transport_extension* parse(ParserContext& context);
+  static Rule_transport_extension* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

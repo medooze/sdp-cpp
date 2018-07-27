@@ -26,7 +26,7 @@ using namespace abnf;
 
 Rule_obs_qp::Rule_obs_qp(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -40,17 +40,17 @@ Rule_obs_qp& Rule_obs_qp::operator=(const Rule_obs_qp& rule)
   return *this;
 }
 
-const Rule_obs_qp* Rule_obs_qp::clone() const
+Rule* Rule_obs_qp::clone() const
 {
   return new Rule_obs_qp(this->spelling, this->rules);
 }
 
-void* Rule_obs_qp::accept(Visitor& visitor) const
+void* Rule_obs_qp::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
+Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
 {
   context.push("obs-qp");
 
@@ -68,15 +68,11 @@ const Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Terminal_StringValue::parse(context, "\\");
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Terminal_StringValue::parse(context, "\\");
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -84,54 +80,47 @@ const Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      unsigned int g1 = context.index;
+      vector<const ParserAlternative*> as2;
+      parsed = false;
       {
-        unsigned int g1 = context.index;
-        vector<const ParserAlternative*> as2;
-        parsed = false;
+        int s2 = context.index;
+        ParserAlternative a2(s2);
+        parsed = true;
+        if (parsed)
         {
-          int s2 = context.index;
-          ParserAlternative a2(s2);
-          parsed = true;
-          if (parsed)
+          bool f2 = true;
+          int c2 = 0;
+          Rule* rule = Terminal_NumericValue::parse(context, "%d0-127", 0x0, 0x7f);
+          if ((f2 = rule != NULL))
           {
-            bool f2 = true;
-            int c2 = 0;
-            for (int i2 = 0; i2 < 1 && f2; i2++)
-            {
-              const Rule* rule = Terminal_NumericValue::parse(context, "%d0-127", 0x00,0x7f, 1);
-              if ((f2 = rule != NULL))
-              {
-                a2.add(*rule, context.index);
-                c2++;
-                delete rule;
-              }
-            }
-            parsed = c2 == 1;
+            a2.add(rule, context.index);
+            c2++;
           }
-          if (parsed)
-          {
-            as2.push_back(new ParserAlternative(a2));
-          }
-          context.index = s2;
+          parsed = c2 == 1;
         }
-
-        const ParserAlternative* b = ParserAlternative::getBest(as2);
-
-        if ((parsed = b != NULL))
+        if (parsed)
         {
-          a1.add(b->rules, b->end);
-          context.index = b->end;
+          as2.push_back(new ParserAlternative(a2));
         }
-
-        for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
-        {
-          delete *a;
-        }
-
-        f1 = context.index > g1;
-        if (parsed) c1++;
+        context.index = s2;
       }
+
+      const ParserAlternative* b = ParserAlternative::getBest(as2);
+
+      if ((parsed = b != NULL))
+      {
+        a1.add(b->rules, b->end);
+        context.index = b->end;
+      }
+
+      for (vector<const ParserAlternative*>::const_iterator a = as2.begin(); a != as2.end(); a++)
+      {
+        delete *a;
+      }
+
+      f1 = context.index > g1;
+      if (parsed) c1++;
       parsed = c1 == 1;
     }
     if (parsed)
@@ -154,7 +143,7 @@ const Rule_obs_qp* Rule_obs_qp::parse(ParserContext& context)
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_obs_qp(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

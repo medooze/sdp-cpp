@@ -26,24 +26,17 @@ class Terminal_NumericValue : public Rule
 public:
   Terminal_NumericValue(
     const std::string& spelling, 
-    const std::vector<const Rule*>& rules);
+    const std::vector<Rule*>& rules);
 
-  const Terminal_NumericValue* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Terminal_NumericValue* parse(
+  static Terminal_NumericValue* parse(
     ParserContext& context,
     const std::string& spelling,
     uint8_t from,
-    uint8_t to,
-    int length);
+    uint8_t to);
 
-  static const Terminal_NumericValue* parse(
-	  ParserContext& context,
-	  const std::string& spelling,
-	  uint8_t val,
-	  int length);
-
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }

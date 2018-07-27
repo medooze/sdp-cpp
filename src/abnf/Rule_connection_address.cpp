@@ -30,7 +30,7 @@ using namespace abnf;
 
 Rule_connection_address::Rule_connection_address(
   const string& spelling, 
-  const vector<const Rule*>& rules) : Rule(spelling, rules)
+  const vector<Rule*>& rules) : Rule(spelling, rules)
 {
 }
 
@@ -44,17 +44,17 @@ Rule_connection_address& Rule_connection_address::operator=(const Rule_connectio
   return *this;
 }
 
-const Rule_connection_address* Rule_connection_address::clone() const
+Rule* Rule_connection_address::clone() const
 {
   return new Rule_connection_address(this->spelling, this->rules);
 }
 
-void* Rule_connection_address::accept(Visitor& visitor) const
+void* Rule_connection_address::accept(Visitor& visitor)
 {
   return visitor.visit(this);
 }
 
-const Rule_connection_address* Rule_connection_address::parse(ParserContext& context)
+Rule_connection_address* Rule_connection_address::parse(ParserContext& context)
 {
   context.push("connection-address");
 
@@ -72,15 +72,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IP4_multicast::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IP4_multicast::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -98,15 +94,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IP6_multicast::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IP6_multicast::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -124,15 +116,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IPv4address::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IPv4address::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -150,15 +138,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_IPv6address::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_IPv6address::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -176,15 +160,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_FQDN::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_FQDN::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -202,15 +182,11 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     {
       bool f1 = true;
       int c1 = 0;
-      for (int i1 = 0; i1 < 1 && f1; i1++)
+      Rule* rule = Rule_extn_addr::parse(context);
+      if ((f1 = rule != NULL))
       {
-        const Rule* rule = Rule_extn_addr::parse(context);
-        if ((f1 = rule != NULL))
-        {
-          a1.add(*rule, context.index);
-          c1++;
-          delete rule;
-        }
+        a1.add(rule, context.index);
+        c1++;
       }
       parsed = c1 == 1;
     }
@@ -234,7 +210,7 @@ const Rule_connection_address* Rule_connection_address::parse(ParserContext& con
     delete *a;
   }
 
-  const Rule* rule = NULL;
+  Rule* rule = NULL;
   if (parsed)
   {
     rule = new Rule_connection_address(context.text.substr(a0.start, a0.end - a0.start), a0.rules);

@@ -24,16 +24,16 @@ class ParserContext;
 class Rule_path_rootless : public Rule
 {
 public:
-  Rule_path_rootless(const std::string& spelling, const std::vector<const Rule*>& rules);
+  Rule_path_rootless(const std::string& spelling, const std::vector<Rule*>& rules);
   Rule_path_rootless(const Rule_path_rootless& rule);
 
   Rule_path_rootless& operator=(const Rule_path_rootless& rule);
 
-  const Rule_path_rootless* clone(void) const;
+  virtual Rule* clone(void) const;
 
-  static const Rule_path_rootless* parse(ParserContext& context);
+  static Rule_path_rootless* parse(ParserContext& context);
 
-  void* accept(Visitor& visitor) const;
+  virtual void* accept(Visitor& visitor);
 };
 
 }
