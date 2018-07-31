@@ -18,7 +18,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_crypto_attribute* rule)
+	void* visit(Rule_crypto_attribute* rule)
 	{
 		//New attr
 		crypto = new CryptoAttribute();
@@ -29,7 +29,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_tag* rule)
+	void* visit(Rule_tag* rule)
 	{
 		//Get type
 		int tag = std::stoi(rule->spelling);
@@ -40,7 +40,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_crypto_suite* rule)
+	void* visit(Rule_crypto_suite* rule)
 	{
 		//Get suite
 		std::string suite = rule->spelling;
@@ -51,7 +51,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_session_param* rule)
+	void* visit(Rule_session_param* rule)
 	{
 		//Get type
 		std::string sessionParam = rule->spelling;
@@ -62,7 +62,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_key_param* rule)
+	void* visit(Rule_key_param* rule)
 	{
 		//New attr
 		param = std::make_shared<CryptoAttribute::KeyParam>();
@@ -75,7 +75,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_key_method* rule)
+	void* visit(Rule_key_method* rule)
 	{
 		//Get method
 		std::string method = rule->spelling;
@@ -86,7 +86,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_key_salt* rule)
+	void* visit(Rule_key_salt* rule)
 	{
 		//Get info
 		std::string info = rule->spelling;

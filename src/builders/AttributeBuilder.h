@@ -28,7 +28,7 @@ class AttributeBuilder :
 public:
 	
 	virtual
-	void* visit(const Rule_attribute_field* rule)
+	void* visit(Rule_attribute_field* rule)
 	{
 		//Reset
 		attr = NULL;
@@ -39,7 +39,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_mid_attr* rule)
+	void* visit(Rule_mid_attr* rule)
 	{
 		//Get builder
 		MidAttributeBuilder builder;
@@ -50,7 +50,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_group_attr* rule)
+	void* visit(Rule_group_attr* rule)
 	{
 		//Get builder
 		GroupAttributeBuilder builder;
@@ -61,7 +61,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_attr* rule)
+	void* visit(Rule_ssrc_attr* rule)
 	{
 		//Get builder
 		SSRCAttributeBuilder builder;
@@ -72,7 +72,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_rtpmap_attr* rule)
+	void* visit(Rule_rtpmap_attr* rule)
 	{
 		//Get builder
 		RTPMapAttributeBuilder builder;
@@ -83,7 +83,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fmtp_attr* rule)
+	void* visit(Rule_fmtp_attr* rule)
 	{
 		//Get builder
 		FormatAttributeBuilder builder;
@@ -94,7 +94,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_group_attr* rule)
+	void* visit(Rule_ssrc_group_attr* rule)
 	{
 		//Get builder
 		SSRCGroupAttributeBuilder builder;
@@ -105,7 +105,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_cname_attr* rule)
+	void* visit(Rule_cname_attr* rule)
 	{
 		//Get builder
 		CNameAttributeBuilder builder;
@@ -116,7 +116,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_previous_ssrc_attr* rule)
+	void* visit(Rule_previous_ssrc_attr* rule)
 	{
 		//Get builder
 		PreviousSSRCAttributeBuilder builder;
@@ -127,7 +127,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_attribute* rule)
+	void* visit(Rule_attribute* rule)
 	{
 		//Get builder
 		BaseAttributeBuilder builder;
@@ -138,7 +138,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_crypto_attribute* rule)
+	void* visit(Rule_crypto_attribute* rule)
 	{
 		//Get builder
 		CryptoAttributeBuilder builder;
@@ -149,7 +149,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_candidate_attribute* rule)
+	void* visit(Rule_candidate_attribute* rule)
 	{
 		//Get builder
 		CandidateAttributeBuilder builder;
@@ -160,7 +160,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extmap_attribute* rule)
+	void* visit(Rule_extmap_attribute* rule)
 	{
 		//Get builder
 		ExtMapAttributeBuilder builder;
@@ -171,7 +171,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fingerprint_attribute* rule)
+	void* visit(Rule_fingerprint_attribute* rule)
 	{
 		//Get builder
 		FingerprintAttributeBuilder builder;
@@ -182,7 +182,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_sctpmap_attr* rule)
+	void* visit(Rule_sctpmap_attr* rule)
 	{
 		//Get builder
 		SCTPMapAttributeBuilder builder;

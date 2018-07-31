@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_extmap_attribute* rule)
+	void* visit(Rule_extmap_attribute* rule)
 	{
 		//New attr
 		extmap = new ExtMapAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_direction* rule)
+	void* visit(Rule_direction* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_identifier* rule)
+	void* visit(Rule_extension_identifier* rule)
 	{
 		//Get type
 		int value = std::stoi(rule->spelling);
@@ -48,7 +48,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_name* rule)
+	void* visit(Rule_extension_name* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -59,7 +59,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_attributes* rule)
+	void* visit(Rule_extension_attributes* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;

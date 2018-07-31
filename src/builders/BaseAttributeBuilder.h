@@ -17,7 +17,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_attribute* rule)
+	void* visit(Rule_attribute* rule)
 	{
 		//New attr
 		attr = new BaseAttribute();
@@ -28,7 +28,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_att_field* rule)
+	void* visit(Rule_att_field* rule)
 	{
 		//Get type
 		std::string field = rule->spelling;
@@ -39,7 +39,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_att_value* rule)
+	void* visit(Rule_att_value* rule)
 	{
 		//Get type
 		std::string value = rule->spelling;

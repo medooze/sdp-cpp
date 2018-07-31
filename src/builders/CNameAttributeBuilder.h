@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_cname_attr* rule)
+	void* visit(Rule_cname_attr* rule)
 	{
 		//New attr
 		attr = new CNameAttribute();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_cname* rule)
+	void* visit(Rule_cname* rule)
 	{
 		//Get value
 		std::string cname = rule->spelling;

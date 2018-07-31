@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_previous_ssrc_attr* rule)
+	void* visit(Rule_previous_ssrc_attr* rule)
 	{
 		//New attr
 		previous = new PreviousSSRCAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_id* rule)
+	void* visit(Rule_ssrc_id* rule)
 	{
 		//Get value
 		std::string ssrc = rule->spelling;

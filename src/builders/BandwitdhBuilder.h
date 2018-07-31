@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_bandwidth_field* rule)
+	void* visit(Rule_bandwidth_field* rule)
 	{
 		//Create object
 		bandwidth = new Bandwidth();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_bandwidth* rule)
+	void* visit(Rule_bandwidth* rule)
 	{
 		//Generate
 		std::string value = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_bwtype* rule)
+	void* visit(Rule_bwtype* rule)
 	{
 		//Generate
 		std::string type = rule->spelling;

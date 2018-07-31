@@ -229,7 +229,7 @@
 
 
 
-void* SessionDescriptionBuilder::visit(const Rule_session_description* rule)
+void* SessionDescriptionBuilder::visit(Rule_session_description* rule)
 {
 	//Create object
 	sdp = new SessionDescription();
@@ -240,7 +240,7 @@ void* SessionDescriptionBuilder::visit(const Rule_session_description* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_proto_version* rule)
+void* SessionDescriptionBuilder::visit(Rule_proto_version* rule)
 {
 	//Parse digit
 	int version = std::stoi(rule->rules[2]->spelling);
@@ -251,7 +251,7 @@ void* SessionDescriptionBuilder::visit(const Rule_proto_version* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_origin_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_origin_field* rule)
 {
 	//Create new origin object
 	OriginBuilder builder;
@@ -264,7 +264,7 @@ void* SessionDescriptionBuilder::visit(const Rule_origin_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_session_name_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_session_name_field* rule)
 {
 	//Create builder
 	SessionNameBuilder builder;
@@ -277,7 +277,7 @@ void* SessionDescriptionBuilder::visit(const Rule_session_name_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_information_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_information_field* rule)
 {
 	//Create new session name
 	InformationBuilder builder;
@@ -290,7 +290,7 @@ void* SessionDescriptionBuilder::visit(const Rule_information_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_attribute_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_attribute_field* rule)
 {
 	//Create new session name
 	AttributeBuilder builder;
@@ -303,7 +303,7 @@ void* SessionDescriptionBuilder::visit(const Rule_attribute_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_uri_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_uri_field* rule)
 {
 	//Check size
 	if (rule->rules.empty())
@@ -318,7 +318,7 @@ void* SessionDescriptionBuilder::visit(const Rule_uri_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_email_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_email_field* rule)
 {
 	//Check size
 	if (rule->rules.empty())
@@ -333,7 +333,7 @@ void* SessionDescriptionBuilder::visit(const Rule_email_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_phone_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_phone_field* rule)
 {
 	//Check size
 	if (rule->rules.empty())
@@ -348,7 +348,7 @@ void* SessionDescriptionBuilder::visit(const Rule_phone_field* rule)
 }
 
 
-void* SessionDescriptionBuilder::visit(const Rule_connection_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_connection_field* rule)
 {
 	//Create builder
 	ConnectionBuilder builder;
@@ -360,7 +360,7 @@ void* SessionDescriptionBuilder::visit(const Rule_connection_field* rule)
 	return NULL;
 }
 
-void* SessionDescriptionBuilder::visit(const Rule_bandwidth_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_bandwidth_field* rule)
 {
 	//Create builder
 	BandwitdhBuilder builder;
@@ -372,7 +372,7 @@ void* SessionDescriptionBuilder::visit(const Rule_bandwidth_field* rule)
 	return NULL;
 }
 
-void* SessionDescriptionBuilder::visit(const Rule_time_repeat_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_time_repeat_field* rule)
 {
 	//Create builder
 	TimeBuilder builder;
@@ -384,7 +384,7 @@ void* SessionDescriptionBuilder::visit(const Rule_time_repeat_field* rule)
 	return NULL;
 }
 
-void* SessionDescriptionBuilder::visit(const Rule_key_field* rule)
+void* SessionDescriptionBuilder::visit(Rule_key_field* rule)
 {
 	//Create builder
 	KeyBuilder builder;
@@ -396,7 +396,7 @@ void* SessionDescriptionBuilder::visit(const Rule_key_field* rule)
 	return NULL;
 }
 
-void* SessionDescriptionBuilder::visit(const Rule_media_description* rule)
+void* SessionDescriptionBuilder::visit(Rule_media_description* rule)
 {
 	//Create builder
 	MediaDescriptionBuilder builder;

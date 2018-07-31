@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_rtpmap_attr* rule)
+	void* visit(Rule_rtpmap_attr* rule)
 	{
 		//New attr
 		attr = new RTPMapAttribute();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fmt* rule)
+	void* visit(Rule_fmt* rule)
 	{
 		//Get type
 		int fmt = std::stoi(rule->spelling);
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_name* rule)
+	void* visit(Rule_name* rule)
 	{
 		//Get type
 		std::string name = rule->spelling;
@@ -49,7 +49,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_rate* rule)
+	void* visit(Rule_rate* rule)
 	{
 		//Get type
 		int rate = std::stoi(rule->spelling);
@@ -60,7 +60,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_parameters* rule)
+	void* visit(Rule_parameters* rule)
 	{
 		//Get type
 		std::string parameters = rule->spelling;

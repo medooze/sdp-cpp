@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_time_repeat_field* rule)
+	void* visit(Rule_time_repeat_field* rule)
 	{
 		//Create object
 		time = new Time();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_start_time* rule)
+	void* visit(Rule_start_time* rule)
 	{
 		//Get start
 		int start = std::stoi(rule->spelling);
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_stop_time* rule)
+	void* visit(Rule_stop_time* rule)
 	{
 		//Get stop
 		int stop = std::stoi(rule->spelling);

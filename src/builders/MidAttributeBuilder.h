@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_mid_attr* rule)
+	void* visit(Rule_mid_attr* rule)
 	{
 		//New attr
 		mid = new MidAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_identification_tag* rule)
+	void* visit(Rule_identification_tag* rule)
 	{
 		//Get type
 		std::string tag = rule->spelling;

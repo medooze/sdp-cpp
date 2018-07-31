@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_connection_field* rule)
+	void* visit(Rule_connection_field* rule)
 	{
 		//Create object
 		conn = new Connection();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_nettype* rule)
+	void* visit(Rule_nettype* rule)
 	{
 		//Generate
 		std::string nettype = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_addrtype* rule)
+	void* visit(Rule_addrtype* rule)
 	{
 		//Generate
 		std::string addrtype = rule->spelling;
@@ -48,7 +48,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_connection_address* rule)
+	void* visit(Rule_connection_address* rule)
 	{
 		//Generate
 		std::string address = rule->spelling;

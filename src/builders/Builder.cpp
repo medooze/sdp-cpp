@@ -235,1099 +235,1099 @@ using std::vector;
 
 using namespace abnf;
 
-void* Builder::visit(const Rule_session_description* rule)
+void* Builder::visit(Rule_session_description* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_proto_version* rule)
+void* Builder::visit(Rule_proto_version* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_origin_field* rule)
+void* Builder::visit(Rule_origin_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_session_name_field* rule)
+void* Builder::visit(Rule_session_name_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_information_field* rule)
+void* Builder::visit(Rule_information_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_uri_field* rule)
+void* Builder::visit(Rule_uri_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_email_fields* rule)
+void* Builder::visit(Rule_email_fields* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_email_field* rule)
+void* Builder::visit(Rule_email_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_phone_fields* rule)
+void* Builder::visit(Rule_phone_fields* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_phone_field* rule)
+void* Builder::visit(Rule_phone_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_connection_field* rule)
+void* Builder::visit(Rule_connection_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_bandwidth_fields* rule)
+void* Builder::visit(Rule_bandwidth_fields* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_bandwidth_field* rule)
+void* Builder::visit(Rule_bandwidth_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_time_fields* rule)
+void* Builder::visit(Rule_time_fields* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_time_repeat_field* rule)
+void* Builder::visit(Rule_time_repeat_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_time_field* rule)
+void* Builder::visit(Rule_time_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_repeat_field* rule)
+void* Builder::visit(Rule_repeat_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_zone_adjustments* rule)
+void* Builder::visit(Rule_zone_adjustments* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_field* rule)
+void* Builder::visit(Rule_key_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_attribute_fields* rule)
+void* Builder::visit(Rule_attribute_fields* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_attribute_field* rule)
+void* Builder::visit(Rule_attribute_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_gen_attribute* rule)
+void* Builder::visit(Rule_gen_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_sctpmap_attr* rule)
+void* Builder::visit(Rule_sctpmap_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_sctpmap_number* rule)
+void* Builder::visit(Rule_sctpmap_number* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_app* rule)
+void* Builder::visit(Rule_app* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_streams* rule)
+void* Builder::visit(Rule_streams* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fingerprint_attribute* rule)
+void* Builder::visit(Rule_fingerprint_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_hash_func* rule)
+void* Builder::visit(Rule_hash_func* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fingerprint* rule)
+void* Builder::visit(Rule_fingerprint* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extmap_attribute* rule)
+void* Builder::visit(Rule_extmap_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_identifier* rule)
+void* Builder::visit(Rule_extension_identifier* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_name* rule)
+void* Builder::visit(Rule_extension_name* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_direction* rule)
+void* Builder::visit(Rule_direction* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_attributes* rule)
+void* Builder::visit(Rule_extension_attributes* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_candidate_attribute* rule)
+void* Builder::visit(Rule_candidate_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_foundation* rule)
+void* Builder::visit(Rule_foundation* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_component_id* rule)
+void* Builder::visit(Rule_component_id* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_transport* rule)
+void* Builder::visit(Rule_transport* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_transport_extension* rule)
+void* Builder::visit(Rule_transport_extension* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_priority* rule)
+void* Builder::visit(Rule_priority* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_cand_type* rule)
+void* Builder::visit(Rule_cand_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_candidate_types* rule)
+void* Builder::visit(Rule_candidate_types* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_rel_addr* rule)
+void* Builder::visit(Rule_rel_addr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_rel_port* rule)
+void* Builder::visit(Rule_rel_port* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_att* rule)
+void* Builder::visit(Rule_extension_att* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_att_name* rule)
+void* Builder::visit(Rule_extension_att_name* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extension_att_value* rule)
+void* Builder::visit(Rule_extension_att_value* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ice_char* rule)
+void* Builder::visit(Rule_ice_char* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_crypto_attribute* rule)
+void* Builder::visit(Rule_crypto_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_tag* rule)
+void* Builder::visit(Rule_tag* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_crypto_suite* rule)
+void* Builder::visit(Rule_crypto_suite* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_params* rule)
+void* Builder::visit(Rule_key_params* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_param* rule)
+void* Builder::visit(Rule_key_param* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_method* rule)
+void* Builder::visit(Rule_key_method* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_method_ext* rule)
+void* Builder::visit(Rule_key_method_ext* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_info* rule)
+void* Builder::visit(Rule_key_info* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_salt* rule)
+void* Builder::visit(Rule_key_salt* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_lifetime* rule)
+void* Builder::visit(Rule_key_lifetime* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_mki* rule)
+void* Builder::visit(Rule_key_mki* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_mki_value* rule)
+void* Builder::visit(Rule_key_mki_value* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_mki_length* rule)
+void* Builder::visit(Rule_key_mki_length* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_session_param* rule)
+void* Builder::visit(Rule_session_param* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_mid_attr* rule)
+void* Builder::visit(Rule_mid_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_identification_tag* rule)
+void* Builder::visit(Rule_identification_tag* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_group_attr* rule)
+void* Builder::visit(Rule_group_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_group_semantics* rule)
+void* Builder::visit(Rule_group_semantics* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ssrc_attr* rule)
+void* Builder::visit(Rule_ssrc_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ssrc_id* rule)
+void* Builder::visit(Rule_ssrc_id* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ssrc_group_attr* rule)
+void* Builder::visit(Rule_ssrc_group_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ssrc_group_semantics* rule)
+void* Builder::visit(Rule_ssrc_group_semantics* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_cname_attr* rule)
+void* Builder::visit(Rule_cname_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_cname* rule)
+void* Builder::visit(Rule_cname* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_previous_ssrc_attr* rule)
+void* Builder::visit(Rule_previous_ssrc_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_rtpmap_attr* rule)
+void* Builder::visit(Rule_rtpmap_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_name* rule)
+void* Builder::visit(Rule_name* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_rate* rule)
+void* Builder::visit(Rule_rate* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_parameters* rule)
+void* Builder::visit(Rule_parameters* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fmtp_attr* rule)
+void* Builder::visit(Rule_fmtp_attr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_param_list* rule)
+void* Builder::visit(Rule_param_list* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_media_descriptions* rule)
+void* Builder::visit(Rule_media_descriptions* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_media_description* rule)
+void* Builder::visit(Rule_media_description* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_media_field* rule)
+void* Builder::visit(Rule_media_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_username* rule)
+void* Builder::visit(Rule_username* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_sess_id* rule)
+void* Builder::visit(Rule_sess_id* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_sess_version* rule)
+void* Builder::visit(Rule_sess_version* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_nettype* rule)
+void* Builder::visit(Rule_nettype* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_addrtype* rule)
+void* Builder::visit(Rule_addrtype* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_email_address* rule)
+void* Builder::visit(Rule_email_address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_address_and_comment* rule)
+void* Builder::visit(Rule_address_and_comment* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dispname_and_address* rule)
+void* Builder::visit(Rule_dispname_and_address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_phone_number* rule)
+void* Builder::visit(Rule_phone_number* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_phone* rule)
+void* Builder::visit(Rule_phone* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_connection_address* rule)
+void* Builder::visit(Rule_connection_address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_unicast_address* rule)
+void* Builder::visit(Rule_unicast_address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_bwtype* rule)
+void* Builder::visit(Rule_bwtype* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_bandwidth* rule)
+void* Builder::visit(Rule_bandwidth* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_start_time* rule)
+void* Builder::visit(Rule_start_time* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_stop_time* rule)
+void* Builder::visit(Rule_stop_time* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_time* rule)
+void* Builder::visit(Rule_time* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_repeat_interval* rule)
+void* Builder::visit(Rule_repeat_interval* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_typed_time* rule)
+void* Builder::visit(Rule_typed_time* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fixed_len_time_unit* rule)
+void* Builder::visit(Rule_fixed_len_time_unit* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_key_type* rule)
+void* Builder::visit(Rule_key_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_prompt_key_type* rule)
+void* Builder::visit(Rule_prompt_key_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_clear_key_type* rule)
+void* Builder::visit(Rule_clear_key_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_base64_key_type* rule)
+void* Builder::visit(Rule_base64_key_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_uri_key_type* rule)
+void* Builder::visit(Rule_uri_key_type* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_base64* rule)
+void* Builder::visit(Rule_base64* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_base64_unit* rule)
+void* Builder::visit(Rule_base64_unit* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_base64_pad* rule)
+void* Builder::visit(Rule_base64_pad* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_base64_char* rule)
+void* Builder::visit(Rule_base64_char* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_attribute* rule)
+void* Builder::visit(Rule_attribute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_att_field* rule)
+void* Builder::visit(Rule_att_field* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_att_value* rule)
+void* Builder::visit(Rule_att_value* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_media* rule)
+void* Builder::visit(Rule_media* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fmt* rule)
+void* Builder::visit(Rule_fmt* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_proto* rule)
+void* Builder::visit(Rule_proto* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_port* rule)
+void* Builder::visit(Rule_port* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_number_of_ports* rule)
+void* Builder::visit(Rule_number_of_ports* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IP4_multicast* rule)
+void* Builder::visit(Rule_IP4_multicast* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_m1* rule)
+void* Builder::visit(Rule_m1* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IP6_multicast* rule)
+void* Builder::visit(Rule_IP6_multicast* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ttl* rule)
+void* Builder::visit(Rule_ttl* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_FQDN* rule)
+void* Builder::visit(Rule_FQDN* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_email_safe* rule)
+void* Builder::visit(Rule_email_safe* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_URI* rule)
+void* Builder::visit(Rule_URI* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_hier_part* rule)
+void* Builder::visit(Rule_hier_part* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_URI_reference* rule)
+void* Builder::visit(Rule_URI_reference* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_absolute_URI* rule)
+void* Builder::visit(Rule_absolute_URI* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_relative_ref* rule)
+void* Builder::visit(Rule_relative_ref* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_relative_part* rule)
+void* Builder::visit(Rule_relative_part* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_scheme* rule)
+void* Builder::visit(Rule_scheme* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_authority* rule)
+void* Builder::visit(Rule_authority* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_userinfo* rule)
+void* Builder::visit(Rule_userinfo* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_host* rule)
+void* Builder::visit(Rule_host* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IP_literal* rule)
+void* Builder::visit(Rule_IP_literal* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IPvFuture* rule)
+void* Builder::visit(Rule_IPvFuture* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IPv6address* rule)
+void* Builder::visit(Rule_IPv6address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_h16* rule)
+void* Builder::visit(Rule_h16* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ls32* rule)
+void* Builder::visit(Rule_ls32* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_IPv4address* rule)
+void* Builder::visit(Rule_IPv4address* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dec_octet* rule)
+void* Builder::visit(Rule_dec_octet* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_reg_name* rule)
+void* Builder::visit(Rule_reg_name* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path* rule)
+void* Builder::visit(Rule_path* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path_abempty* rule)
+void* Builder::visit(Rule_path_abempty* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path_absolute* rule)
+void* Builder::visit(Rule_path_absolute* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path_noscheme* rule)
+void* Builder::visit(Rule_path_noscheme* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path_rootless* rule)
+void* Builder::visit(Rule_path_rootless* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_path_empty* rule)
+void* Builder::visit(Rule_path_empty* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_segment* rule)
+void* Builder::visit(Rule_segment* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_segment_nz* rule)
+void* Builder::visit(Rule_segment_nz* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_segment_nz_nc* rule)
+void* Builder::visit(Rule_segment_nz_nc* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_pchar* rule)
+void* Builder::visit(Rule_pchar* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_query* rule)
+void* Builder::visit(Rule_query* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_fragment* rule)
+void* Builder::visit(Rule_fragment* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_pct_encoded* rule)
+void* Builder::visit(Rule_pct_encoded* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_unreserved* rule)
+void* Builder::visit(Rule_unreserved* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_reserved* rule)
+void* Builder::visit(Rule_reserved* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_gen_delims* rule)
+void* Builder::visit(Rule_gen_delims* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_sub_delims* rule)
+void* Builder::visit(Rule_sub_delims* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_addr_spec* rule)
+void* Builder::visit(Rule_addr_spec* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_local_part* rule)
+void* Builder::visit(Rule_local_part* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_domain* rule)
+void* Builder::visit(Rule_domain* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_domain_literal* rule)
+void* Builder::visit(Rule_domain_literal* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dcontent* rule)
+void* Builder::visit(Rule_dcontent* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dtext* rule)
+void* Builder::visit(Rule_dtext* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_NO_WS_CTL* rule)
+void* Builder::visit(Rule_NO_WS_CTL* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_quoted_pair* rule)
+void* Builder::visit(Rule_quoted_pair* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_text* rule)
+void* Builder::visit(Rule_text* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_FWS* rule)
+void* Builder::visit(Rule_FWS* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_comment* rule)
+void* Builder::visit(Rule_comment* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ccontent* rule)
+void* Builder::visit(Rule_ccontent* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ctext* rule)
+void* Builder::visit(Rule_ctext* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dot_atom* rule)
+void* Builder::visit(Rule_dot_atom* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_dot_atom_text* rule)
+void* Builder::visit(Rule_dot_atom_text* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_atext* rule)
+void* Builder::visit(Rule_atext* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_integer* rule)
+void* Builder::visit(Rule_integer* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_alpha_numeric* rule)
+void* Builder::visit(Rule_alpha_numeric* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_decimal_uchar* rule)
+void* Builder::visit(Rule_decimal_uchar* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_decimal_uchar_1xx* rule)
+void* Builder::visit(Rule_decimal_uchar_1xx* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_decimal_uchar_2xx* rule)
+void* Builder::visit(Rule_decimal_uchar_2xx* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_decimal_uchar_25x* rule)
+void* Builder::visit(Rule_decimal_uchar_25x* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_BIT* rule)
+void* Builder::visit(Rule_BIT* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_CHAR* rule)
+void* Builder::visit(Rule_CHAR* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_CR* rule)
+void* Builder::visit(Rule_CR* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_CTL* rule)
+void* Builder::visit(Rule_CTL* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_HEXDIG* rule)
+void* Builder::visit(Rule_HEXDIG* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_HTAB* rule)
+void* Builder::visit(Rule_HTAB* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_LF* rule)
+void* Builder::visit(Rule_LF* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_LWSP* rule)
+void* Builder::visit(Rule_LWSP* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_OCTET* rule)
+void* Builder::visit(Rule_OCTET* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_SP* rule)
+void* Builder::visit(Rule_SP* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_VCHAR* rule)
+void* Builder::visit(Rule_VCHAR* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_quoted_string* rule)
+void* Builder::visit(Rule_quoted_string* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_qcontent* rule)
+void* Builder::visit(Rule_qcontent* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_qtext* rule)
+void* Builder::visit(Rule_qtext* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_local_part* rule)
+void* Builder::visit(Rule_obs_local_part* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_domain* rule)
+void* Builder::visit(Rule_obs_domain* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_FWS* rule)
+void* Builder::visit(Rule_obs_FWS* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_qp* rule)
+void* Builder::visit(Rule_obs_qp* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_text* rule)
+void* Builder::visit(Rule_obs_text* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_obs_char* rule)
+void* Builder::visit(Rule_obs_char* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_CFWS* rule)
+void* Builder::visit(Rule_CFWS* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_WSP* rule)
+void* Builder::visit(Rule_WSP* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_atom* rule)
+void* Builder::visit(Rule_atom* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_word* rule)
+void* Builder::visit(Rule_word* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_extn_addr* rule)
+void* Builder::visit(Rule_extn_addr* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_non_ws_string* rule)
+void* Builder::visit(Rule_non_ws_string* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_byte_string* rule)
+void* Builder::visit(Rule_byte_string* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_CRLF* rule)
+void* Builder::visit(Rule_CRLF* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_token* rule)
+void* Builder::visit(Rule_token* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_ALPHA* rule)
+void* Builder::visit(Rule_ALPHA* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_DIGIT* rule)
+void* Builder::visit(Rule_DIGIT* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_POS_DIGIT* rule)
+void* Builder::visit(Rule_POS_DIGIT* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_DQUOTE* rule)
+void* Builder::visit(Rule_DQUOTE* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Rule_EQUALS* rule)
+void* Builder::visit(Rule_EQUALS* rule)
 {
   return visitRules(rule->rules);
 }
 
-void* Builder::visit(const Terminal_StringValue* value)
+void* Builder::visit(Terminal_StringValue* value)
 {
   return NULL;
 }
 
-void* Builder::visit(const Terminal_NumericValue* value)
+void* Builder::visit(Terminal_NumericValue* value)
 {
   return NULL;
 }
 
-void* Builder::visitRules(const vector<const Rule*>& rules)
+void* Builder::visitRules(const vector<Rule*>& rules)
 {
-  vector<const Rule*>::const_iterator i;
+  vector<Rule*>::const_iterator i;
   for (i = rules.begin(); i != rules.end(); i++)
     (*i)->accept(*this);
 

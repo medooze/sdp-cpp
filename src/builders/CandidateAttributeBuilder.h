@@ -17,7 +17,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_candidate_attribute* rule)
+	void* visit(Rule_candidate_attribute* rule)
 	{
 		//New attr
 		candidate = new CandidateAttribute();
@@ -28,7 +28,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_foundation* rule)
+	void* visit(Rule_foundation* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -39,7 +39,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_component_id* rule)
+	void* visit(Rule_component_id* rule)
 	{
 		//Get type
 		int value = std::stoi(rule->spelling);
@@ -50,7 +50,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_transport* rule)
+	void* visit(Rule_transport* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -61,7 +61,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_priority* rule)
+	void* visit(Rule_priority* rule)
 	{
 		//Get type
 		int value = std::stoi(rule->spelling);
@@ -72,7 +72,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_connection_address* rule)
+	void* visit(Rule_connection_address* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -83,7 +83,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_port* rule)
+	void* visit(Rule_port* rule)
 	{
 		//Get type
 		int value = std::stoi(rule->spelling);
@@ -94,7 +94,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_candidate_types* rule)
+	void* visit(Rule_candidate_types* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -105,7 +105,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_rel_addr* rule)
+	void* visit(Rule_rel_addr* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -116,7 +116,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_rel_port* rule)
+	void* visit(Rule_rel_port* rule)
 	{
 		//Get type
 		int value = std::stoi(rule->spelling);
@@ -127,7 +127,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_att* rule)
+	void* visit(Rule_extension_att* rule)
 	{
 		//New attr
 		extension = std::make_shared<CandidateAttribute::Extension>();
@@ -140,7 +140,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_att_name* rule)
+	void* visit(Rule_extension_att_name* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;
@@ -151,7 +151,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_extension_att_value* rule)
+	void* visit(Rule_extension_att_value* rule)
 	{
 		//Get value
 		std::string value = rule->spelling;

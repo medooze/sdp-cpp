@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_origin_field* rule)
+	void* visit(Rule_origin_field* rule)
 	{
 		//Create object
 		origin = new Origin();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_username* rule)
+	void* visit(Rule_username* rule)
 	{
 		//Generate
 		std::string username = rule->spelling;
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_sess_id* rule)
+	void* visit(Rule_sess_id* rule)
 	{
 		//Generate
 		int64_t sessId = std::stoll(rule->spelling);
@@ -49,7 +49,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_sess_version* rule)
+	void* visit(Rule_sess_version* rule)
 	{
 		//Generate
 		int64_t sessVersion = std::stoll(rule->spelling);
@@ -60,7 +60,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_nettype* rule)
+	void* visit(Rule_nettype* rule)
 	{
 		//Generate
 		std::string nettype = rule->spelling;
@@ -71,7 +71,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_addrtype* rule)
+	void* visit(Rule_addrtype* rule)
 	{
 		//Generate
 		std::string addrtype = rule->spelling;
@@ -82,7 +82,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_unicast_address* rule)
+	void* visit(Rule_unicast_address* rule)
 	{
 		//Generate
 		std::string address = rule->spelling;

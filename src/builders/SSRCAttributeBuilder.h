@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_ssrc_attr* rule)
+	void* visit(Rule_ssrc_attr* rule)
 	{
 		//New attr
 		ssrc = new SSRCAttribute();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_id* rule)
+	void* visit(Rule_ssrc_id* rule)
 	{
 		//Get type
 		uint32_t ssrcId = std::stoll(rule->spelling);
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_att_field* rule)
+	void* visit(Rule_att_field* rule)
 	{
 		//Get type
 		std::string field = rule->spelling;
@@ -49,7 +49,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_att_value* rule)
+	void* visit(Rule_att_value* rule)
 	{
 		//Get type
 		std::string value = rule->spelling;

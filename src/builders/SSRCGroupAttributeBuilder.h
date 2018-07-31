@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_ssrc_group_attr* rule)
+	void* visit(Rule_ssrc_group_attr* rule)
 	{
 		//New attr
 		group = new SSRCGroupAttribute();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_id* rule)
+	void* visit(Rule_ssrc_id* rule)
 	{
 		//Get type
 		uint32_t ssrc = std::stoll(rule->spelling);
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_ssrc_group_semantics* rule)
+	void* visit(Rule_ssrc_group_semantics* rule)
 	{
 		//Get type
 		std::string semantics = rule->spelling;

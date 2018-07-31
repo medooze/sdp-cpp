@@ -8,7 +8,7 @@ class InformationBuilder :
 	public Builder
 {
 public:
-	virtual void* visit(const Rule_information_field* rule) override 
+	virtual void* visit(Rule_information_field* rule) override 
 	{
 		//Create new session name
 		Information* info = new Information();

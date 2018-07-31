@@ -16,7 +16,7 @@ private:
 public:
 
 	virtual
-	void* visit(const Rule_sctpmap_attr* rule)
+	void* visit(Rule_sctpmap_attr* rule)
 	{
 		//New attr
 		sctpmap = new SCTPMapAttribute();
@@ -27,7 +27,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_sctpmap_number* rule)
+	void* visit(Rule_sctpmap_number* rule)
 	{
 		//Get number
 		int value = std::stoi(rule->spelling);
@@ -38,7 +38,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_app* rule)
+	void* visit(Rule_app* rule)
 	{
 		//Get app
 		std::string value = rule->spelling;
@@ -49,7 +49,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_streams* rule)
+	void* visit(Rule_streams* rule)
 	{
 		//Get number
 		int value = std::stoi(rule->spelling);

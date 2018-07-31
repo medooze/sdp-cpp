@@ -22,7 +22,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_media_description* rule)
+	void* visit(Rule_media_description* rule)
 	{
 		//New object
 		media = new MediaDescription();
@@ -33,7 +33,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_port* rule)
+	void* visit(Rule_port* rule)
 	{
 		//Get port
 		int port = std::stoi(rule->spelling);
@@ -44,7 +44,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_number_of_ports* rule)
+	void* visit(Rule_number_of_ports* rule)
 	{
 		//Get port
 		int number = std::stoi(rule->spelling);
@@ -55,7 +55,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_proto* rule)
+	void* visit(Rule_proto* rule)
 	{
 		//Get protocol
 		std::string proto = rule->spelling;
@@ -66,7 +66,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_media* rule)
+	void* visit(Rule_media* rule)
 	{
 		//Get media
 		std::string name = rule->spelling;
@@ -77,7 +77,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fmt* rule)
+	void* visit(Rule_fmt* rule)
 	{
 		//Get protocol
 		std::string fmt = rule->spelling;
@@ -88,7 +88,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_key_field* rule)
+	void* visit(Rule_key_field* rule)
 	{
 		//Create builder
 		KeyBuilder builder;
@@ -101,7 +101,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_connection_field* rule)
+	void* visit(Rule_connection_field* rule)
 	{
 		//Create builder
 		ConnectionBuilder builder;
@@ -114,7 +114,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_bandwidth_field* rule)
+	void* visit(Rule_bandwidth_field* rule)
 	{
 		//Create builder
 		BandwitdhBuilder builder;
@@ -127,7 +127,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_information_field* rule)
+	void* visit(Rule_information_field* rule)
 	{
 		//Create new session name
 		InformationBuilder builder;
@@ -140,7 +140,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_attribute_field* rule)
+	void* visit(Rule_attribute_field* rule)
 	{
 		//Create new session name
 		AttributeBuilder builder;

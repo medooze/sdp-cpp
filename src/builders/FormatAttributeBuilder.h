@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_fmtp_attr* rule)
+	void* visit(Rule_fmtp_attr* rule)
 	{
 		//New attr
 		attr = new FormatAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fmt* rule)
+	void* visit(Rule_fmt* rule)
 	{
 		//Get value
 		int fmt = std::stoi(rule->spelling);
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_param_list* rule)
+	void* visit(Rule_param_list* rule)
 	{
 		//Get value
 		std::string parameters = rule->spelling;

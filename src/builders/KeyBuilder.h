@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_key_field* rule)
+	void* visit(Rule_key_field* rule)
 	{
 		//New kwy
 		key = new Key();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_prompt_key_type* rule)
+	void* visit(Rule_prompt_key_type* rule)
 	{
 		//Get type
 		std::string type = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_clear_key_type* rule)
+	void* visit(Rule_clear_key_type* rule)
 	{
 		//Get type and key
 		std::string type = rule->rules[0]->spelling;
@@ -51,7 +51,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_base64_key_type* rule)
+	void* visit(Rule_base64_key_type* rule)
 	{
 		//Get type and key
 		std::string type = rule->rules[0]->spelling;
@@ -65,7 +65,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_uri_key_type* rule)
+	void* visit(Rule_uri_key_type* rule)
 	{
 		//Get type and key
 		std::string type = rule->rules[0]->spelling;

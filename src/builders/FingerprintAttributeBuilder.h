@@ -15,7 +15,7 @@ private:
 
 public:
 	virtual
-	void* visit(const Rule_fingerprint_attribute* rule)
+	void* visit(Rule_fingerprint_attribute* rule)
 	{
 		//New attr
 		fingerprint = new FingerprintAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_hash_func* rule)
+	void* visit(Rule_hash_func* rule)
 	{
 		//Get hash func
 		std::string value = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_fingerprint* rule)
+	void* visit(Rule_fingerprint* rule)
 	{
 		//Get fingerprint
 		std::string value = rule->spelling;

@@ -15,7 +15,7 @@ private:
 
 public:	
 	virtual
-	void* visit(const Rule_group_attr* rule)
+	void* visit(Rule_group_attr* rule)
 	{
 		//New attr
 		group = new GroupAttribute();
@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_identification_tag* rule)
+	void* visit(Rule_identification_tag* rule)
 	{
 		//Get type
 		std::string tag = rule->spelling;
@@ -37,7 +37,7 @@ public:
 	}
 
 	virtual
-	void* visit(const Rule_group_semantics* rule)
+	void* visit(Rule_group_semantics* rule)
 	{
 		//Get type
 		std::string semantics = rule->spelling;

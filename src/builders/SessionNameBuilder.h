@@ -12,7 +12,7 @@ public Builder
 {
 public:
 	virtual
-	void* visit(const Rule_session_name_field* rule)
+	void* visit(Rule_session_name_field* rule)
 	{
 		//Create object
 		SessionName* sessionName = new SessionName();
