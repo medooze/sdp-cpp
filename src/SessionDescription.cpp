@@ -56,8 +56,14 @@ std::shared_ptr<SessionDescription> SessionDescription::parse(const std::string&
 	
 	//Create builder
 	SessionDescriptionBuilder builder;
-	//And make it visit the object
-	return std::shared_ptr<SessionDescription>((SessionDescription*)builder.visit(rule));
+	//And make it visit the object to get the parser object
+	auto sdp = (SessionDescription*)builder.visit(rule);
+
+	//Release rules
+	delete(rule);
+
+	//Return pointer
+	return std::shared_ptr<SessionDescription>(sdp);
 }
 
 
