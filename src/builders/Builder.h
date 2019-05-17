@@ -233,6 +233,53 @@ public:
 	 
 protected:
 	void* visitRules(const std::vector<Rule*>& rules);	 
+
+	// Inherited via Visitor
+	virtual void * visit(Rule_source_filter_attr * rule) override;
+	virtual void * visit(Rule_filter_mode * rule) override;
+	virtual void * visit(Rule_filter_spec * rule) override;
+	virtual void * visit(Rule_address_types * rule) override;
+	virtual void * visit(Rule_dest_address * rule) override;
+	virtual void * visit(Rule_src_list * rule) override;
+	virtual void * visit(Rule_timestamp_refclk_attr * rule) override;
+	virtual void * visit(Rule_clksrc * rule) override;
+	virtual void * visit(Rule_clksrc_ext * rule) override;
+	virtual void * visit(Rule_clksrc_param_name * rule) override;
+	virtual void * visit(Rule_clksrc_param_value * rule) override;
+	virtual void * visit(Rule_ntp * rule) override;
+	virtual void * visit(Rule_ntp_server_addr * rule) override;
+	virtual void * visit(Rule_ptp * rule) override;
+	virtual void * visit(Rule_ptp_version * rule) override;
+	virtual void * visit(Rule_ptp_version_ext * rule) override;
+	virtual void * visit(Rule_ptp_server * rule) override;
+	virtual void * visit(Rule_ptp_gmid * rule) override;
+	virtual void * visit(Rule_ptp_domain * rule) override;
+	virtual void * visit(Rule_ptp_domain_name * rule) override;
+	virtual void * visit(Rule_ptp_domain_char * rule) override;
+	virtual void * visit(Rule_ptp_domain_nmbr * rule) override;
+	virtual void * visit(Rule_ptp_domain_dgts * rule) override;
+	virtual void * visit(Rule_ptp_domain_n1 * rule) override;
+	virtual void * visit(Rule_ptp_domain_n2 * rule) override;
+	virtual void * visit(Rule_ptp_domain_n3 * rule) override;
+	virtual void * visit(Rule_gps * rule) override;
+	virtual void * visit(Rule_gal * rule) override;
+	virtual void * visit(Rule_glonass * rule) override;
+	virtual void * visit(Rule_local * rule) override;
+	virtual void * visit(Rule_private * rule) override;
+	virtual void * visit(Rule_media_clksrc_attr * rule) override;
+	virtual void * visit(Rule_media_clkid * rule) override;
+	virtual void * visit(Rule_media_clktag * rule) override;
+	virtual void * visit(Rule_mediaclock * rule) override;
+	virtual void * visit(Rule_mediaclock_ext * rule) override;
+	virtual void * visit(Rule_mediaclock_param_name * rule) override;
+	virtual void * visit(Rule_mediaclock_param_value * rule) override;
+	virtual void * visit(Rule_sender * rule) override;
+	virtual void * visit(Rule_direct * rule) override;
+	virtual void * visit(Rule_fsrate * rule) override;
+	virtual void * visit(Rule_ieee1722_streamid * rule) override;
+	virtual void * visit(Rule_avb_stream_id * rule) override;
+	virtual void * visit(Rule_hostport * rule) override;
+	virtual void * visit(Rule_EUI64 * rule) override;
 };
 
 #endif

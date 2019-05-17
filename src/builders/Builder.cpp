@@ -87,12 +87,55 @@ using std::vector;
 #include "../abnf/Rule_cname_attr.hpp"
 #include "../abnf/Rule_cname.hpp"
 #include "../abnf/Rule_previous_ssrc_attr.hpp"
+#include "../abnf/Rule_source_filter_attr.hpp"
+#include "../abnf/Rule_filter_mode.hpp"
+#include "../abnf/Rule_filter_spec.hpp"
+#include "../abnf/Rule_address_types.hpp"
+#include "../abnf/Rule_dest_address.hpp"
+#include "../abnf/Rule_src_list.hpp"
 #include "../abnf/Rule_rtpmap_attr.hpp"
 #include "../abnf/Rule_name.hpp"
 #include "../abnf/Rule_rate.hpp"
 #include "../abnf/Rule_parameters.hpp"
 #include "../abnf/Rule_fmtp_attr.hpp"
 #include "../abnf/Rule_param_list.hpp"
+#include "../abnf/Rule_timestamp_refclk_attr.hpp"
+#include "../abnf/Rule_clksrc.hpp"
+#include "../abnf/Rule_clksrc_ext.hpp"
+#include "../abnf/Rule_clksrc_param_name.hpp"
+#include "../abnf/Rule_clksrc_param_value.hpp"
+#include "../abnf/Rule_ntp.hpp"
+#include "../abnf/Rule_ntp_server_addr.hpp"
+#include "../abnf/Rule_ptp.hpp"
+#include "../abnf/Rule_ptp_version.hpp"
+#include "../abnf/Rule_ptp_version_ext.hpp"
+#include "../abnf/Rule_ptp_server.hpp"
+#include "../abnf/Rule_ptp_gmid.hpp"
+#include "../abnf/Rule_ptp_domain.hpp"
+#include "../abnf/Rule_ptp_domain_name.hpp"
+#include "../abnf/Rule_ptp_domain_char.hpp"
+#include "../abnf/Rule_ptp_domain_nmbr.hpp"
+#include "../abnf/Rule_ptp_domain_dgts.hpp"
+#include "../abnf/Rule_ptp_domain_n1.hpp"
+#include "../abnf/Rule_ptp_domain_n2.hpp"
+#include "../abnf/Rule_ptp_domain_n3.hpp"
+#include "../abnf/Rule_gps.hpp"
+#include "../abnf/Rule_gal.hpp"
+#include "../abnf/Rule_glonass.hpp"
+#include "../abnf/Rule_local.hpp"
+#include "../abnf/Rule_private.hpp"
+#include "../abnf/Rule_media_clksrc_attr.hpp"
+#include "../abnf/Rule_media_clkid.hpp"
+#include "../abnf/Rule_media_clktag.hpp"
+#include "../abnf/Rule_mediaclock.hpp"
+#include "../abnf/Rule_mediaclock_ext.hpp"
+#include "../abnf/Rule_mediaclock_param_name.hpp"
+#include "../abnf/Rule_mediaclock_param_value.hpp"
+#include "../abnf/Rule_sender.hpp"
+#include "../abnf/Rule_direct.hpp"
+#include "../abnf/Rule_fsrate.hpp"
+#include "../abnf/Rule_ieee1722_streamid.hpp"
+#include "../abnf/Rule_avb_stream_id.hpp"
 #include "../abnf/Rule_media_descriptions.hpp"
 #include "../abnf/Rule_media_description.hpp"
 #include "../abnf/Rule_media_field.hpp"
@@ -148,6 +191,7 @@ using std::vector;
 #include "../abnf/Rule_scheme.hpp"
 #include "../abnf/Rule_authority.hpp"
 #include "../abnf/Rule_userinfo.hpp"
+#include "../abnf/Rule_hostport.hpp"
 #include "../abnf/Rule_host.hpp"
 #include "../abnf/Rule_IP_literal.hpp"
 #include "../abnf/Rule_IPvFuture.hpp"
@@ -200,6 +244,7 @@ using std::vector;
 #include "../abnf/Rule_CHAR.hpp"
 #include "../abnf/Rule_CR.hpp"
 #include "../abnf/Rule_CTL.hpp"
+#include "../abnf/Rule_EUI64.hpp"
 #include "../abnf/Rule_HEXDIG.hpp"
 #include "../abnf/Rule_HTAB.hpp"
 #include "../abnf/Rule_LF.hpp"
@@ -230,6 +275,7 @@ using std::vector;
 #include "../abnf/Rule_POS_DIGIT.hpp"
 #include "../abnf/Rule_DQUOTE.hpp"
 #include "../abnf/Rule_EQUALS.hpp"
+
 #include "../abnf/Terminal_StringValue.hpp"
 #include "../abnf/Terminal_NumericValue.hpp"
 
@@ -1332,5 +1378,230 @@ void* Builder::visitRules(const vector<Rule*>& rules)
     (*i)->accept(*this);
 
   return NULL;
+}
+
+void * Builder::visit(Rule_source_filter_attr * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_filter_mode * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_filter_spec * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_address_types * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_dest_address * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_src_list * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_timestamp_refclk_attr * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_clksrc * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_clksrc_ext * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_clksrc_param_name * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_clksrc_param_value * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ntp * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ntp_server_addr * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_version * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_version_ext * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_server * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_gmid * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_name * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_char * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_nmbr * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_dgts * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_n1 * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_n2 * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ptp_domain_n3 * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_gps * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_gal * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_glonass * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_local * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_private * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_media_clksrc_attr * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_media_clkid * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_media_clktag * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_mediaclock * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_mediaclock_ext * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_mediaclock_param_name * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_mediaclock_param_value * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_sender * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_direct * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_fsrate * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_ieee1722_streamid * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_avb_stream_id * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_hostport * rule)
+{
+  return visitRules(rule->rules);
+}
+
+void * Builder::visit(Rule_EUI64 * rule)
+{
+  return visitRules(rule->rules);
 }
  

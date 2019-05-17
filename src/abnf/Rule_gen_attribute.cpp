@@ -21,16 +21,19 @@ using std::vector;
 
 #include "Rule_extmap_attribute.hpp"
 #include "Rule_mid_attr.hpp"
+#include "Rule_media_clksrc_attr.hpp"
 #include "Rule_group_attr.hpp"
 #include "Rule_sctpmap_attr.hpp"
 #include "Rule_rtpmap_attr.hpp"
 #include "Rule_fmtp_attr.hpp"
 #include "Rule_fingerprint_attribute.hpp"
 #include "Rule_ssrc_attr.hpp"
+#include "Rule_timestamp_refclk_attr.hpp"
 #include "Rule_ssrc_group_attr.hpp"
 #include "Rule_attribute.hpp"
 #include "Rule_cname_attr.hpp"
 #include "Rule_previous_ssrc_attr.hpp"
+#include "Rule_source_filter_attr.hpp"
 #include "Rule_crypto_attribute.hpp"
 #include "Rule_candidate_attribute.hpp"
 
@@ -212,6 +215,28 @@ Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
     {
       bool f1 = true;
       int c1 = 0;
+      Rule* rule = Rule_source_filter_attr::parse(context);
+      if ((f1 = rule != NULL))
+      {
+        a1.add(rule, context.index);
+        c1++;
+      }
+      parsed = c1 == 1;
+    }
+    if (parsed)
+    {
+      as1.push_back(new ParserAlternative(a1));
+    }
+    context.index = s1;
+  }
+  {
+    int s1 = context.index;
+    ParserAlternative a1(s1);
+    parsed = true;
+    if (parsed)
+    {
+      bool f1 = true;
+      int c1 = 0;
       Rule* rule = Rule_rtpmap_attr::parse(context);
       if ((f1 = rule != NULL))
       {
@@ -235,6 +260,50 @@ Rule_gen_attribute* Rule_gen_attribute::parse(ParserContext& context)
       bool f1 = true;
       int c1 = 0;
       Rule* rule = Rule_fmtp_attr::parse(context);
+      if ((f1 = rule != NULL))
+      {
+        a1.add(rule, context.index);
+        c1++;
+      }
+      parsed = c1 == 1;
+    }
+    if (parsed)
+    {
+      as1.push_back(new ParserAlternative(a1));
+    }
+    context.index = s1;
+  }
+  {
+    int s1 = context.index;
+    ParserAlternative a1(s1);
+    parsed = true;
+    if (parsed)
+    {
+      bool f1 = true;
+      int c1 = 0;
+      Rule* rule = Rule_timestamp_refclk_attr::parse(context);
+      if ((f1 = rule != NULL))
+      {
+        a1.add(rule, context.index);
+        c1++;
+      }
+      parsed = c1 == 1;
+    }
+    if (parsed)
+    {
+      as1.push_back(new ParserAlternative(a1));
+    }
+    context.index = s1;
+  }
+  {
+    int s1 = context.index;
+    ParserAlternative a1(s1);
+    parsed = true;
+    if (parsed)
+    {
+      bool f1 = true;
+      int c1 = 0;
+      Rule* rule = Rule_media_clksrc_attr::parse(context);
       if ((f1 = rule != NULL))
       {
         a1.add(rule, context.index);

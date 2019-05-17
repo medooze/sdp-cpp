@@ -102,12 +102,55 @@ using std::transform;
 #include "Rule_cname_attr.hpp"
 #include "Rule_cname.hpp"
 #include "Rule_previous_ssrc_attr.hpp"
+#include "Rule_source_filter_attr.hpp"
+#include "Rule_filter_mode.hpp"
+#include "Rule_filter_spec.hpp"
+#include "Rule_address_types.hpp"
+#include "Rule_dest_address.hpp"
+#include "Rule_src_list.hpp"
 #include "Rule_rtpmap_attr.hpp"
 #include "Rule_name.hpp"
 #include "Rule_rate.hpp"
 #include "Rule_parameters.hpp"
 #include "Rule_fmtp_attr.hpp"
 #include "Rule_param_list.hpp"
+#include "Rule_timestamp_refclk_attr.hpp"
+#include "Rule_clksrc.hpp"
+#include "Rule_clksrc_ext.hpp"
+#include "Rule_clksrc_param_name.hpp"
+#include "Rule_clksrc_param_value.hpp"
+#include "Rule_ntp.hpp"
+#include "Rule_ntp_server_addr.hpp"
+#include "Rule_ptp.hpp"
+#include "Rule_ptp_version.hpp"
+#include "Rule_ptp_version_ext.hpp"
+#include "Rule_ptp_server.hpp"
+#include "Rule_ptp_gmid.hpp"
+#include "Rule_ptp_domain.hpp"
+#include "Rule_ptp_domain_name.hpp"
+#include "Rule_ptp_domain_char.hpp"
+#include "Rule_ptp_domain_nmbr.hpp"
+#include "Rule_ptp_domain_dgts.hpp"
+#include "Rule_ptp_domain_n1.hpp"
+#include "Rule_ptp_domain_n2.hpp"
+#include "Rule_ptp_domain_n3.hpp"
+#include "Rule_gps.hpp"
+#include "Rule_gal.hpp"
+#include "Rule_glonass.hpp"
+#include "Rule_local.hpp"
+#include "Rule_private.hpp"
+#include "Rule_media_clksrc_attr.hpp"
+#include "Rule_media_clkid.hpp"
+#include "Rule_media_clktag.hpp"
+#include "Rule_mediaclock.hpp"
+#include "Rule_mediaclock_ext.hpp"
+#include "Rule_mediaclock_param_name.hpp"
+#include "Rule_mediaclock_param_value.hpp"
+#include "Rule_sender.hpp"
+#include "Rule_direct.hpp"
+#include "Rule_fsrate.hpp"
+#include "Rule_ieee1722_streamid.hpp"
+#include "Rule_avb_stream_id.hpp"
 #include "Rule_media_descriptions.hpp"
 #include "Rule_media_description.hpp"
 #include "Rule_media_field.hpp"
@@ -163,6 +206,7 @@ using std::transform;
 #include "Rule_scheme.hpp"
 #include "Rule_authority.hpp"
 #include "Rule_userinfo.hpp"
+#include "Rule_hostport.hpp"
 #include "Rule_host.hpp"
 #include "Rule_IP_literal.hpp"
 #include "Rule_IPvFuture.hpp"
@@ -215,6 +259,7 @@ using std::transform;
 #include "Rule_CHAR.hpp"
 #include "Rule_CR.hpp"
 #include "Rule_CTL.hpp"
+#include "Rule_EUI64.hpp"
 #include "Rule_HEXDIG.hpp"
 #include "Rule_HTAB.hpp"
 #include "Rule_LF.hpp"
@@ -327,12 +372,55 @@ static map<string, pParser> buildParserMap(void)
   parsers["cname_attr"] = (pParser)Rule_cname_attr::parse;
   parsers["cname"] = (pParser)Rule_cname::parse;
   parsers["previous_ssrc_attr"] = (pParser)Rule_previous_ssrc_attr::parse;
+  parsers["source_filter_attr"] = (pParser)Rule_source_filter_attr::parse;
+  parsers["filter_mode"] = (pParser)Rule_filter_mode::parse;
+  parsers["filter_spec"] = (pParser)Rule_filter_spec::parse;
+  parsers["address_types"] = (pParser)Rule_address_types::parse;
+  parsers["dest_address"] = (pParser)Rule_dest_address::parse;
+  parsers["src_list"] = (pParser)Rule_src_list::parse;
   parsers["rtpmap_attr"] = (pParser)Rule_rtpmap_attr::parse;
   parsers["name"] = (pParser)Rule_name::parse;
   parsers["rate"] = (pParser)Rule_rate::parse;
   parsers["parameters"] = (pParser)Rule_parameters::parse;
   parsers["fmtp_attr"] = (pParser)Rule_fmtp_attr::parse;
   parsers["param_list"] = (pParser)Rule_param_list::parse;
+  parsers["timestamp_refclk_attr"] = (pParser)Rule_timestamp_refclk_attr::parse;
+  parsers["clksrc"] = (pParser)Rule_clksrc::parse;
+  parsers["clksrc_ext"] = (pParser)Rule_clksrc_ext::parse;
+  parsers["clksrc_param_name"] = (pParser)Rule_clksrc_param_name::parse;
+  parsers["clksrc_param_value"] = (pParser)Rule_clksrc_param_value::parse;
+  parsers["ntp"] = (pParser)Rule_ntp::parse;
+  parsers["ntp_server_addr"] = (pParser)Rule_ntp_server_addr::parse;
+  parsers["ptp"] = (pParser)Rule_ptp::parse;
+  parsers["ptp_version"] = (pParser)Rule_ptp_version::parse;
+  parsers["ptp_version_ext"] = (pParser)Rule_ptp_version_ext::parse;
+  parsers["ptp_server"] = (pParser)Rule_ptp_server::parse;
+  parsers["ptp_gmid"] = (pParser)Rule_ptp_gmid::parse;
+  parsers["ptp_domain"] = (pParser)Rule_ptp_domain::parse;
+  parsers["ptp_domain_name"] = (pParser)Rule_ptp_domain_name::parse;
+  parsers["ptp_domain_char"] = (pParser)Rule_ptp_domain_char::parse;
+  parsers["ptp_domain_nmbr"] = (pParser)Rule_ptp_domain_nmbr::parse;
+  parsers["ptp_domain_dgts"] = (pParser)Rule_ptp_domain_dgts::parse;
+  parsers["ptp_domain_n1"] = (pParser)Rule_ptp_domain_n1::parse;
+  parsers["ptp_domain_n2"] = (pParser)Rule_ptp_domain_n2::parse;
+  parsers["ptp_domain_n3"] = (pParser)Rule_ptp_domain_n3::parse;
+  parsers["gps"] = (pParser)Rule_gps::parse;
+  parsers["gal"] = (pParser)Rule_gal::parse;
+  parsers["glonass"] = (pParser)Rule_glonass::parse;
+  parsers["local"] = (pParser)Rule_local::parse;
+  parsers["private"] = (pParser)Rule_private::parse;
+  parsers["media_clksrc_attr"] = (pParser)Rule_media_clksrc_attr::parse;
+  parsers["media_clkid"] = (pParser)Rule_media_clkid::parse;
+  parsers["media_clktag"] = (pParser)Rule_media_clktag::parse;
+  parsers["mediaclock"] = (pParser)Rule_mediaclock::parse;
+  parsers["mediaclock_ext"] = (pParser)Rule_mediaclock_ext::parse;
+  parsers["mediaclock_param_name"] = (pParser)Rule_mediaclock_param_name::parse;
+  parsers["mediaclock_param_value"] = (pParser)Rule_mediaclock_param_value::parse;
+  parsers["sender"] = (pParser)Rule_sender::parse;
+  parsers["direct"] = (pParser)Rule_direct::parse;
+  parsers["fsrate"] = (pParser)Rule_fsrate::parse;
+  parsers["ieee1722_streamid"] = (pParser)Rule_ieee1722_streamid::parse;
+  parsers["avb_stream_id"] = (pParser)Rule_avb_stream_id::parse;
   parsers["media_descriptions"] = (pParser)Rule_media_descriptions::parse;
   parsers["media_description"] = (pParser)Rule_media_description::parse;
   parsers["media_field"] = (pParser)Rule_media_field::parse;
@@ -388,6 +476,7 @@ static map<string, pParser> buildParserMap(void)
   parsers["scheme"] = (pParser)Rule_scheme::parse;
   parsers["authority"] = (pParser)Rule_authority::parse;
   parsers["userinfo"] = (pParser)Rule_userinfo::parse;
+  parsers["hostport"] = (pParser)Rule_hostport::parse;
   parsers["host"] = (pParser)Rule_host::parse;
   parsers["ip_literal"] = (pParser)Rule_IP_literal::parse;
   parsers["ipvfuture"] = (pParser)Rule_IPvFuture::parse;
@@ -440,6 +529,7 @@ static map<string, pParser> buildParserMap(void)
   parsers["char"] = (pParser)Rule_CHAR::parse;
   parsers["cr"] = (pParser)Rule_CR::parse;
   parsers["ctl"] = (pParser)Rule_CTL::parse;
+  parsers["eui64"] = (pParser)Rule_EUI64::parse;
   parsers["hexdig"] = (pParser)Rule_HEXDIG::parse;
   parsers["htab"] = (pParser)Rule_HTAB::parse;
   parsers["lf"] = (pParser)Rule_LF::parse;
