@@ -97,11 +97,7 @@ std::shared_ptr<SessionDescription> SessionDescription::clone()
 	for (auto bandwidth : bandwidths)
 		//Add it
 		cloned->addBandwidth(bandwidth->clone());
-	//For each connection
-	for (auto attribute : attributes)
-		//Add it
-		cloned->addAttribute(attribute->clone());
-	//For each connection
+	//For each attribute
 	for (auto attribute : attributes)
 		//Add it
 		cloned->addAttribute(attribute->clone());
