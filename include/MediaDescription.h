@@ -256,6 +256,22 @@ public:
 		return value;
 	}
 
+	std::shared_ptr<FormatAttribute> getFormat(int fmt)
+	{
+		//For each attribute
+		for (auto attr : attributes)
+		{
+			//Try to convert it
+			auto fmtp = std::dynamic_pointer_cast<FormatAttribute>(attr);
+			//Check if it is a format attribute and is the ftmp type
+			if (fmtp && fmtp->getFmt() == fmt)
+				//return format paraeters
+				return fmtp;
+		}
+		//NOt found
+		return std::shared_ptr<FormatAttribute>();
+	}
+
 	std::map<std::string, std::string> getFormatParameters(int fmt)
 	{
 		//For each attribute
