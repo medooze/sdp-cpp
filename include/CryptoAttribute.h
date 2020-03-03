@@ -105,7 +105,7 @@ public:
 	virtual std::string getValue() override
 	{
 		bool first = true;
-		std::string value = tag + " " + suite + " ";
+		std::string value = std::to_string(tag) + " " + suite + " ";
 		for (auto param : keyParams)
 		{
 			if (first)
