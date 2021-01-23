@@ -124,7 +124,7 @@ Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E, 0x7E);
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-FF", 0x0E, 0xFF);
             if ((f2 = rule != NULL))
             {
               a2.add(rule, context.index);
@@ -212,7 +212,7 @@ Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7E", 0x0E, 0x7E);
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-FF", 0x0E, 0xFF);
             if ((f2 = rule != NULL))
             {
               a2.add(rule, context.index);
