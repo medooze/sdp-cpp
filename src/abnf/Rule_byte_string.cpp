@@ -124,7 +124,29 @@ Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-FF", 0x0E, 0xFF);
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7F", 0x0E, 0x7F);
+            if ((f2 = rule != NULL))
+            {
+              a2.add(rule, context.index);
+              c2++;
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80, 0xFF);
             if ((f2 = rule != NULL))
             {
               a2.add(rule, context.index);
@@ -212,7 +234,29 @@ Rule_byte_string* Rule_byte_string::parse(ParserContext& context)
           {
             bool f2 = true;
             int c2 = 0;
-            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-FF", 0x0E, 0xFF);
+            Rule* rule = Terminal_NumericValue::parse(context, "%x0E-7F", 0x0E, 0x7F);
+            if ((f2 = rule != NULL))
+            {
+              a2.add(rule, context.index);
+              c2++;
+            }
+            parsed = c2 == 1;
+          }
+          if (parsed)
+          {
+            as2.push_back(new ParserAlternative(a2));
+          }
+          context.index = s2;
+        }
+        {
+          int s2 = context.index;
+          ParserAlternative a2(s2);
+          parsed = true;
+          if (parsed)
+          {
+            bool f2 = true;
+            int c2 = 0;
+            Rule* rule = Terminal_NumericValue::parse(context, "%x80-FF", 0x80, 0xFF);
             if ((f2 = rule != NULL))
             {
               a2.add(rule, context.index);
